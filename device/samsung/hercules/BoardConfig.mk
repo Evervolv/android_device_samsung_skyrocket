@@ -1,5 +1,5 @@
 # inherit from the proprietary version
--include vendor/samsung/surf/BoardConfigVendor.mk
+-include vendor/samsung/skyrocket/BoardConfigVendor.mk
 
 USE_CAMERA_STUB := true
 
@@ -22,7 +22,7 @@ TARGET_HAVE_TSLIB := false
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/surf/include
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/skyrocket/include
 
 # Connectivity - Wi-Fi
 WPA_SUPPLICANT_VERSION := VER_0_6_X
@@ -53,16 +53,13 @@ BOARD_FORCE_STATIC_A2DP := true
 # Enable NFC
 BOARD_HAVE_NFC := true
 
-# gps
-BOARD_USES_GPSWRAPPER := true
-
 # FM Radio
 BOARD_HAVE_FM_RADIO := true
 BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 BOARD_FM_DEVICE := si4709
 
 # Define egl.cfg location
-BOARD_EGL_CFG := device/samsung/surf/prebuilt/system/lib/egl/egl.cfg
+BOARD_EGL_CFG := device/samsung/skyrocket/prebuilt/system/lib/egl/egl.cfg
 BOARD_USES_OVERLAY := true
 #USE_OPENGL_RENDERER := true
 #BOARD_USES_HGL := true
@@ -78,8 +75,8 @@ BOARD_USES_QCOM_LIBS := true
 # Legacy touchscreen support
 BOARD_USE_LEGACY_TOUCHSCREEN := true
 
-#(temporary signal fix moved libril.so to full_surf.mk)
-#TARGET_PROVIDES_LIBRIL := vendor/samsung/surf/proprietary/libril.so
+#(temporary signal fix moved libril.so to full_skyrocket.mk)
+#TARGET_PROVIDES_LIBRIL := vendor/samsung/skyrocket/proprietary/libril.so
 
 BOARD_KERNEL_CMDLINE := no_console_suspend=1
 BOARD_KERNEL_BASE := 0x48000000

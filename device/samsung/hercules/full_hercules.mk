@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-# Pull in full_surf.mk
+# Pull in full_skyrocket.mk
 $(call inherit-product, device/samsung/skyrocket/full_skyrocket.mk)
 
 # The gps config appropriate for this device

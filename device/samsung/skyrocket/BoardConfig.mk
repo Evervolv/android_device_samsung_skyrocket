@@ -14,7 +14,7 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
-TARGET_BOOTLOADER_BOARD_NAME := surf
+TARGET_BOOTLOADER_BOARD_NAME := SGH-I727
 TARGET_HAVE_HDMI_OUT := true
 TARGET_USES_OVERLAY := true
 TARGET_NO_RADIOIMAGE := true
@@ -50,9 +50,6 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_FORCE_STATIC_A2DP := true
 
-# gps
-BOARD_USES_GPSWRAPPER := true
-
 # FM Radio
 BOARD_HAVE_FM_RADIO := true
 BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
@@ -74,6 +71,9 @@ BOARD_USES_QCOM_LIBS := true
 
 # Legacy touchscreen support
 BOARD_USE_LEGACY_TOUCHSCREEN := true
+
+# Enable NFC
+BOARD_HAVE_NFC := true
 
 #(temporary signal fix moved libril.so to full_skyrocket.mk)
 #TARGET_PROVIDES_LIBRIL := vendor/samsung/skyrocket/proprietary/libril.so
