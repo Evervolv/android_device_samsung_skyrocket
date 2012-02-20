@@ -1,0 +1,307 @@
+# Copyright (c) 2010, Code Aurora Forum. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of Code Aurora Forum, Inc. nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+#
+on boot
+    chown system system /dev/accelerometer
+    chown system system /dev/akm8975
+    chmod 664	/dev/accelerometer
+    chmod 664	/dev/akm8975
+    chown system system /sys/class/K3G_GYRO-dev/k3g/gyro_selftest_dps
+    chown system system /sys/class/sec/gsensorcal/calibration
+
+# ko files for vibrator
+    insmod /lib/modules/vibrator.ko
+
+    chown system system /sys/class/timed_output/vibrator/enable
+	chmod 0664 /sys/class/timed_output/vibrator/enable    
+
+on early-fs
+# mount mmc partitions
+# mount system rw first to create dirs for firmware
+    mount ext4 /dev/block/mmcblk0p24 /system wait rw barrier=1
+    exec /system/bin/e2fsck -p /dev/block/mmcblk0p26
+    mount ext4 /dev/block/mmcblk0p26 /cache wait nosuid nodev barrier=1
+    mkdir /efs 0771 system system
+    exec /system/bin/e2fsck -p /dev/block/mmcblk0p21
+    mount ext4 /dev/block/mmcblk0p21 /efs wait nosuid nodev barrier=1
+    chown radio system /efs
+    chmod 0771 /efs
+    mkdir /efs/imei 0775
+    chown radio system /efs/imei
+    chown radio system /efs/imei/keystr
+    chmod 0775 /efs/imei
+    chmod 0775 /efs/imei/keystr
+
+    mkdir /system/etc/firmware/misc 0771 system system
+    mkdir /system/etc/firmware/misc_mdm 0771 system system
+    mount vfat /dev/block/mmcblk0p13 /system/etc/firmware/misc wait ro shortname=lower
+    mount vfat /dev/block/mmcblk0p17 /system/etc/firmware/misc_mdm wait ro shortname=lower
+    exec /system/bin/sh /system/etc/init.qcom.modem_links.sh
+#remount system as ro
+    mount ext4 /dev/block/mmcblk0p24 /system remount ro barrier=0
+    exec e2fsck -p /dev/block/mmcblk0p27
+    mount ext4 /dev/block/mmcblk0p27 /tombstones nosuid nodev barrier=1
+    exec e2fsck -p /dev/block/mmcblk0p25
+    mount ext4 /dev/block/mmcblk0p25 /data wait nosuid nodev usedm barrier=1 noauto_da_alloc
+
+    # We chown/chmod /data again so because mount is run as root + defaults
+    chown system system /data
+    chmod 0771 /data
+    mkdir /tombstones 0744 radio system
+	chown radio system /tombstones
+	mkdir /tombstones/mdm 0744 radio system
+	chown radio system /tombstones/mdm
+
+    symlink /system/lib /lib
+
+    mkdir /mnt/emmc 0000 system system
+    symlink /mnt/emmc /emmc
+
+    # Create dump dir and collect dumps.
+    # Do this before we mount cache so eventually we can use cache for
+    # storing dumps on platforms which do not have a dedicated dump partition.
+
+    # Create log system
+    mkdir /data/log 0777 system system
+    chmod 0777 /data/log 
+    chmod 0662 /dev/log/radio
+    chmod 0662 /dev/log/main
+    chmod 0662 /dev/log/event
+ 
+    mkdir /data/dontpanic
+    chown root log /data/dontpanic
+    chmod 0750 /data/dontpanic
+
+    # Collect apanic data, free resources and re-arm trigger
+    copy /proc/apanic_console /data/dontpanic/apanic_console
+    chown root log /data/dontpanic/apanic_console
+    chmod 0640 /data/dontpanic/apanic_console
+
+    copy /proc/apanic_threads /data/dontpanic/apanic_threads
+    chown root log /data/dontpanic/apanic_threads
+    chmod 0640 /data/dontpanic/apanic_threads
+
+    write /proc/apanic_console 1
+
+on post-fs
+    # once everything is setup, no need to modify /
+    mount rootfs rootfs / ro remount
+
+    # We chown/chmod /data again so because mount is run as root + defaults
+    chown system system /data
+    chmod 0771 /data
+    # Mounting of persist is moved to 'on emmc-fs' and 'on fs' sections
+    # We chown/chmod /persist again so because mount is run as root + defaults
+    chown system system /persist
+    chmod 0771 /persist
+    chmod 0664 /sys/devices/platform/msm_sdcc.1/polling
+    chmod 0664 /sys/devices/platform/msm_sdcc.2/polling
+    chmod 0664 /sys/devices/platform/msm_sdcc.3/polling
+    chmod 0664 /sys/devices/platform/msm_sdcc.4/polling
+
+    # Chown polling nodes as needed from UI running on system server
+    chown system system /sys/devices/platform/msm_sdcc.1/polling
+    chown system system /sys/devices/platform/msm_sdcc.2/polling
+    chown system system /sys/devices/platform/msm_sdcc.3/polling
+    chown system system /sys/devices/platform/msm_sdcc.4/polling
+
+    # for parameter
+    chown system radio /dev/block/mmcblk0p12
+    chmod 0660 /dev/block/mmcblk0p12
+
+    wait /dev/ttyHSL1
+    mkdir /data/qcks 0770 system system
+
+# create basic filesystem structure
+    mkdir /data/misc 01771 system misc
+    mkdir /data/misc/bluetoothd 0770 bluetooth bluetooth
+    mkdir /data/misc/bluetooth 0770 system system
+    mkdir /data/misc/keystore 0700 keystore keystore
+    mkdir /data/misc/vpn 0770 system system
+    mkdir /data/misc/systemkeys 0700 system system
+    mkdir /data/misc/vpn/profiles 0770 system system
+    # give system access to wpa_supplicant.conf for backup and restore
+    mkdir /data/misc/wifi 0770 wifi system
+    chmod 0770 /data/misc/wifi
+    mkdir /data/misc/radio 0774 radio radio
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
+    mkdir /data/misc/dhcp 0770 dhcp dhcp
+    mkdir /data/wifi 0770 wifi wifi
+    chmod 0660 /data/misc/wifi/wpa_supplicant.conf
+    mkdir /data/local 0771 shell shell
+    mkdir /data/local/tmp 0771 shell shell
+    mkdir /data/data 0771 system system
+    mkdir /data/app-private 0771 system system
+    mkdir /data/app 0771 system system
+    mkdir /data/property 0700 root root
+    mkdir /data/radio 0770 radio radio
+    mkdir /data/misc/sensors 0775 root root
+    write /data/system/sensors/settings 0
+    chmod 0664 /data/system/sensors/settings
+
+    mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
+    chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
+    chown bluetooth bluetooth /proc/bluetooth/sleep/proto
+    chown system system /sys/module/sco/parameters/disable_esco
+    chmod 0660 /sys/module/bluetooth_power/parameters/power
+    chmod 0660 /sys/class/rfkill/rfkill0/state
+    chmod 0660 /proc/bluetooth/sleep/proto
+    chown bluetooth bluetooth /dev/ttyHS0
+    chmod 0660 /dev/ttyHS0
+    chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/clock
+    chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
+
+# permissions for bluetooth.
+    chown bluetooth bluetooth ro.bt.bdaddr_path
+    chown bluetooth bluetooth /dev/uinput
+    chmod 0660 /dev/uinput
+
+    chmod 0660 /sys/class/rfkill/rfkill1/state
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill1/state
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill1/type
+
+# permission for qc modem silrent reset
+	chown system system /sys/module/subsystem_restart/parameters/restart_level
+
+# permission for fast dormacy for RIL
+	chown radio system /sys/devices/virtual/sec/sdio_al/waketime
+    # create log system
+    mkdir /data/log 0777 system system
+
+    chmod 0777 /data/log
+    chmod 0777 /data/anr
+
+    # create dalvik-cache and double-check the perms
+    mkdir /data/dalvik-cache 0771 system system
+    chown system system /data/dalvik-cache
+    chmod 0771 /data/dalvik-cache
+
+    # create the lost+found directories, so as to enforce our permissions
+    mkdir /data/lost+found 0770
+
+    # double check the perms, in case lost+found already exists, and set owner
+    chown root root /data/lost+found
+    chmod 0770 /data/lost+found
+
+    mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
+
+    # create fota delta dir
+    mkdir /data/fota 0777 root root
+    chmod 0777 /data/fota		
+on post-fs
+
+
+#SISO-PLAYREADY-CHANGES
+#DRM directory creation
+    mkdir /system/etc/security/.drm 0775
+    chown root root /system/etc/security/.drm
+    chmod 0775 /system/etc/security/.drm
+    # Added for testing DIVX DRM
+    mkdir /efs/.android 0777
+
+    # Added for Playready DRM Support
+    mkdir /data/data/.drm 0775
+   	chown drm system /data/data/.drm
+    	chmod 0775 /data/data/.drm
+
+    mkdir /data/data/.drm/.playready 0775
+  	chown drm system /data/data/.drm/.playready
+  	chmod 0775 /data/data/.drm/.playready
+
+# DRM directory creation
+    # DivX DRM	
+    mkdir /efs/.files 0777
+    mkdir /efs/.files/.dx1 0777
+    mkdir /efs/.files/.dm33 0777
+    mkdir /efs/.files/.mp301 0777
+#SISO-PLAYREADY-CHANGES
+
+service kickstart /system/bin/qcks l
+    oneshot
+
+service dcvsd0 /system/bin/dcvsd -c 0 -f /data/misc/dcvsd/dcvsd0.conf
+    user root
+    disabled
+
+service dcvsd1 /system/bin/dcvsd -c 1 -f /data/misc/dcvsd/dcvsd1.conf
+    user root
+    disabled
+
+service dcvs0 /system/bin/dcvs --cpu=0 --slacktime=64
+    user root
+    disabled
+
+service dcvs1 /system/bin/dcvs --cpu=1 --slacktime=64
+    user root
+    disabled
+
+service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
+    user root
+    disabled
+
+on property:ro.baseband=svlte2a
+   setprop ro.config.ehrpd true
+   setprop ro.config.svlte1x true
+
+service qrngd /system/bin/qrngd -f
+    user root
+
+service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant \
+    -Dwext -ieth0 -c/data/misc/wifi/wpa_supplicant.conf
+#   we will start as root and wpa_supplicant will switch to user wifi
+#   after setting up the capabilities required for WEXT
+#   user wifi
+#   group wifi inet keystore
+    socket wpa_eth0 dgram 660 wifi wifi
+    disabled
+    oneshot
+
+service dhcpcd_eth0 /system/bin/dhcpcd -ABKL eth0
+    disabled
+    oneshot
+
+service iprenew_eth0 /system/bin/dhcpcd -n
+    disabled
+    oneshot
+
+service hciattach /system/bin/logwrapper /system/bin/brcm_patchram_plus --enable_hci --enable_lpm --baudrate 3000000 --patchram /system/bin/BCM4330B1_002.001.003.0419.0450.hcd /dev/ttyHS0
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+service notified_event /system/bin/notified_event
+    user system
+    group system
+    socket notified_event stream 0660 root system
+
+service macloader /system/bin/macloader
+    oneshot
+
