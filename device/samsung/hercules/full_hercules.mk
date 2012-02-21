@@ -21,16 +21,37 @@ $(call inherit-product, device/samsung/skyrocket/full_skyrocket.mk)
 PRODUCT_COPY_FILES += \
     device/samsung/hercules/prebuilt/system/etc/gps.conf:system/etc/gps.conf
 
-#Kernel files for this device
+# Kernel 
 PRODUCT_COPY_FILES += \
+    device/samsung/hercules/prebuilt/root/init.goldfish.rc:root/init.goldfish.rc \
     device/samsung/hercules/prebuilt/root/init.qcom.sh:root/init.qcom.sh \
     device/samsung/hercules/prebuilt/root/init.qcom.rc:root/init.qcom.rc \
-    device/samsung/hercules/prebuilt/recovery/root/init.rc:root/init.rc \
     device/samsung/hercules/prebuilt/recovery/root/lpm.rc:root/lpm.rc \
     device/samsung/hercules/prebuilt/root/init.qcom.lpm_boot.sh:root/init.qcom.lpm_boot.sh \
     device/samsung/hercules/prebuilt/root/init.skyrocket.usb.rc:root/init.skyrocket.usb.rc \
+    device/samsung/hercules/prebuilt/root/init.target.rc:root/init.target.rc \
     device/samsung/hercules/prebuilt/root/ueventd.goldfish.rc:root/ueventd.goldfish.rc \
-    device/samsung/hercules/prebuilt/root/ueventd.rc:root/ueventd.rc
+    device/samsung/hercules/prebuilt/root/ueventd.rc:root/ueventd.rc \
+    device/samsung/hercules/prebuilt/system/lib/modules/ansi_cprng.ko:root/lib/modules/ansi_cprng.ko \
+    device/samsung/hercules/prebuilt/system/lib/modules/bthid.ko:root/lib/modules/bthid.ko \
+    device/samsung/hercules/prebuilt/system/lib/modules/dal_remotetest.ko:root/lib/modules/dal_remotetest.ko \
+    device/samsung/hercules/prebuilt/system/lib/modules/dhd.ko:root/lib/modules/dhd.ko \
+    device/samsung/hercules/prebuilt/system/lib/modules/dma_test.ko:root/lib/modules/dma_test.ko \
+    device/samsung/hercules/prebuilt/system/lib/modules/evbug.ko:root/lib/modules/evbug.ko \
+    device/samsung/hercules/prebuilt/system/lib/modules/gspca_main.ko:root/lib/modules/gspca_main.ko \
+    device/samsung/hercules/prebuilt/system/lib/modules/ksapi.ko:root/lib/modules/ksapi.ko \
+    device/samsung/hercules/prebuilt/system/lib/modules/lcd.ko:root/lib/modules/lcd.ko \
+    device/samsung/hercules/prebuilt/system/lib/modules/librasdioif.ko:root/lib/modules/librasdioif.ko \
+    device/samsung/hercules/prebuilt/system/lib/modules/msm_tsif.ko:root/lib/modules/msm_tsif.ko\
+    device/samsung/hercules/prebuilt/system/lib/modules/oprofile.ko:root/lib/modules/oprofile.ko \
+    device/samsung/hercules/prebuilt/system/lib/modules/qce.ko:root/lib/modules/qce.ko \
+    device/samsung/hercules/prebuilt/system/lib/modules/qcedev.ko:root/lib/modules/qcedev.ko \
+    device/samsung/hercules/prebuilt/system/lib/modules/qcrypto.ko:root/lib/modules/qcrypto.ko \
+    device/samsung/hercules/prebuilt/system/lib/modules/scsi_wait_scan.ko:root/lib/modules/scsi_wait_scan.ko \
+    device/samsung/hercules/prebuilt/system/lib/modules/spidev.ko:root/lib/modules/spidev.ko \
+    device/samsung/hercules/prebuilt/system/lib/modules/tsif_chrdev.ko:root/lib/modules/tsif_chrdev.ko \
+    device/samsung/hercules/prebuilt/system/lib/modules/vibrator.ko:root/lib/modules/vibrator.ko
+
 
 ## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
 PRODUCT_PROPERTY_OVERRIDES += \

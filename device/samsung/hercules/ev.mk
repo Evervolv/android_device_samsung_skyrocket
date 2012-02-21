@@ -1,5 +1,5 @@
 # Inherit AOSP device configuration for surf.
-$(call inherit-product, device/samsung/surf/full_surf.mk)
+$(call inherit-product, device/samsung/hercules/full_hercules.mk)
 
 # Inherit some common evervolv stuff.
 $(call inherit-product, vendor/ev/config/common_full_phone.mk)
@@ -16,7 +16,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=SGH-T989 BUILD_ID=GRI40 BUILD_FINGE
 
 # Set up the product codename, build version & MOTD.
 PRODUCT_CODENAME := iuro
-PRODUCT_VERSION_DEVICE_SPECIFIC := p1
+PRODUCT_VERSION_DEVICE_SPECIFIC := p2
 
 PRODUCT_MOTD :="\n\n\n--------------------MESSAGE---------------------\nThank you for choosing Evervolv for your Tmo Samsung Galaxy sII\n------------------------------------------------\n"
 
