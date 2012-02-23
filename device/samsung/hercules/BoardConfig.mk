@@ -25,8 +25,9 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/skyrocket/include
 
 # Connectivity - Wi-Fi
-WPA_SUPPLICANT_VERSION := VER_0_6_X
+WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wext
 
 # SGH-T989 uses bcm4330
 BOARD_WLAN_DEVICE := bcm4330

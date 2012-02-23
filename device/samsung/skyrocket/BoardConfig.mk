@@ -25,8 +25,9 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/skyrocket/include
 
 # Connectivity - Wi-Fi
-WPA_SUPPLICANT_VERSION := VER_0_6_X
+WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wext
 
 # SGH-I727 uses bcm4330
 BOARD_WLAN_DEVICE := bcm4330
@@ -93,11 +94,11 @@ TARGET_RECOVERY_INITRC := device/samsung/skyrocket/prebuilt/recovery/root/init.r
 
 # cat /proc/emmc
 #dev:        size     erasesize name
-mmcblk0p22: 00fffc00 00000200 "recovery"
-mmcblk0p8: 01000000 00000200 "boot"
-mmcblk0p24: 5ffffc00 00000200 "system"
-mmcblk0p26: 13fffe00 00000200 "cache"
-mmcblk0p25: 9ffffe00 00000200 "userdata"
+#mmcblk0p22: 00fffc00 00000200 "recovery"
+#mmcblk0p8: 01000000 00000200 "boot"
+#mmcblk0p24: 5ffffc00 00000200 "system"
+#mmcblk0p26: 13fffe00 00000200 "cache"
+#mmcblk0p25: 9ffffe00 00000200 "userdata"
 
 
 TARGET_USERIMAGES_USE_EXT4 := true
