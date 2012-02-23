@@ -38,6 +38,8 @@ PRODUCT_COPY_FILES += \
     device/samsung/skyrocket/prebuilt/root/init.qcom.sh:root/init.qcom.sh \
     device/samsung/skyrocket/prebuilt/root/init.qcom.rc:root/init.qcom.rc \
     device/samsung/skyrocket/prebuilt/recovery/root/lpm.rc:root/lpm.rc \
+    device/samsung/skyrocket/prebuilt/root/init.rc:root/init.rc \
+    device/samsung/skyrocket/prebuilt/root/init:root/init \
     device/samsung/skyrocket/prebuilt/root/init.qcom.lpm_boot.sh:root/init.qcom.lpm_boot.sh \
     device/samsung/skyrocket/prebuilt/root/init.skyrocket.usb.rc:root/init.skyrocket.usb.rc \
     device/samsung/skyrocket/prebuilt/root/init.target.rc:root/init.target.rc \
