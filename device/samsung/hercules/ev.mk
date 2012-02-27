@@ -16,7 +16,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=SGH-T989 BUILD_ID=GRI40 BUILD_FINGE
 
 # Set up the product codename, build version & MOTD.
 PRODUCT_CODENAME := iuro
-PRODUCT_VERSION_DEVICE_SPECIFIC := p2
+PRODUCT_VERSION_DEVICE_SPECIFIC := p4
 
 PRODUCT_MOTD :="\n\n\n--------------------MESSAGE---------------------\nThank you for choosing Evervolv for your Tmo Samsung Galaxy sII\n------------------------------------------------\n"
 

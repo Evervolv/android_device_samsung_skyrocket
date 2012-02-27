@@ -16,7 +16,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=SGH-I727 BUILD_ID=GRI40 BUILD_FINGE
 
 # Set up the product codename, build version & MOTD.
 PRODUCT_CODENAME := xiphias
-PRODUCT_VERSION_DEVICE_SPECIFIC := p3
+PRODUCT_VERSION_DEVICE_SPECIFIC := p4
 
 PRODUCT_MOTD :="\n\n\n--------------------MESSAGE---------------------\nThank you for choosing Evervolv for your Samsung Skyrocket\n------------------------------------------------\n"
 

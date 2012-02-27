@@ -137,6 +137,12 @@ on post-fs
     wait /dev/ttyHSL1
     mkdir /data/qcks 0770 system system
 
+ 	export EXTERNAL_STORAGE /mnt/sdcard
+	mkdir /mnt/sdcard 0000 system system
+ 	# for backwards compatibility
+	symlink /mnt/sdcard /sdcard
+
+
 # create basic filesystem structure
     mkdir /data/misc 01771 system misc
     mkdir /data/misc/bluetoothd 0770 bluetooth bluetooth
@@ -291,11 +297,12 @@ service iprenew_eth0 /system/bin/dhcpcd -n
     disabled
     oneshot
 
-service hciattach /system/bin/logwrapper /system/bin/brcm_patchram_plus --enable_hci --enable_lpm --baudrate 3000000 --patchram /system/bin/BCM4330B1_002.001.003.0419.0450.hcd /dev/ttyHS0
-    user bluetooth
-    group bluetooth net_bt_admin
-    disabled
-    oneshot
+service hciattach /system/bin/logwrapper /system/bin/brcm_patchram_plus --enable_hci \
+	baudrate 3000000 --patchram /system/bin/BCM4330B1_002.001.003.0419.0450.hcd /dev/ttyHS0
+    	user bluetooth
+    	group bluetooth net_bt_admin
+    	disabled
+    	oneshot
 
 service notified_event /system/bin/notified_event
     user system

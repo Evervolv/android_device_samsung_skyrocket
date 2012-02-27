@@ -29,6 +29,7 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/bin/qcks:/system/bin/qcks \
     vendor/samsung/skyrocket/proprietary/bin/qmiproxy:/system/bin/qmiproxy \
     vendor/samsung/skyrocket/proprietary/bin/rild:/system/bin/rild \
+    vendor/samsung/skyrocket/proprietary/bin/qmuxd:/system/bin/qmuxd \
     vendor/samsung/skyrocket/proprietary/bin/rmt_storage:/system/bin/rmt_storage \
     vendor/samsung/skyrocket/proprietary/bin/sdcard:/system/bin/sdcard \
     vendor/samsung/skyrocket/proprietary/bin/sec-ril:/system/bin/sec-ril \
@@ -62,6 +63,8 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/etc/voicemail-conf.xml:/system/etc/voicemail-conf.xml \
     vendor/samsung/skyrocket/proprietary/lib/libgsl.so:/system/lib/libgsl.so \
     vendor/samsung/skyrocket/proprietary/lib/libakm.so:/system/lib/libakm.so \
+    vendor/samsung/skyrocket/proprietary/lib/libdiag.so:/system/lib/libdiag.so \
+    vendor/samsung/skyrocket/proprietary/lib/libdsutils.so:/system/lib/libdsutils.so \
     vendor/samsung/skyrocket/proprietary/lib/libdsi_netctrl.so:/system/lib/libdsi_netctrl.so \
     vendor/samsung/skyrocket/proprietary/lib/libidl.so:/system/lib/libidl.so \
     vendor/samsung/skyrocket/proprietary/lib/libnetmgr.so:/system/lib/libnetmgr.so \
