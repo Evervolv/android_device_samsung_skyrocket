@@ -51,9 +51,6 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_FORCE_STATIC_A2DP := true
 
-# Enable NFC
-BOARD_HAVE_NFC := true
-
 # FM Radio
 BOARD_HAVE_FM_RADIO := true
 BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
@@ -76,8 +73,17 @@ BOARD_USES_QCOM_LIBS := true
 # Legacy touchscreen support
 BOARD_USE_LEGACY_TOUCHSCREEN := true
 
-#(temporary signal fix moved libril.so to full_skyrocket.mk)
-#TARGET_PROVIDES_LIBRIL := vendor/samsung/skyrocket/proprietary/libril.so
+# Enable NFC
+BOARD_HAVE_NFC := true
+
+# Evervolv specific
+BOARD_KEEP_PARCEL_GB_COMPATIBLE := true
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := hercules
+
+# Prebuilt Ril
+TARGET_PROVIDES_LIBRIL := vendor/samsung/skyrocket/proprietary/libril.so
 
 BOARD_KERNEL_CMDLINE := no_console_suspend=1
 BOARD_KERNEL_BASE := 0x48000000
@@ -91,11 +97,11 @@ TARGET_RECOVERY_INITRC := device/samsung/hercules/prebuilt/recovery/root/init.rc
 
 # cat /proc/emmc
 #dev:        size     erasesize name
-mmcblk0p22: 00fffc00 00000200 "recovery"
-mmcblk0p8: 01000000 00000200 "boot"
-mmcblk0p24: 5ffffc00 00000200 "system"
-mmcblk0p26: 13fffe00 00000200 "cache"
-mmcblk0p25: 9ffffe00 00000200 "userdata"
+#mmcblk0p22: 00fffc00 00000200 "recovery"
+#mmcblk0p8: 01000000 00000200 "boot"
+#mmcblk0p24: 5ffffc00 00000200 "system"
+#mmcblk0p26: 13fffe00 00000200 "cache"
+#mmcblk0p25: 9ffffe00 00000200 "userdata"
 
 
 TARGET_USERIMAGES_USE_EXT4 := true

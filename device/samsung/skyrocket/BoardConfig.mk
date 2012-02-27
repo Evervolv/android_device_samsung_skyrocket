@@ -79,8 +79,14 @@ BOARD_USE_LEGACY_TOUCHSCREEN := true
 # Enable NFC
 BOARD_HAVE_NFC := true
 
-#(temporary signal fix moved libril.so to full_skyrocket.mk)
-#TARGET_PROVIDES_LIBRIL := vendor/samsung/skyrocket/proprietary/libril.so
+# Evervolv specific
+BOARD_KEEP_PARCEL_GB_COMPATIBLE := true
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := SGH-I727
+
+# LibRIL
+TARGET_PROVIDES_LIBRIL := vendor/samsung/skyrocket/proprietary/libril.so
 
 BOARD_KERNEL_CMDLINE := no_console_suspend=1
 BOARD_KERNEL_BASE := 0x48000000

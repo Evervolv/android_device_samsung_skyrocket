@@ -74,8 +74,8 @@ PRODUCT_COPY_FILES += \
     device/samsung/skyrocket/prebuilt/system/lib/hw/audio.a2dp.default.so:system/lib/hw/audio.a2dp.default.so
 
 #Using prebuilt libril.so right now
-PRODUCT_COPY_FILES += \
-    device/samsung/skyrocket/prebuilt/system/lib/libril.so:system/lib/libril.so
+#PRODUCT_COPY_FILES += \
+    #device/samsung/skyrocket/prebuilt/system/lib/libril.so:system/lib/libril.so
 
 #Add touchscreen config file
 PRODUCT_COPY_FILES += \

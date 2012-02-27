@@ -95,3 +95,5 @@ ro.sf.lcd_density=240
 
 #ICS Disable HW Acceleration
 ro.config.disable_hw_accel=false
+
+ro.telephony.ril.v3=signalstrength
