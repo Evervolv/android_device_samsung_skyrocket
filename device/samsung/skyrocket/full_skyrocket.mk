@@ -190,6 +190,11 @@ PRODUCT_COPY_FILES += \
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
+# Temporary hack
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    persist.service.adb.enable=1 \
+    ro.secure=0
+
 
 #NFC Support
 PRODUCT_PACKAGES += \
@@ -201,6 +206,8 @@ PRODUCT_PACKAGES += \
 #Optional Add on packages
 PRODUCT_PACKAGES += \
     Camera \
+    Superuser \
+    su \
     Stk
 
 # NFC EXTRAS add-on API
