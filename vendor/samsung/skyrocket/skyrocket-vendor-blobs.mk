@@ -21,9 +21,6 @@
 
 # All the blobs necessary for skyrocket
 PRODUCT_COPY_FILES += \
-    vendor/samsung/skyrocket/proprietary/bin/BCM4330B1_002.001.003.0419.0450.hcd:/system/bin/BCM4330B1_002.001.003.0419.0450.hcd \
-    vendor/samsung/skyrocket/proprietary/bin/btld:/system/bin/btld \
-    vendor/samsung/skyrocket/proprietary/bin/dhcpcd:/system/bin/dhcpcd \
     vendor/samsung/skyrocket/proprietary/bin/ks:/system/bin/ks \
     vendor/samsung/skyrocket/proprietary/bin/netmgrd:/system/bin/netmgrd \
     vendor/samsung/skyrocket/proprietary/bin/qcks:/system/bin/qcks \
@@ -34,7 +31,6 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/bin/sdcard:/system/bin/sdcard \
     vendor/samsung/skyrocket/proprietary/bin/sec-ril:/system/bin/sec-ril \
     vendor/samsung/skyrocket/proprietary/bin/vold:/system/bin/vold \
-    vendor/samsung/skyrocket/proprietary/bin/sh0:/system/bin/sh0 \
     vendor/samsung/skyrocket/proprietary/etc/init.qcom.modem_links.sh:/system/etc/init.qcom.modem_links.sh \
     vendor/samsung/skyrocket/proprietary/etc/audio_effects.conf:/system/etc/audio_effects.conf \
     vendor/samsung/skyrocket/proprietary/etc/audio/LVVEFS_Rx_Configuration.txt:/system/etc/audio/LVVEFS_Rx_Configuration.txt \
@@ -57,10 +53,11 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/etc/wifi/wifi.conf:/system/etc/wifi/wifi.conf \
     vendor/samsung/skyrocket/proprietary/etc/wifi/wl:/system/etc/wifi/wl \
     vendor/samsung/skyrocket/proprietary/etc/wifi/wpa_supplicant.conf:/system/etc/wifi/wpa_supplicant.conf \
+    vendor/samsung/skyrocket/proprietary/etc/wifi/bcm4330_apsta.bin:/system/etc/wifi/bcm4330_apsta.bin \
+    vendor/samsung/skyrocket/proprietary/etc/wifi/bcm4330_p2p.bin:/system/etc/wifi/bcm4330_p2p.bin \
+    vendor/samsung/skyrocket/proprietary/etc/wifi/default_ap.conf:/system/etc/wifi/default_ap.conf \
     vendor/samsung/skyrocket/proprietary/etc/init.qcom.post_boot.sh:/system/etc/init.qcom.post_boot.sh \
     vendor/samsung/skyrocket/proprietary/etc/apns-conf.xml:/system/etc/apns-conf.xml \
-    vendor/samsung/skyrocket/proprietary/etc/spn-conf.xml:/system/etc/spn-conf.xml \
-    vendor/samsung/skyrocket/proprietary/etc/voicemail-conf.xml:/system/etc/voicemail-conf.xml \
     vendor/samsung/skyrocket/proprietary/lib/libgsl.so:/system/lib/libgsl.so \
     vendor/samsung/skyrocket/proprietary/lib/libakm.so:/system/lib/libakm.so \
     vendor/samsung/skyrocket/proprietary/lib/libdiag.so:/system/lib/libdiag.so \
@@ -70,25 +67,38 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/lib/libnetmgr.so:/system/lib/libnetmgr.so \
     vendor/samsung/skyrocket/proprietary/lib/libqdp.so:/system/lib/libqdp.so \
     vendor/samsung/skyrocket/proprietary/lib/libsecril-client.so:/system/lib/libsecril-client.so\
-    vendor/samsung/skyrocket/proprietary/lib/libmediayamaha.so:/system/lib/libmediayamaha.so \
-    vendor/samsung/skyrocket/proprietary/lib/libmediayamaha_jni.so:/system/lib/libmediayamaha_jni.so \
-    vendor/samsung/skyrocket/proprietary/lib/libmediayamahaservice.so:/system/lib/libmediayamahaservice.so \
-    vendor/samsung/skyrocket/proprietary/lib/libmediayamaha_tuning_jni.so:/system/lib/libmediayamaha_tuning_jni.so \
     vendor/samsung/skyrocket/proprietary/lib/libqmi.so:/system/lib/libqmi.so \
     vendor/samsung/skyrocket/proprietary/lib/libqmiservices.so:/system/lib/libqmiservices.so \
     vendor/samsung/skyrocket/proprietary/lib/libqueue.so:/system/lib/libqueue.so \
-    vendor/samsung/skyrocket/proprietary/lib/libreference-cdma-sms.so:/system/lib/libreference-cdma-sms.so \
     vendor/samsung/skyrocket/proprietary/lib/libreference-ril.so:/system/lib/libreference-ril.so \
     vendor/samsung/skyrocket/proprietary/lib/libril-qc-qmi-1.so:/system/lib/libril-qc-qmi-1.so \
     vendor/samsung/skyrocket/proprietary/lib/libril-qcril-hook-oem.so:/system/lib/libril-qcril-hook-oem.so \
     vendor/samsung/skyrocket/proprietary/lib/libsc-a2xx.so:/system/lib/libsc-a2xx.so \
-    vendor/samsung/skyrocket/proprietary/lib/hw/alsa.default.so:/system/lib/hw/alsa.default.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/audio_policy.msm8660.so:/system/lib/hw/audio_policy.msm8660.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/audio.primary.msm8660.so:/system/lib/hw/audio.primary.msm8660.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/gps.default.so:/system/lib/hw/gps.default.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/lights.msm8660.so:/system/lib/hw/lights.msm8660.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/sensors.default.so:/system/lib/hw/sensors.default.so \
+    vendor/samsung/skyrocket/proprietary/lib/hw/audio.a2dp.default.so:/system/lib/hw/audio.a2dp.default.so \
+    vendor/samsung/skyrocket/proprietary/lib/hw/audio.primary.default.so:/system/lib/hw/audio.primary.default.so \
+    vendor/samsung/skyrocket/proprietary/lib/hw/audio_policy.default.so:/system/lib/hw/audio_policy.default.so \
+    vendor/samsung/skyrocket/proprietary/lib/hw/camera.msm8660.so:/system/lib/hw/camera.msm8660.so \
+    vendor/samsung/skyrocket/proprietary/lib/hw/copybit.msm8660.so:/system/lib/hw/copybit.msm8660.so \
+    vendor/samsung/skyrocket/proprietary/lib/hw/gralloc.default.so:/system/lib/hw/gralloc.default.so \
+    vendor/samsung/skyrocket/proprietary/lib/hw/gralloc.msm8660.so:/system/lib/hw/gralloc.msm8660.so \
+    vendor/samsung/skyrocket/proprietary/lib/hw/hwcomposer.msm8660.so:/system/lib/hw/hwcomposer.msm8660.so \
+    vendor/samsung/skyrocket/proprietary/lib/hw/nfc.qcom.so:/system/lib/hw/nfc.qcom.so \
     vendor/samsung/skyrocket/proprietary/lib/egl/eglsubAndroid.so:/system/lib/egl/eglsubAndroid.so \
     vendor/samsung/skyrocket/proprietary/lib/egl/libEGL_adreno200.so:/system/lib/egl/libEGL_adreno200.so \
+    vendor/samsung/skyrocket/proprietary/lib/egl/libGLES_android.so:/system/lib/egl/libGLES_android.so \
     vendor/samsung/skyrocket/proprietary/lib/egl/libGLESv1_CM_adreno200.so:/system/lib/egl/libGLESv1_CM_adreno200.so \
     vendor/samsung/skyrocket/proprietary/lib/egl/libGLESv2_adreno200.so:/system/lib/egl/libGLESv2_adreno200.so \
+    vendor/samsung/skyrocket/proprietary/lib/egl/libGLESv2_adreno200.so:/system/lib/egl/libGLESv2_adreno200.so \
+    vendor/samsung/skyrocket/proprietary/lib/egl/libGLESv2S3D_adreno200.so:/system/lib/egl/libGLESv2S3D_adreno200.so \
+    vendor/samsung/skyrocket/proprietary/lib/egl/libq3dtools_adreno200.so:/system/lib/egl/libq3dtools_adreno200.so \
+
+
+# Not sure if I need these
+#vendor/samsung/skyrocket/proprietary/bin/dhcpcd:/system/bin/dhcpcd \
+#vendor/samsung/skyrocket/proprietary/bin/sh0:/system/bin/sh0 \
+

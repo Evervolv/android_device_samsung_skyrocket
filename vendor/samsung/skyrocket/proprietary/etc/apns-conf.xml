@@ -1,72 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2008 The Android Open Source Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-  
-          http://www.apache.org/licenses/LICENSE-2.0
-  
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+<!--
+/*
+** Copyright 2006, Google Inc.
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
 -->
-<apns version="6">
-  <apn carrier="SK Telecom"
-      mcc="450"
-      mnc="05"
-      apn="lte.sktelecom.com"
-      server="*"
-      mmsc="vmms.nate.com"
-      mmsport="8082"
-      type="*"
-      authtype="1"
-  />
 
-  <apn carrier="KT"
-    	mcc="450"
-    	mnc="08"
-    	apn="Alwayson-r6.ktfwing.com"
-    	server="*"
-    	mmsc="http://mmsc.ktfwing.com:9082"
-    	type="*"
-    	authtype="1"
-  />
-
-  <apn carrier="KT"
-    	mcc="450"
-    	mnc="02"
-    	apn="Alwayson-r6.ktfwing.com"
-    	server="*"
-    	mmsc="http://mmsc.ktfwing.com:9082"
-    	type="*"
-    	authtype="1"
-  />
-
-  <apn carrier="LG U+"
-      mcc="450"
-      mnc="06"
-      apn="internet.lguplus.co.kr"
-      server="*"
-      mmsc="http://mmsc.ez-i.co.kr"        
-      mmsport="8084"
-      type="*"
-      authtype="1"
-  />
-
-<apn carrier="LG U+(Roaming)"
-      mcc="450"
-      mnc="06"
-      apn="wroaming.lguplus.co.kr"
-      server="*"
-      mmsc="http://mmsc.ez-i.co.kr"        
-      mmsport="8084"
-      type="*"
-      authtype="1"
-  />
-  
+<!-- use empty string to specify no proxy or port -->
+<!-- This version must agree with that in apps/common/res/apns.xml -->
+<apns version="7">
   <apn carrier="Cosmote Wireless Internet"
       mcc="202"
       mnc="01"
@@ -84,23 +37,17 @@
       type="mms"
   />
 
-  <apn carrier="Vf Internet"
+<!-- Samsung edit -->
+<!--Vodafone Greece requested. QC56746. 2011.09.30. -->
+  <apn carrier="Vf Mobile Internet"
       mcc="202"
       mnc="05"
       apn="internet.vodafone.gr"
-      type="default,supl"
+      type="default,supl,dun"
   />
 
-  <apn carrier="Vf Wap"
-      mcc="202"
-      mnc="05"
-      apn="wap.vodafone.gr"
-      user="user"
-      password="pass"
-      proxy="213.249.019.049"
-      port="5080"
-      type="default,supl"
-  />
+<!-- Samsung edit -->
+<!--Vodafone Greece requested to remove "Vf Wap. QC56746. 2011.09.30. -->
 
   <apn carrier="Vf MMS"
       mcc="202"
@@ -187,7 +134,7 @@
       user="tmobilemms"
       password="tmobilemms"
       mmsc="http://t-mobilemms"
-      mmsproxy="010.010.010.011"
+      mmsproxy="10.10.10.11"
       mmsport="8080"
       type="mms"
   />
@@ -218,12 +165,33 @@
       type="default,supl"
   />
 
+<!-- Samsung edit -->
+<!-- Telenet is using 206/01 as well (Confirmed by operator) -->
+  <apn carrier="Telenet Internet"
+       mcc="206"
+       mnc="01"
+       apn="telenetwap.be"
+       type="default,supl"
+  />
+
+<!-- Samsung edit -->
+<!-- Telenet is using 206/01 as well (Confirmed by operator) -->
+  <apn carrier="Telenet MMS"
+       mcc="206"
+       mnc="01"
+       apn="mms.be"
+       mmsc="http://mmsc.telenet.be"
+       mmsproxy="195.130.149.100"
+       mmsport="80"
+       type="mms"
+  />
+
+<!-- Samsung edit -->
+<!-- The WAP proxy should be removed (Confirmed by operator) -->
   <apn carrier="Telenet"
       mcc="206"
       mnc="05"
       apn="telenetwap.be"
-      proxy="195.130.149.100"
-      port="80"
       type="default,supl"
   />
 
@@ -242,7 +210,7 @@
       mnc="10"
       apn="mms.be"
       mmsc="http://mmsc.mobistar.be"
-      mmsproxy="212.065.063.143"
+      mmsproxy="212.65.63.143"
       mmsport="8080"
       type="mms"
   />
@@ -253,17 +221,19 @@
       apn="mworld.be"
       user="mobistar"
       password="mobistar"
-      proxy="212.065.063.143"
+      proxy="212.65.63.143"
       port="8080"
       type="default,supl"
   />
 
+<!-- Samsung edit -->
+<!-- The account for Base should be changed (Confirmed by operator) -->
   <apn carrier="Base"
       mcc="206"
       mnc="20"
       apn="gprs.base.be"
-      user="BASE"
-      password="1234"
+      user="base"
+      password="base"
       proxy="172.31.198.37"
       port="5080"
       type="default,supl"
@@ -281,16 +251,20 @@
       type="mms"
   />
 
-  <apn carrier="Orange WAP"
+<!-- Samsung edit -->
+<!-- Change value -->
+  <apn carrier="Orange World"
       mcc="208"
       mnc="01"
       apn="orange"
       user="orange"
       password="orange"
+      authtype="2"
       type="default,supl"
-      authtype="0"      
   />
 
+<!-- Samsung edit -->
+<!-- Change value -->
   <apn carrier="Orange MMS"
       mcc="208"
       mnc="01"
@@ -298,29 +272,72 @@
       user="orange"
       password="orange"
       mmsc="http://mms.orange.fr"
-      mmsproxy="192.168.10.200"
+      mmsproxy="192.168.010.200"
       mmsport="8080"
+      authtype="2"
       type="mms"
-      authtype="0"      
   />
-   
-  <apn carrier="SFR Full Internet"
+
+<!-- Samsung edit -->
+<!-- Add new apns -->
+  <apn carrier="Orange Entreprise"
+      mcc="208"
+      mnc="01"
+      apn="orange-mib"
+      proxy="172.16.2.8"
+      port="8000"
+      user="orange"
+      password="orange"
+      authtype="2"
+      type="default"
+  />
+
+<!-- Samsung edit -->
+<!-- Add new apns -->
+  <apn carrier="Orange Internet"
+      apn="orange.fr"
+      user="orange"
+      password="orange"
+      mcc="208"
+      mnc="01"
+      authtype="0"
+      type="dun"
+  />
+
+<!-- Samsung edit -->
+<!-- Add new apns -->
+  <apn carrier="Orange Internet Entreprise"
+      apn="internet-entreprise"
+      user="orange"
+      password="orange"
+      mcc="208"
+      mnc="01"
+      authtype="0"
+      type="dun"
+  />
+
+  <apn carrier="SFR webphone"
       mcc="208"
       mnc="10"
       apn="sl2sfr"
       type="default,supl"
   />
 
-  <apn carrier="SFR Internet Mobile"
+  <apn carrier="SFR Mobile"
       mcc="208"
       mnc="10"
       apn="wapsfr"
-      proxy="195.115.25.129"
-      port="8080" 
       type="default,supl"
   />
 
-  <apn carrier="SFR MMS"
+  <apn carrier="SFR Option Modem"
+      mcc="208"
+      mnc="10"
+      apn="websfr"
+      type="dun"
+  />
+
+  <apn carrier="MMS"
       mcc="208"
       mnc="10"
       apn="mmssfr"
@@ -331,246 +348,228 @@
   />
 
   <apn carrier="Bouygues Telecom"
-      mmsc="http://mms.bouyguestelecom.fr/mms/wapenc"
-      mmsproxy="62.201.129.226"
-      mmsport="8080"
       mcc="208"
       mnc="20"
       apn="mmsbouygtel.com"
-      type="*"
-      authtype="1"
+      mmsc="http://mms.bouyguestelecom.fr/mms/wapenc"
+      mmsproxy="62.201.129.226"
+      mmsport="8080"
+      type="default,supl,mms"
   />
 
-  <apn carrier="NRJWEB" 
-      mcc="208" 
-      mnc="10" 
-      apn="fnetnrj" 
-      type="default,supl" 
+  <apn carrier="NRJWEB"
+      mcc="208"
+      mnc="10"
+      apn="fnetnrj"
+      type="default,supl"
   />
 
-  <apn carrier="NRJMMS" 
-      mcc="208" 
-      mnc="10" 
-      mmsc="http://mmsnrj" 
-      mmsproxy="10.143.156.5" 
-      mmsport="8080" 
-      apn="mmsnrj" 
-      type="mms" 
+  <apn carrier="NRJMMS"
+      mcc="208"
+      mnc="10"
+      mmsc="http://mmsnrj"
+      mmsproxy="10.143.156.5"
+      mmsport="8080"
+      apn="mmsnrj"
+      type="mms"
   />
 
-  <apn carrier="VM WAP" 
-      mcc="208" 
-      mnc="01" 
-      apn="ofnew.fr" 
-      user="orange" 
-      password="orange" 
-      type="default,supl" 
+  <apn carrier="VM WAP"
+      mcc="208"
+      mnc="01"
+      apn="ofnew.fr"
+      user="orange"
+      password="orange"
+      type="default,supl"
   />
 
-  <apn carrier="VM MMS" 
-      mcc="208" 
-      mnc="01" 
-      apn="orange.acte" 
-      user="orange" 
-      password="orange" 
-      mmsc="http://mms.orange.fr" 
-      mmsproxy="192.168.10.200" 
-      mmsport="8080" 
-      type="mms" 
+  <apn carrier="VM MMS"
+      mcc="208"
+      mnc="01"
+      apn="orange.acte"
+      user="orange"
+      password="orange"
+      mmsc="http://mms.orange.fr"
+      mmsproxy="192.168.10.200"
+      mmsport="8080"
+      type="mms"
   />
 
   <apn carrier="Tele2 WAP"
-      mcc="208" 
-      mnc="01" 
-      apn="ofnew.fr" 
-      user="orange" 
-      password="orange" 
-      type="default,supl" 
-  />
- 
-  <apn carrier="Tele2 MMS" 
-      mcc="208" 
-      mnc="01" 
-      apn="orange.acte" 
-      user="orange" 
-      password="orange" 
-      mmsc="http://mms.orange.fr" 
-      mmsproxy="192.168.10.200" 
-      mmsport="8080" 
-      type="mms" 
-  />
-
-  <apn carrier="Carrefour WAP" 
-      mcc="208" 
-      mnc="01" 
-      apn="ofnew.fr" 
-      user="orange" 
-      password="orange" 
-      type="default,supl" 
-  />
-
-  <apn carrier="Carrefour MMS" 
-      mcc="208" 
-      mnc="01" 
-      apn="orange.acte" 
-      user="orange" 
-      password="orange" 
-      mmsc="http://mms.orange.fr" 
-      mmsproxy="192.168.10.200" 
-      mmsport="8080" 
-      type="mms" 
-  />
-
-  <apn carrier="Auchan WAP" 
-      mcc="208" 
-      mnc="10" 
-      proxy="192.168.21.8" 
-      port="8080" 
-      apn="wap65" 
-      type="default,supl" 
-  />
-
-  <apn carrier="Auchan MMS" 
-      mcc="208" 
-      mnc="10" 
-      mmsc="http://mms65" 
-      mmsproxy="10.143.156.8" 
-      mmsport="8080" 
-      apn="mms65" 
-      type="mms" 
-  />
-
-  <apn carrier="NRJWEB" 
-      mcc="208" 
-      mnc="01" 
-      apn="ofnew.fr" 
-      user="orange" 
-      password="orange" 
-      type="default,supl" 
-  />
-
-  <apn carrier="NRJMMS" 
-      mcc="208" 
-      mnc="01" 
-      apn="orange.acte" 
-      user="orange" 
-      password="orange" 
-      mmsc="http://mms.orange.fr" 
-      mmsproxy="192.168.10.200" 
-      mmsport="8080" 
-      type="mms" 
-  />
-
-  <apn carrier="WAP Simplicime" 
-      mcc="208" 
-      mnc="10" 
-      proxy="192.168.21.3" 
-      port="8080" 
-      apn="wapdebitel" 
-      type="default,supl" 
-  />
-
-  <apn carrier="MMS Simplicime" 
       mcc="208"
-      mnc="10" 
-      mmsc="http://mmsdebitel" 
-      mmsproxy="10.143.156.3" 
-      mmsport="8080" 
-      apn="mmsdebitel" 
-      type="mms" 
-  />
- 
-  <apn carrier="WAP LeclercMobile" 
-      mcc="208" 
-      mnc="10" 
-      proxy="192.168.021.009" 
-      port="8080" 
-      apn="wap66" 
-      type="default,supl" 
-  />
-
-  <apn carrier="MMS LeclercMobile" 
-      mcc="208" 
-      mnc="10" 
-      mmsc="http://mms66" 
-      mmsproxy="10.143.156.9" 
-      mmsport="8080" 
-      apn="mms66" 
-      type="mms" 
-  />
-
-  <apn carrier="Coriolis WAP" 
-      mcc="208"
-      mnc="10" 
-      proxy="192.168.21.6" 
-      port="8080" 
-      apn="wapcoriolis" 
-      type="default,supl" 
-  />
-
-  <apn carrier="Coriolis MMS" 
-      mcc="208" 
-      mnc="10" 
-      mmsc="http://mmscoriolis" 
-      mmsproxy="10.143.156.6" 
-      mmsport="8080" 
-      apn="mmscoriolis" 
-      type="mms" 
-  />
-
-  <apn carrier="Keyyo Mobile Internet" 
-      mcc="208"
-      mnc="10"
-      apn="internet68" 
-      type="default,supl" 
-  />
-  
-  <apn carrier="Keyyo Mobile MMS" 
-      mcc="208" 
-      mnc="10" 
-      mmsc="http://mms68" 
-      mmsproxy="010.143.156.011" 
-      mmsport="8080" 
-      apn="mms68" 
-      type="mms" 
-  />
-
-  <apn carrier="WEB La Poste Mobile" 
-      mcc="208" 
-      mnc="10" 
-      proxy="192.168.021.003" 
-      port="8080" 
-      apn="wapdebitel" 
-      type="default,supl" 
-  />
-
-  <apn carrier="MMS La Poste Mobile" 
-      mcc="208" 
-      mnc="10" 
-      mmsc="http://mmsdebitel" 
-      mmsproxy="010.143.156.003" 
-      mmsport="8080" 
-      apn="mmsdebitel" 
-      type="mms"
-  />
-
-  <apn carrier="SFR"
-      mcc="208"
-      mnc="101"
-      apn="sl2sfr"
+      mnc="01"
+      apn="ofnew.fr"
+      user="orange"
+      password="orange"
       type="default,supl"
   />
-  
-  <apn carrier="SFR-MMS"
-      mmsc="http://mms1"
-      mmsproxy="10.151.0.1"
-      mmsport="8080"
+
+  <apn carrier="Tele2 MMS"
       mcc="208"
-      mnc="101"
-      apn="mmssfr"
+      mnc="01"
+      apn="orange.acte"
+      user="orange"
+      password="orange"
+      mmsc="http://mms.orange.fr"
+      mmsproxy="192.168.10.200"
+      mmsport="8080"
       type="mms"
   />
-	    
+
+  <apn carrier="Carrefour WAP"
+      mcc="208"
+      mnc="01"
+      apn="ofnew.fr"
+      user="orange"
+      password="orange"
+      type="default,supl"
+  />
+
+  <apn carrier="Carrefour MMS"
+      mcc="208"
+      mnc="01"
+      apn="orange.acte"
+      user="orange"
+      password="orange"
+      mmsc="http://mms.orange.fr"
+      mmsproxy="192.168.10.200"
+      mmsport="8080"
+      type="mms"
+  />
+
+  <apn carrier="Auchan WAP"
+      mcc="208"
+      mnc="10"
+      proxy="192.168.21.8"
+      port="8080"
+      apn="wap65"
+      type="default,supl"
+  />
+
+  <apn carrier="Auchan MMS"
+      mcc="208"
+      mnc="10"
+      mmsc="http://mms65"
+      mmsproxy="10.143.156.8"
+      mmsport="8080"
+      apn="mms65"
+      type="mms"
+  />
+
+  <apn carrier="NRJWEB"
+      mcc="208"
+      mnc="01"
+      apn="ofnew.fr"
+      user="orange"
+      password="orange"
+      type="default,supl"
+  />
+
+  <apn carrier="NRJMMS"
+      mcc="208"
+      mnc="01"
+      apn="orange.acte"
+      user="orange"
+      password="orange"
+      mmsc="http://mms.orange.fr"
+      mmsproxy="192.168.10.200"
+      mmsport="8080"
+      type="mms"
+  />
+
+  <apn carrier="WAP Simplicime"
+      mcc="208"
+      mnc="10"
+      proxy="192.168.21.3"
+      port="8080"
+      apn="wapdebitel"
+      type="default,supl"
+  />
+
+  <apn carrier="MMS Simplicime"
+      mcc="208"
+      mnc="10"
+      mmsc="http://mmsdebitel"
+      mmsproxy="10.143.156.3"
+      mmsport="8080"
+      apn="mmsdebitel"
+      type="mms"
+  />
+
+  <apn carrier="WAP LeclercMobile"
+      mcc="208"
+      mnc="10"
+      proxy="192.168.21.9"
+      port="8080"
+      apn="wap66"
+      type="default,supl"
+  />
+
+  <apn carrier="MMS LeclercMobile"
+      mcc="208"
+      mnc="10"
+      mmsc="http://mms66"
+      mmsproxy="10.143.156.9"
+      mmsport="8080"
+      apn="mms66"
+      type="mms"
+  />
+
+  <apn carrier="Coriolis WAP"
+      mcc="208"
+      mnc="10"
+      proxy="192.168.21.6"
+      port="8080"
+      apn="wapcoriolis"
+      type="default,supl"
+  />
+
+  <apn carrier="Coriolis MMS"
+      mcc="208"
+      mnc="10"
+      mmsc="http://mmscoriolis"
+      mmsproxy="10.143.156.6"
+      mmsport="8080"
+      apn="mmscoriolis"
+      type="mms"
+  />
+
+  <apn carrier="Keyyo Mobile Internet"
+      mcc="208"
+      mnc="10"
+      apn="internet68"
+      type="default,supl"
+  />
+
+  <apn carrier="Keyyo Mobile MMS"
+      mcc="208"
+      mnc="10"
+      mmsc="http://mms68"
+      mmsproxy="10.143.156.11"
+      mmsport="8080"
+      apn="mms68"
+      type="mms"
+  />
+
+  <apn carrier="WEB La Poste Mobile"
+      mcc="208"
+      mnc="10"
+      proxy="192.168.21.3"
+      port="8080"
+      apn="wapdebitel"
+      type="default,supl"
+  />
+
+  <apn carrier="MMS La Poste Mobile"
+      mcc="208"
+      mnc="10"
+      mmsc="http://mmsdebitel"
+      mmsproxy="10.143.156.3"
+      mmsport="8080"
+      apn="mmsdebitel"
+      type="mms"
+  />
+
   <apn carrier="Internet movil"
       mcc="214"
       mnc="01"
@@ -578,7 +577,6 @@
       user="wap@wap"
       password="wap125"
       type="default,supl"
-      authtype="0"      
   />
 
   <apn carrier="MMS VODAFONE"
@@ -591,30 +589,63 @@
       mmsproxy="212.73.32.10"
       mmsport="80"
       type="mms"
-      authtype="0"      
   />
 
+  <apn carrier="INTERNET"
+      mcc="214"
+      mnc="01"
+      apn="airtelnet.es"
+      user="vodafone"
+      password="vodafone"
+      type="dun"
+  />
+
+<!-- Samsung edit -->
+<!-- Add new apn -->
+  <apn carrier="Orange Internet Móvil"
+      mcc="214"
+      mnc="03"
+      apn="orangeworld"
+      proxy="10.132.61.10"
+      port="8080"
+      user="orange"
+      password="orange"
+      authtype="1"
+      type="default"
+  />
+
+<!-- Samsung edit -->
+<!-- Change the value -->
   <apn carrier="Orange Internet PC"
       mcc="214"
       mnc="03"
       apn="internet"
-      type="default,supl"
+      user="orange"
+      password="orange"
+      authtype="0"
+      type="dun"
   />
 
+<!-- Samsung edit -->
+<!-- Change the value -->
   <apn carrier="Orange MMS"
-      mcc="214"
-      mnc="03"
       apn="orangemms"
+      proxy="172.22.188.25"
+      port="8080"
       user="orange"
       password="orange"
       mmsc="http://mms.orange.es"
       mmsproxy="172.22.188.25"
       mmsport="8080"
+      mcc="214"
+      mnc="03"
+      authtype="2"
       type="mms"
-      authtype="1"      
   />
 
-  <apn carrier="GPRS Connection"
+<!-- Samsung edit -->
+<!-- The name for Yoigo should be changed (Confirmed by operator) -->
+  <apn carrier="Yoigo Navegador"
       mcc="214"
       mnc="04"
       apn="internet"
@@ -736,6 +767,17 @@
       type="default,supl"
   />
 
+<!-- Samsung edit -->
+<!-- The APN for DUN was added (Confirmed by operator) -->
+  <apn carrier="Conexión compartida"
+      mcc="214"
+      mnc="07"
+      apn="movistar.es"
+      user="MOVISTAR"
+      password="MOVISTAR"
+      type="dun"
+  />
+
   <apn carrier="Euskaltel MMS"
       mcc="214"
       mnc="08"
@@ -791,7 +833,7 @@
   <apn carrier="Telenor Online"
       mcc="216"
       mnc="01"
-      apn="net"
+      apn="online"
       type="default,supl"
   />
 
@@ -838,12 +880,79 @@
       type="default,supl"
   />
 
+<!-- Samsung edit -->
+<!-- The APNs for Bosnia & Herzegovina should be added -->
+  <apn carrier="HT Eronet"
+      mcc="218"
+      mnc="03"
+      apn="wap.eronet.ba"
+      proxy="010.012.003.010"
+      port="8080"
+      type="default,supl"
+  />
+
+<!-- Samsung edit -->
+<!-- The APNs for Bosnia & Herzegovina should be added -->
+  <apn carrier="Ht Eronet MMS"
+      mcc="218"
+      mnc="03"
+      apn="mms.eronet.ba"
+      mmsc="http://mms.gprs.eronet.ba/mms/wapenc"
+      mmsproxy="010.012.003.011"
+      mmsport="8080"
+      type="mms"
+  />
+
+<!-- Samsung edit -->
+<!-- The APNs for Bosnia & Herzegovina should be added -->
+  <apn carrier="m:tel"
+      mcc="218"
+      mnc="05"
+      apn="3g1"
+      proxy="192.168.61.10"
+      port="80"
+      type="default,supl"
+  />
+
+<!-- Samsung edit -->
+<!-- The APNs for Bosnia & Herzegovina should be added -->
+  <apn carrier="mtelmms"
+      mcc="218"
+      mnc="05"
+      apn="mtelmms"
+      mmsc="http://mmsc.mtel.ba/mms/wapenc"
+      mmsproxy="192.168.61.11"
+      mmsport="8080"
+      type="mms"
+  />
+
+<!-- Samsung edit -->
+<!-- The APNs for Bosnia & Herzegovina should be added -->
+  <apn carrier="Bh Mobile"
+      mcc="218"
+      mnc="90"
+      apn="active.bhmobile.ba"
+      type="default,supl"
+  />
+
+<!-- Samsung edit -->
+<!-- The APNs for Bosnia & Herzegovina should be added -->
+  <apn carrier="BHMobileMMS"
+      mcc="218"
+      mnc="90"
+      apn="mms.bhmobile.ba"
+      mmsc="http://mms.bhmobile.ba/cmmsc/post"
+      mmsproxy="195.222.056.041"
+      mmsport="8080"
+      type="mms"
+  />
+
   <apn carrier="T-Mobile MMS"
       mcc="219"
       mnc="01"
       apn="mms.htgprs"
       mmsc="http://mms.t-mobile.hr/servlets/mms"
-      mmsproxy="010.012.000.004"
+      mmsproxy="10.12.0.4"
       mmsport="8080"
       type="mms"
   />
@@ -855,12 +964,13 @@
       type="default,supl"
   />
 
+
   <apn carrier="Tele2"
       mcc="219"
       mnc="02"
       apn="internet.tele2.hr"
       mmsc="http://mmsc.tele2.hr"
-      mmsproxy="193.012.040.066"
+      mmsproxy="193.12.40.66"
       mmsport="8080"
       type="default,supl,mms"
   />
@@ -871,7 +981,7 @@
       apn="data.vip.hr"
       user="38591"
       password="38591"
-      proxy="212.091.099.091"
+      proxy="212.91.99.91"
       port="8080"
       type="default,supl"
   />
@@ -883,7 +993,7 @@
       user="38591"
       password="38591"
       mmsc="http://mms.vipnet.hr/servlets/mms"
-      mmsproxy="212.091.099.091"
+      mmsproxy="212.91.99.91"
       mmsport="8080"
       type="mms"
   />
@@ -905,6 +1015,33 @@
       apn="mms"
       mmsc="http://mms.telenor.rs/servlets/mms"
       mmsproxy="217.65.192.33"
+      mmsport="8080"
+      type="mms"
+  />
+
+<!-- Samsung edit -->
+<!-- Telenor is using 220/02 as well (Confirmed by operator) -->
+  <apn carrier="Telenor MNE internet"
+      mcc="220"
+      mnc="02"
+      apn="internet"
+      user="gprs"
+      password="gprs"
+      proxy="192.168.246.5"
+      port="8080"
+      type="default,supl"
+  />
+
+<!-- Samsung edit -->
+<!-- Telenor is using 220/02 as well (Confirmed by operator) -->
+  <apn carrier="Telenor MNE mms"
+      mcc="220"
+      mnc="02"
+      apn="mms"
+      user="mms"
+      password="mms"
+      mmsc="http://mm.vor.telenor.me"
+      mmsproxy="192.168.246.5"
       mmsport="8080"
       type="mms"
   />
@@ -978,13 +1115,12 @@
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- TIM proxy should be removed  (Confirmed by operator) -->
   <apn carrier="TIM WAP"
       mcc="222"
       mnc="01"
       apn="wap.tim.it"
-      user="WAPTIM"
-      password="WAPTIM"
-      authtype="1"
       type="default,supl"
   />
 
@@ -993,7 +1129,6 @@
       mnc="01"
       apn="ibox.tim.it"
       type="default,supl"
-      authtype="1"      
   />
 
   <apn carrier="TIM MMS"
@@ -1005,27 +1140,9 @@
       mmsport="80"
       type="mms"
   />
-  
-  <apn carrier="Iusacell Internet"
-      mcc="222"
-      mnc="01"
-      apn="web.iusacellgsm.mx"
-      user="Iusacellgsm"
-      password="Iusacellgsm"
-      type="default,supl,dun"
-  />
-  
-  <apn carrier="Iusacell MMS"
-      mcc="222"
-      mnc="01"
-      apn="mms.iusacellgsm.mx"
-      user="mmsiusacellgsm"
-      password="mmsiusacellgsm"
-      mmsproxy="192.200.1.32"
-      mmsport="80"
-      mmsc="http://mms.iusacell3g.com/"
-      type="mms"
-  />
+
+<!-- Samsung edit -->
+<!-- The apns for Iusacell ("Iusacell Internet" , "Iusacell MMS" was removed  (Confirmed by Italy PM) -->
 
   <apn carrier="MMS Vodafone"
       mcc="222"
@@ -1044,6 +1161,13 @@
       type="default,supl"
   />
 
+  <apn carrier="Tethering Internet"
+      mcc="222"
+      mnc="10"
+      apn="web.omnitel.it"
+      type="dun"
+  />
+
   <apn carrier="WIND WEB"
       mcc="222"
       mnc="88"
@@ -1056,7 +1180,6 @@
       mnc="88"
       apn="internet.wind.biz"
       type="default,supl"
-      authtype="1"      
   />
 
   <apn carrier="WIND MMS"
@@ -1067,7 +1190,6 @@
       mmsproxy="212.245.244.100"
       mmsport="8080"
       type="mms"
-      authtype="1"      
   />
 
   <apn carrier="3"
@@ -1078,7 +1200,6 @@
       mmsproxy="62.13.171.3"
       mmsport="8799"
       type="default,supl,mms"
-      authtype="1"      
   />
 
   <apn carrier="Fastweb WEB"
@@ -1190,23 +1311,52 @@
       type="default,supl"
   />
 
+<!-- Samsung edit -->
+<!-- change value -->
   <apn carrier="Orange MMS"
       mcc="226"
       mnc="10"
       apn="mms"
-      user="mms"
-      password="mms"
+     user=""
+     password=""
+     server=""
+     proxy=""
+     port=""
       mmsc="http://wap.mms.orange.ro:8002"
       mmsproxy="62.217.247.252"
-      mmsport="8799"
+     mmsport="9201"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!--Add new orange apn -->
+  <apn carrier="Orange WAP"
+      mcc="226"
+      mnc="10"
+      apn="wap"
+      user=""
+      password=""
+      server=""
+      proxy="62.217.247.252"
+      port="8799"
+      mmsc=""
+      mmsproxy=""
+      mmsport=""
+      type="default"
+  />
+
+<!-- Samsung edit -->
+<!-- change value -->
   <apn carrier="Orange Internet"
       mcc="226"
       mnc="10"
       apn="net"
-      type="default,supl"
+      user=""
+      password=""
+      server=""
+      proxy=""
+      port=""
+      type="default"
   />
 
   <apn carrier="Swisscom MMS"
@@ -1223,7 +1373,7 @@
       mcc="228"
       mnc="01"
       apn="gprs.swisscom.ch"
-      proxy="192.168.210.001"
+      proxy="192.168.210.1"
       port="8080"
       type="default,supl"
   />
@@ -1245,12 +1395,12 @@
       type="mms"
   />
 
-  <apn carrier="Orange"
+<!-- Samsung edit -->
+<!-- Change the value -->
+  <apn carrier="Orange Internet"
       mcc="228"
       mnc="03"
       apn="internet"
-      proxy="192.168.010.002"
-      port="8080"
       type="default,supl"
   />
 
@@ -1263,6 +1413,9 @@
       mmsport="8080"
       type="mms"
   />
+
+<!-- Samsung edit -->
+<!-- The apns for CoopMobile should be removed  (Confirmed by Switzerland PM) -->
 
   <apn carrier="T-Mobile CZ"
       mcc="230"
@@ -1322,14 +1475,18 @@
       type="mms"
   />
 
-  <apn carrier="Orange internet"
+<!-- Samsung edit -->
+<!-- Change values -->
+  <apn carrier="Orange SK"
       mcc="231"
       mnc="01"
       apn="internet"
-      type="default,supl"
+      type="default"
   />
 
-  <apn carrier="Orange MMS"
+<!-- Samsung edit -->
+<!-- Change values -->
+  <apn carrier="Orange SK MMS"
       mcc="231"
       mnc="01"
       apn="mms"
@@ -1425,7 +1582,7 @@
       user="mobil@aon.at"
       password="ppp"
       mmsc="http://mmsc.aon.at"
-      mmsproxy="194.048.124.134"
+      mmsproxy="194.48.124.134"
       mmsport="8001"
       type="mms"
   />
@@ -1520,7 +1677,7 @@
       user="data@bob.at"
       password="ppp"
       mmsc="http://mmsc.bob.at"
-      mmsproxy="194.048.124.007"
+      mmsproxy="194.48.124.7"
       mmsport="8001"
       type="mms"
   />
@@ -1555,7 +1712,7 @@
       user="payandgo"
       password="password"
       mmsc="http://mmsc.mms.o2.co.uk:8002"
-      mmsproxy="193.113.200.195"
+      mmsproxy="82.132.254.1"
       mmsport="8080"
       type="mms"
   />
@@ -1567,11 +1724,38 @@
       user="o2wap"
       password="password"
       mmsc="http://mmsc.mms.o2.co.uk:8002"
-      mmsproxy="193.113.200.195"
+      mmsproxy="82.132.254.1"
       mmsport="8080"
       type="mms"
   />
 
+  <apn carrier="O2 Mobile Web"
+      mcc="234"
+      mnc="10"
+      apn="mobile.o2.co.uk"
+      user="o2web"
+      password="password"
+      type="default,supl"
+  />
+
+<!-- Samsung edit -->
+<!-- changed the proxy value as O2's request -->
+  <apn carrier="O2 MMS"
+      mcc="234"
+      mnc="10"
+      apn="wap.o2.co.uk"
+      user="o2wap"
+      password="password"
+      proxy="193.113.200.195"
+      port="8080"
+      mmsc="http://mmsc.mms.o2.co.uk:8002"
+      mmsproxy="82.132.254.1"
+      mmsport="8080"
+      type="mms"
+  />
+
+<!-- Samsung edit -->
+<!-- changed the proxy value as O2's request -->
   <apn carrier="O2 PREPAY"
       mcc="234"
       mnc="10"
@@ -1581,44 +1765,10 @@
       user="payandgo"
       password="password"
       mmsc="http://mmsc.mms.o2.co.uk:8002"
-      mmsproxy="193.113.200.195"
+      mmsproxy="82.132.254.1"
       mmsport="8080"
       type="default,supl,mms"
   />
-
-  <apn carrier="O2 MOBILE WEB"
-      mcc="234"
-      mnc="11"
-      apn="mobile.o2.co.uk"
-      user="O2web"
-      password="O2web"
-      type="default,supl"
-  />
-
-  <apn carrier="O2 MMS Prepay"
-      mcc="234"
-      mnc="11"
-      apn="payandgo.o2.co.uk"
-      user="payandgo"
-      password="password"
-      mmsc="http://mmsc.mms.o2.co.uk:8002"
-      mmsproxy="193.113.200.195"
-      mmsport="8080"
-      type="mms"
-  />
-
-  <apn carrier="O2 MMS Postpay"
-      mcc="234"
-      mnc="11"
-      apn="wap.o2.co.uk"
-      user="o2wap"
-      password="password"
-      mmsc="http://mmsc.mms.o2.co.uk:8002"
-      mmsproxy="193.113.200.195"
-      mmsport="8080"
-      type="mms"
-  />
-
 
   <apn carrier="TESCO"
       mcc="234"
@@ -1627,21 +1777,7 @@
       user="tescowap"
       password="password"
       mmsc="http://mmsc.mms.o2.co.uk:8002"
-      mmsproxy="193.113.200.195"
-      mmsport="8080"
-      type="default,supl,mms"
-  />
-
-  <apn carrier="O2 POSTPAY"
-      mcc="234"
-      mnc="10"
-      apn="wap.o2.co.uk"
-      user="o2wap"
-      password="password"
-      proxy="193.113.200.195"
-      port="8080"
-      mmsc="http://mmsc.mms.o2.co.uk:8002"
-      mmsproxy="193.113.200.195"
+      mmsproxy="82.132.254.1"
       mmsport="8080"
       type="default,supl,mms"
   />
@@ -1661,8 +1797,42 @@
       apn="payandgo.o2.co.uk"
       user="payandgo"
       password="password"
+      mmsc="http://mmsc.mms.o2.co.uk:8002"
+      mmsproxy="82.132.254.1"
+      mmsport="8080"
+      type="mms"
+  />
+
+  <apn carrier="O2 MMS Postpay"
+      mcc="234"
+      mnc="11"
+      apn="wap.o2.co.uk"
+      user="o2wap"
+      password="password"
+      mmsc="http://mmsc.mms.o2.co.uk:8002"
+      mmsproxy="82.132.254.1"
+      mmsport="8080"
+      type="mms"
+  />
+
+
+  <apn carrier="O2 MOBILE WEB"
+      mcc="234"
+      mnc="11"
+      apn="mobile.o2.co.uk"
+      user="O2web"
+      password="O2web"
+      type="default,supl"
+  />
+
+  <apn carrier="O2 MMS Prepay"
+      mcc="234"
+      mnc="11"
+      apn="payandgo.o2.co.uk"
+      user="payandgo"
+      password="password"
       mmsc="http://mmsc.mms.02.co.uk:8002"
-      mmsproxy="193.113.200.195"
+      mmsproxy="82.132.254.1"
       mmsport="8080"
       type="mms"
   />
@@ -1674,7 +1844,7 @@
       user="o2wap"
       password="password"
       mmsc="http://mmsc.mms.02.co.uk:8002"
-      mmsproxy="193.113.200.195"
+      mmsproxy="82.132.254.1"
       mmsport="8080"
       type="mms"
   />
@@ -1727,24 +1897,19 @@
       type="default,supl,mms"
   />
 
-  <apn carrier="3 WAP"
-      mcc="234"
-      mnc="20"
-      apn="three.co.uk"
-      user="user"
-      type="default,supl"
-      authtype="1"
-  />
+<!-- Samsung edit -->
+<!-- Remove apn value named "3 WAP", Hutchison requirement" -->
 
-  <apn carrier="3 MMS"
+<!-- Samsung edit -->
+<!--  Hutchison requirement, Changed mmsproxy from "217.171.129.2" to "mms.three.co.uk" -->
+  <apn carrier="3"
       mcc="234"
       mnc="20"
       apn="three.co.uk"
       mmsc="http://mms.um.three.co.uk:10021/mmsc"
-      mmsproxy="217.171.129.2"
+      mmsproxy="mms.three.co.uk"
       mmsport="8799"
-      type="mms"
-      authtype="1"      
+      type="default,supl,mms"
   />
 
   <apn carrier="T-Mobile UK"
@@ -1757,7 +1922,6 @@
       mmsproxy="149.254.201.135"
       mmsport="8080"
       type="default,supl,mms"
-      authtype="1"      
   />
 
   <apn carrier="Virgin Media"
@@ -1813,23 +1977,37 @@
       type="mms"
   />
 
-  <apn carrier="Orange internet"
+<!-- Samsung edit -->
+<!-- Change valuess -->
+  <apn carrier="Orange Internet"
+      apn="orangeinternet"
       mcc="234"
       mnc="33"
-      apn="orangeinternet"
-      type="default,supl"
-      authtype="1"      
+      authtype="2"
+      type="default"
   />
 
+<!-- Samsung edit -->
+<!-- Change valuess -->
   <apn carrier="Orange MMS"
-      mcc="234"
-      mnc="33"
       apn="orangemms"
       mmsc="http://mms.orange.co.uk/"
       mmsproxy="192.168.224.10"
       mmsport="8080"
+      mcc="234"
+      mnc="33"
+      authtype="2"
       type="mms"
-      authtype="1"
+  />
+
+<!-- Samsung edit -->
+<!-- Add new apn -->
+  <apn carrier="Consumer Broadband"
+      apn="consumerbroadband"
+      mcc="234"
+      mnc="33"
+      authtype="0"
+      type="dun" 
   />
 
   <apn carrier="Orange internet"
@@ -1844,7 +2022,7 @@
       mnc="34"
       apn="orangemms"
       mmsc="http://mms.orange.co.uk/"
-      mmsproxy="192.168.224.010"
+      mmsproxy="192.168.224.10"
       mmsport="8080"
       type="mms"
   />
@@ -1930,7 +2108,6 @@
       mnc="86"
       apn="orangeinternet"
       type="default,supl"
-      authtype="1"      
   />
 
   <apn carrier="Orange MMS"
@@ -1941,7 +2118,6 @@
       mmsproxy="192.168.224.10"
       mmsport="8080"
       type="mms"
-      authtype="1"      
   />
 
   <apn carrier="TDC"
@@ -1995,7 +2171,7 @@
       mcc="238"
       mnc="01"
       apn="wap"
-      proxy="194.182.251.015"
+      proxy="194.182.251.15"
       port="8080"
       type="default,supl"
   />
@@ -2005,7 +2181,7 @@
       mnc="01"
       apn="mms"
       mmsc="htp://192.168.241.114:8002"
-      mmsproxy="194.182.251.015"
+      mmsproxy="194.182.251.15"
       mmsport="8080"
       type="mms"
   />
@@ -2027,12 +2203,14 @@
       type="mms"
   />
 
-  <apn carrier="3 Locked"
+<!-- Samsung edit -->
+<!--  Hutchison requirement, Changed apn carrier from "3 Locked" to "3" and mmsproxy from "172.16.53.12" to "mmsproxy.3.dk" -->
+  <apn carrier="3"
       mcc="238"
       mnc="06"
       apn="data.tre.dk"
       mmsc="http://mms.3.dk/"
-      mmsproxy="172.16.53.12"
+      mmsproxy="mmsproxy.3.dk"
       mmsport="8799"
       type="default,supl,mms"
   />
@@ -2126,12 +2304,14 @@
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!--  Hutchison requirement, Changed mmsproxy from "172.16.53.11" to "mmsproxy.tre.se" -->
   <apn carrier="3"
       mcc="240"
       mnc="02"
       apn="data.tre.se"
       mmsc="http://mms.tre.se"
-      mmsproxy="172.16.53.11"
+      mmsproxy="mmsproxy.tre.se"
       mmsport="8799"
       type="default,supl,mms"
   />
@@ -2307,7 +2487,7 @@
       mnc="04"
       apn="internet.tele2.no "
       mmsc="http://mmsc.tele2.no"
-      mmsproxy="193.012.040.014"
+      mmsproxy="193.12.40.14"
       mmsport="8080"
       type="mms"
   />
@@ -2521,7 +2701,7 @@
       apn="internet.tele2.lt"
       user="wap"
       password="wap"
-      proxy="130.244.196.090"
+      proxy="130.244.196.90"
       port="8080"
       type="default,supl"
   />
@@ -2533,7 +2713,7 @@
       user="wap"
       password="wap"
       mmsc="http://mmsc.tele2.lt/"
-      mmsproxy="193.012.040.029"
+      mmsproxy="193.12.40.29"
       mmsport="8080"
       type="mms"
   />
@@ -2571,7 +2751,7 @@
       user="wap"
       password="wap"
       mmsc="http://mmsc.tele2.lv/"
-      mmsproxy="193.012.040.038"
+      mmsproxy="193.12.40.38"
       mmsport="8080"
       type="mms"
   />
@@ -2668,7 +2848,7 @@
       mnc="03"
       apn="mms.tele2.ee"
       mmsc="http://mmsc.tele2.ee"
-      mmsproxy="193.12.040.006"
+      mmsproxy="193.12.40.6"
       mmsport="8080"
       type="mms"
   />
@@ -2682,6 +2862,8 @@
       type="default,supl"
   />
 
+<!-- Samsung edit -->
+<!-- Change port number for Russia- MTS -->
   <apn carrier="MTS MMS"
       mcc="250"
       mnc="01"
@@ -2690,7 +2872,7 @@
       password="mts"
       mmsc="http://mmsc"
       mmsproxy="192.168.192.192"
-      mmsport="8080"
+      mmsport="9201"
       type="mms"
   />
 
@@ -2731,7 +2913,7 @@
       user="beeline"
       password="beeline"
       mmsc="http://mms/"
-      mmsproxy="192.168.094.023"
+      mmsproxy="192.168.94.23"
       mmsport="8080"
       type="mms"
   />
@@ -2763,38 +2945,27 @@
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Change mmsc value -->
   <apn carrier="MTS MMS"
       mcc="255"
       mnc="01"
-      apn="mms.umc.ua"
-      mmsc="http://mmsc:8002/"
+      apn="mms"
+      mmsc="http://mms/"
       mmsproxy="192.168.10.10"
       mmsport="8080"
       type="mms"
   />
 
-  <apn carrier="Jeans WAP"
-      mcc="255"
-      mnc="01"
-      apn="wap.jeans.ua"
-      proxy="192.168.10.10"
-      port="8080"
-      type="default,supl"
-  />
+<!-- Samsung edit -->
+<!-- Remove unused apns (Jeans WAP and MTS WAP -->
 
-  <apn carrier="MTS WAP"
-      mcc="255"
-      mnc="01"
-      apn="wap.umc.ua"
-      proxy="192.168.10.10"
-      port="8080"
-      type="default,supl"
-  />
-
+<!-- Samsung edit -->
+<!-- Change values -->
   <apn carrier="MTS-internet"
       mcc="255"
       mnc="01"
-      apn="www.mts.ua"
+      apn="internet"
       type="default,supl"
   />
 
@@ -2815,14 +2986,8 @@
       type="mms"
   />
 
-  <apn carrier="Beeline WAP"
-      mcc="255"
-      mnc="02"
-      apn="wap.beeline.ua"
-      proxy="172.29.18.192"
-      port="8080"
-      type="default,supl"
-  />
+<!-- Samsung edit -->
+<!-- Remove unused apns "Beeline WAP"-->
 
   <apn carrier="Djuice MMS"
       mcc="255"
@@ -2848,36 +3013,17 @@
       type="mms"
   />
 
-  <apn carrier="Kyivstar WAP A&amp;B"
+<!-- Samsung edit -->
+<!-- Change values -->
+  <apn carrier="Kyivstar Internet"
       mcc="255"
       mnc="03"
-      apn="wap.ab.kyivstar.net"
-      proxy="10.10.10.10"
-      port="8080"
+      apn="www.kyivstar.net"
       type="default,supl"
   />
 
-  <apn carrier="Djuice WAP"
-      mcc="255"
-      mnc="03"
-      apn="wap.djuice.com.ua"
-      user="djuice"
-      password="wap"
-      proxy="10.10.10.10"
-      port="8080"
-      type="default,supl"
-  />
-
-  <apn carrier="Kyivstar WAP"
-      mcc="255"
-      mnc="03"
-      apn="wap.kyivstar.net"
-      user="wgprs"
-      password="wap"
-      proxy="10.10.10.10"
-      port="8080"
-      type="default,supl"
-  />
+<!-- Samsung edit -->
+<!-- Remove unused apns "Djuice WAP" and "Kyivstar WAP"-->
 
   <apn carrier="life:) internet"
       mcc="255"
@@ -2896,23 +3042,28 @@
       type="mms"
   />
 
-  <apn carrier="Life:) WAP"
+<!-- Samsung edit -->
+<!-- Remove unused apns "life:) WAP"-->
+
+<!-- Samsung edit -->
+<!-- Change values -->
+  <apn carrier="Utel Internet"
       mcc="255"
-      mnc="06"
-      apn="wap"
-      proxy="212.58.162.230"
-      port="8080"
+      mnc="07"
+      apn="3g.utel.ua"
       type="default,supl"
   />
 
-  <apn carrier="Utel"
+<!-- Samsung edit -->
+<!--- Add new apn for Utel MMS -->
+  <apn carrier="Utel MMS"
       mcc="255"
       mnc="07"
       apn="3g.utel.ua"
       mmsc="http://10.212.1.4/mms/wapenc"
       mmsproxy="10.212.3.148"
       mmsport="8080"
-      type="default,supl,mms"
+      type="mms"
   />
 
   <apn carrier="Plus Internet"
@@ -2930,36 +3081,30 @@
       mmsproxy="212.2.96.16"
       mmsport="8080"
       type="mms"
-      authtype="1"      
   />
 
-  <apn carrier="Plus MMS"
-      mcc="260"
-      mnc="01"
-      apn="mms.plusgsm.pl"
-      mmsc="http://mms.plusgsm.pl:8002"
-      mmsproxy="212.2.96.16"
-      mmsport="8080"
-      type="mms"
-  />
+<!-- Samsung edit -->
+<!-- Plus MMS is DUPLICATED -->
 
-  <apn carrier="Era Internet"
+<!-- Samsung edit -->
+<!-- ERA changed to T-MOBILE  -->
+  <apn carrier="T-mobile.pl"
       mcc="260"
       mnc="02"
-      apn="erainternet"
+      apn="internet"
       type="default,supl"
-      authtype="1"      
   />
 
-  <apn carrier="Era MMS"
+<!-- Samsung edit -->
+<!-- apn name "MMS" is change to "mms"  -->
+  <apn carrier="T-mobile.pl"
       mcc="260"
       mnc="02"
-      apn="eramms"
-      mmsc="http://mms.era.pl/servlets/mms"
+      apn="mms"
+      mmsc="http://mms/servlets/mms"
       mmsproxy="213.158.194.226"
       mmsport="8080"
       type="mms"
-      authtype="1"
   />
 
   <apn carrier="heyahinternet"
@@ -2979,27 +3124,29 @@
       type="mms"
   />
 
-  <apn carrier="Orange INTERNET"
-      mcc="260"
-      mnc="03"
-      apn="internet"
+<!-- Samsung edit -->
+<!-- Change value --> 
+  <apn carrier="Internet"
+      apn="Internet"
       user="internet"
       password="internet"
-      type="default,supl"
-      authtype="1"      
-  />
-
-  <apn carrier="Orange MMS"
       mcc="260"
       mnc="03"
+      type="default" 
+  />
+
+<!-- Samsung edit -->
+<!-- Change value --> 
+  <apn carrier="MMS Orange"
       apn="mms"
       user="mms"
       password="mms"
       mmsc="http://mms.orange.pl"
       mmsproxy="192.168.6.104"
       mmsport="8080"
+      mcc="260"
+      mnc="03"
       type="mms"
-      authtype="1"
   />
 
   <apn carrier="P4 Internet"
@@ -3007,7 +3154,6 @@
       mnc="06"
       apn="internet"
       type="default,supl"
-      authtype="1"      
   />
 
   <apn carrier="P4 MMS"
@@ -3020,6 +3166,7 @@
       type="mms"
   />
 
+
   <apn carrier="T-Mobile Internet"
       mcc="262"
       mnc="01"
@@ -3030,7 +3177,6 @@
       mmsproxy="172.28.23.131"
       mmsport="8008"
       type="default,supl,mms"
-      authtype="1"
   />
 
   <apn carrier="Vodafone DE-MMS"
@@ -3057,7 +3203,6 @@
       user="eplus"
       password="internet"
       type="default,supl"
-      authtype="1"
   />
 
   <apn carrier="E-Plus MMS"
@@ -3070,7 +3215,6 @@
       mmsproxy="212.23.97.153"
       mmsport="5080"
       type="mms"
-      authtype="1"
   />
 
   <apn carrier="o2"
@@ -3083,6 +3227,20 @@
       type="default,supl,mms"
   />
 
+<!-- Samsung edit -->
+<!-- O2 De has prepaid profile, so we added below one -->
+  <apn carrier="o2 Internet Prepaid"
+      mcc="262"
+      mnc="07"
+      apn="pinternet.interkom.de"
+      proxy="82.113.100.6"
+      port="8080"
+      mmsc="http://10.81.0.7:8002"
+      mmsproxy="82.113.100.6"
+      mmsport="8080"
+      type="default,supl,mms"
+  />
+  
   <apn carrier="Vodafone Net2"
       mcc="268"
       mnc="01"
@@ -3097,21 +3255,23 @@
       type="default,supl,mms"
   />
 
-  <apn carrier="PortalOptimus"
+<!-- Samsung edit -->
+<!-- Change value --> 
+  <apn carrier="Optimus Internet"
       mcc="268"
       mnc="03"
       apn="umts"
-      proxy="62.169.66.5"
-      port="8799"
-      type="default,supl"
+      type="default"
   />
 
+<!-- Samsung edit -->
+<!-- Change value --> 
   <apn carrier="Optimus MMS"
       mcc="268"
       mnc="03"
-      apn="umts"
+      apn="mms"
       mmsc="http://mmsc:10021/mmsc"
-      mmsproxy="62.169.66.5"
+      mmsproxy="62.169.66.1"
       mmsport="8799"
       type="mms"
   />
@@ -3130,7 +3290,7 @@
       user="tmn"
       password="tmnnet"
       mmsc="http://mmsc/"
-      mmsproxy="10.111.002.016"
+      mmsproxy="10.111.2.16"
       mmsport="8080"
       type="mms"
   />
@@ -3235,7 +3395,7 @@
       user="my"
       password="wap"
       mmsc="http://mms.mymeteor.ie"
-      mmsproxy="010.085.085.085"
+      mmsproxy="10.85.85.85"
       mmsport="8799"
       type="default,supl,mms"
   />
@@ -3283,15 +3443,6 @@
       mcc="274"
       mnc="02"
       apn="gprs.is"
-      type="default,supl"
-  />
-
-  <apn carrier="Vodafone Live!"
-      mcc="274"
-      mnc="02"
-      apn="live.gprs.is"
-      proxy="10.22.0.22"
-      port="8080"
       type="default,supl"
   />
 
@@ -3378,23 +3529,54 @@
       type="default,supl"
   />
 
+<!-- Samsung edit -->
+<!-- The APN for M-Tel should be changed (Confirmed by operator) -->
   <apn carrier="M-Tel"
       mcc="284"
       mnc="01"
-      apn="inet-gprs.mtel.bg"
+      apn="wap-gprs.mtel.bg"
       proxy="213.226.006.065"
       port="8080"
       type="default,supl"
   />
 
+<!-- Samsung edit -->
+<!-- The APN for M-Tel should be changed (Confirmed by operator) -->
   <apn carrier="M-Tel MMS"
       mcc="284"
       mnc="01"
       apn="mms-gprs.mtel.bg"
-      user=""
-      password=""
-      mmsc="http://mmsc"
-      mmsproxy="010.150.000.033"
+      user="mtel"
+      password="mtel"
+      mmsc="http://mmsc/"
+      mmsproxy="10.150.0.33"
+      mmsport="8080"
+      type="mms"
+  />
+
+<!-- Samsung edit -->
+<!-- The APN for Vivacom should be added (Confirmed by operator) -->
+    <apn carrier="Vivacom WAP"
+      mcc="284"
+      mnc="03"
+      apn="wap.vivacom.bg"
+      user="wap"
+      password="wap"
+      proxy="192.168.123.123"
+      port="8080"
+      type="default,supl"
+  />
+
+<!-- Samsung edit -->
+<!-- The APN for Vivacom should be added (Confirmed by operator) -->
+  <apn carrier="Vivacom MMS"
+      mcc="284"
+      mnc="03"
+      apn="mms.vivacom.bg"
+      user="mms"
+      password="mms"
+      mmsc="http://mmsc.vivacom.bg"
+      mmsproxy="192.168.123.123"
       mmsport="8080"
       type="mms"
   />
@@ -3562,6 +3744,31 @@
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Cosmofon should be added (Confirmed by operator) -->
+   <apn carrier="Cosmofon"
+      mcc="294"
+      mnc="02"
+      apn="Internet"
+      user="Internet"
+      password="Internet"
+      proxy="http://wap.planet.mk"
+      port="8080"
+      type="default,supl"
+  />
+
+<!-- Samsung edit -->
+<!-- Cosmofon should be added (Confirmed by operator) -->
+  <apn carrier="Cosmofon MMS"
+      mcc="294"
+      mnc="02"
+      apn="mms"
+      mmsc="http://195.167.65.220:8002"
+      mmsproxy="10.010.010.020"
+      mmsport="8080"
+      type="mms"
+  />
+
   <apn carrier="Internet"
       mcc="294"
       mnc="03"
@@ -3632,6 +3839,20 @@
       type="default,supl,mms"
   />
 
+<!-- Samsung edit -->
+<!-- A Telus apn is added. -->
+  <apn carrier="Clearnet"
+      mcc="302"
+      mnc="220"
+      apn="inet.clearnet.com"
+      proxy="74.49.0.18"
+      port="80"
+      mmsc="http://aliasredirect.net/proxy/clearnet/mmsc"
+      mmsproxy="74.49.0.18"
+      mmsport="80"
+      type="default,supl,mms"
+  />
+
   <apn carrier="MOWAP"
       mcc="302"
       mnc="320"
@@ -3667,6 +3888,18 @@
       mnc="370"
       apn="isp.fido.apn"
       type="dun"
+  />
+
+<!-- Samsung edit -->
+<!-- A Rogers apn is added. -->
+  <apn carrier="Chatr Internet"
+      mcc="302"
+      mnc="370"
+      apn="chatrweb.apn"
+      mmsc="http://mms.chatrwireless.com"
+      mmsproxy="205.151.11.11"
+      mmsport="80"
+      type="default,mms"
   />
 
   <apn carrier="Wind CA"
@@ -3944,7 +4177,19 @@
       mmsport="8080"
       type="mms"
   />
-  
+
+  <apn carrier="Cingular 410"
+      mcc="310"
+      mnc="410"
+      apn="wap.cingular"
+      user="WAP@CINGULARGPRS.COM"
+      password="CINGULAR1"
+      server="cingulargprs.com"
+      mmsc="http://mmsc.cingular.com/"
+      mmsproxy="wireless.cingular.com"
+      type="default,supl,mms"
+  />
+
   <apn carrier="CBW MMS"
       mcc="310"
       mnc="420"
@@ -4187,15 +4432,20 @@
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="INTERNET CLARO"
       mcc="330"
       mnc="110"
       apn="internet.claropr.com"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS CLARO"
       mcc="330"
       mnc="110"
@@ -4205,20 +4455,25 @@
       mmsproxy="10.50.38.3"
       mmsport="8799"
       mmsc="http://mmsg.claropr.com:10021/mmsc"
+      authtype="1"
       type="mms"
   />
 
-
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Internet"
       mcc="334"
       mnc="020"
       apn="internet.itelcel.com"
       user="webgprs"
       password="webgprs2002"
+      authtype="1"
       type="default,supl,dun"
   />
 
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Mensajes Multimedia"
       mcc="334"
       mnc="020"
@@ -4228,18 +4483,24 @@
       mmsc="http://mms.itelcel.com/servlets/mms"
       mmsproxy="148.233.151.240"
       mmsport="8080"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="movistar Internet"
       mcc="334"
       mnc="03"
       apn="internet.movistar.mx"
       user="movistar"
       password="movistar"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="movistar MMS"
       mcc="334"
       mnc="03"
@@ -4249,19 +4510,25 @@
       mmsc="http://mms.movistar.mx"
       mmsproxy="10.2.20.1"
       mmsport="80"
+      authtype="1"
       type="mms"
   />
-  
-  <apn carrier="movistar Internet" 
+
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
+  <apn carrier="movistar Internet"
       mcc="334"
       mnc="030"
       apn="internet.movistar.mx"
       user="movistar"
       password="movistar"
-      type="default,supl,dun" 
+      authtype="1"
+      type="default,supl,dun"
   />
 
-  <apn carrier="movistar MMS" 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
+  <apn carrier="movistar MMS"
       mcc="334"
       mnc="030"
       apn="mms.movistar.mx"
@@ -4269,19 +4536,25 @@
       password="movistar"
       mmsc="http://mms.movistar.mx"
       mmsproxy="10.2.20.1"
-      mmsport="80" 
+      mmsport="80"
+      authtype="1"
       type="mms"
   />
-  
+
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Iusacell Internet"
       mcc="334"
       mnc="050"
       apn="web.iusacellgsm.mx"
       user="Iusacellgsm"
       password="Iusacellgsm"
+      authtype="1"
       type="default,supl,dun"
   />
-  
+
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Iusacell MMS"
       mcc="334"
       mnc="050"
@@ -4291,17 +4564,23 @@
       mmsproxy="192.200.1.32"
       mmsport="80"
       mmsc="http://mms.iusacell3g.com/"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="INTERNET Digicel"
       mcc="338"
       mnc="050"
       apn="web.digiceljamaica.com"
+      authtype="1"
       type="default,supl,dun"
   />
 
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS Digicel"
       mcc="338"
       mnc="050"
@@ -4311,18 +4590,24 @@
       mmsproxy="172.16.7.12"
       mmsport="8080"
       mmsc="http://mms.digicelgroup.com"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Lime Internet Postpaid"
       mcc="338"
       mnc="18"
       apn="internet"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Lime Postpaid MMS"
       mcc="338"
       mnc="18"
@@ -4332,18 +4617,24 @@
       mmsproxy="10.20.5.34"
       mmsport="8799"
       mmsc="http://mmsc"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Claro Web"
       mcc="338"
       mnc="070"
       apn="internet.ideasclaro.com.jm"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Claro MMS"
       mcc="338"
       mnc="070"
@@ -4353,18 +4644,24 @@
       mmsproxy="190.80.147.118"
       mmsport="8080"
       mmsc="http://mms.ideasclaro.com.jm/mms/wapenc"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Lime Internet Postpaid"
       mcc="338"
       mnc="180"
       apn="internet"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Lime Postpaid MMS"
       mcc="338"
       mnc="180"
@@ -4374,6 +4671,7 @@
       mmsproxy="10.20.5.34"
       mmsport="8799"
       mmsc="http://mmsc"
+      authtype="1"
       type="mms"
   />
 
@@ -4601,6 +4899,60 @@
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!--  Apply new carrier -->
+  <apn carrier="INTERNET Aruba"
+      mcc="363"
+      mnc="02"
+      apn="web.digicelaruba.com"
+      user=""
+      password=""
+      authtype="1"
+      type="default,supl,dun"
+  />
+
+<!-- Samsung edit -->
+<!--  Apply new carrier -->
+  <apn carrier="MMS Digicel"
+      mcc="363"
+      mnc="02"
+      apn="wap"
+      user=""
+      password=""
+      mmsproxy="172.16.7.12"
+      mmsport="8080"
+      mmsc="http://mms.digicelgroup.com"
+      authtype="1"
+      type="mms"
+  />
+
+<!-- Samsung edit -->
+<!--  Apply new carrier -->
+ <apn carrier="INTERNET Aruba"
+      mcc="363"
+      mnc="020"
+      apn="web.digicelaruba.com"
+      user=""
+      password=""
+      authtype="1"
+      type="default,supl,dun"
+  />
+
+<!-- Samsung edit -->
+<!--  Apply new carrier -->
+  <apn carrier="MMS Digicel"
+      mcc="363"
+      mnc="020"
+      apn="wap"
+      user=""
+      password=""
+      mmsproxy="172.16.7.12"
+      mmsport="8080"
+      mmsc="http://mms.digicelgroup.com"
+      authtype="1"
+      type="mms"
+  />
+
   <apn carrier="Lime Internet Postpaid"
       mcc="365"
       mnc="84"
@@ -4643,13 +4995,18 @@
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Internet"
       mcc="368"
       mnc="01"
       apn="internet"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Cubacel MMS"
       mcc="368"
       mnc="01"
@@ -4657,18 +5014,24 @@
       mmsproxy="200.13.145.52"
       mmsport="8080"
       mmsc="http://mms.cubacel.cu/"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Orange net"
       mcc="370"
       mnc="01"
       apn="orangenet.com.do"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Orange MMS"
       mcc="370"
       mnc="01"
@@ -4678,18 +5041,24 @@
       mmsproxy="172.16.126.70"
       mmsport="8080"
       mmsc="http://mms.orange.com.do/servlets/mms"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="INTERNET CLARO"
       mcc="370"
       mnc="02"
       apn="internet.ideasclaro.com.do"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS CLARO"
       mcc="370"
       mnc="02"
@@ -4699,9 +5068,12 @@
       mmsproxy="190.80.147.8"
       mmsport="8080"
       mmsc="http://mms.ideasclaro.com.do/mms/wapenc"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Viva Edge"
       mcc="370"
       mnc="04"
@@ -4710,9 +5082,12 @@
       port="9401"
       user="viva"
       password="viva"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Viva MMS"
       mcc="370"
       mnc="04"
@@ -4722,18 +5097,24 @@
       mmsproxy="192.168.16.10"
       mmsport="9401"
       mmsc="http://10.200.16.4/mms/wapenc"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Bmobile internet"
       mcc="374"
       mnc="12"
       apn="internet"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Bmobile mms"
       mcc="374"
       mnc="12"
@@ -4743,18 +5124,24 @@
       mmsproxy="192.168.210.104"
       mmsport="8080"
       mmsc="http://192.168.210.104/mmrelay.app"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Bmobile internet"
       mcc="374"
       mnc="120"
       apn="internet"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Bmobile mms"
       mcc="374"
       mnc="120"
@@ -4764,18 +5151,24 @@
       mmsproxy="192.168.210.104"
       mmsport="8080"
       mmsc="http://192.168.210.104/mmrelay.app"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Bmobile internet"
       mcc="374"
       mnc="121"
       apn="internet"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Bmobile mms"
       mcc="374"
       mnc="121"
@@ -4785,18 +5178,24 @@
       mmsproxy="192.168.210.104"
       mmsport="8080"
       mmsc="http://192.168.210.104/mmrelay.app"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Bmobile internet"
       mcc="374"
       mnc="122"
       apn="internet"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Bmobile mms"
       mcc="374"
       mnc="122"
@@ -4806,18 +5205,24 @@
       mmsproxy="192.168.210.104"
       mmsport="8080"
       mmsc="http://192.168.210.104/mmrelay.app"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Bmobile internet"
       mcc="374"
       mnc="123"
       apn="internet"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Bmobile mms"
       mcc="374"
       mnc="123"
@@ -4827,18 +5232,24 @@
       mmsproxy="192.168.210.104"
       mmsport="8080"
       mmsc="http://192.168.210.104/mmrelay.app"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Bmobile internet"
       mcc="374"
       mnc="124"
       apn="internet"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Bmobile mms"
       mcc="374"
       mnc="124"
@@ -4848,18 +5259,24 @@
       mmsproxy="192.168.210.104"
       mmsport="8080"
       mmsc="http://192.168.210.104/mmrelay.app"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Bmobile internet"
       mcc="374"
       mnc="125"
       apn="internet"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Bmobile mms"
       mcc="374"
       mnc="125"
@@ -4869,18 +5286,24 @@
       mmsproxy="192.168.210.104"
       mmsport="8080"
       mmsc="http://192.168.210.104/mmrelay.app"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Bmobile internet"
       mcc="374"
       mnc="126"
       apn="internet"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Bmobile mms"
       mcc="374"
       mnc="126"
@@ -4890,18 +5313,24 @@
       mmsproxy="192.168.210.104"
       mmsport="8080"
       mmsc="http://192.168.210.104/mmrelay.app"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Bmobile internet"
       mcc="374"
       mnc="127"
       apn="internet"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Bmobile mms"
       mcc="374"
       mnc="127"
@@ -4911,18 +5340,24 @@
       mmsproxy="192.168.210.104"
       mmsport="8080"
       mmsc="http://192.168.210.104/mmrelay.app"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Bmobile internet"
       mcc="374"
       mnc="128"
       apn="internet"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Bmobile mms"
       mcc="374"
       mnc="128"
@@ -4932,18 +5367,24 @@
       mmsproxy="192.168.210.104"
       mmsport="8080"
       mmsc="http://192.168.210.104/mmrelay.app"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Bmobile internet"
       mcc="374"
       mnc="129"
       apn="internet"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Bmobile mms"
       mcc="374"
       mnc="129"
@@ -4953,6 +5394,61 @@
       mmsproxy="192.168.210.104"
       mmsport="8080"
       mmsc="http://192.168.210.104/mmrelay.app"
+      authtype="1"
+      type="mms"
+  />
+
+<!-- Samsung edit -->
+<!-- Apply new carrier -->
+  <apn carrier="INTERNET Trinidad"
+      mcc="374"
+      mnc="13"
+      apn="web.digiceltt.com"
+      user=""
+      password=""
+      authtype="1"
+      type="default,supl,dun"
+  />
+
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
+  <apn carrier="MMS Trinidad"
+      mcc="374"
+      mnc="13"
+      apn="wap.digiceltt.com"
+      user="wap"
+      password="wap"
+      mmsproxy="172.20.6.12"
+      mmsport="8080"
+      mmsc="http://mmc.digiceltt.com/servlets/mms"
+      authtype="1"
+      type="mms"
+  />
+
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
+  <apn carrier="INTERNET Trinidad"
+      mcc="374"
+      mnc="130"
+      apn="web.digiceltt.com"
+      user=""
+      password=""
+      authtype="1"
+      type="default,supl,dun"
+  />
+
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
+  <apn carrier="MMS Trinidad"
+      mcc="374"
+      mnc="130"
+      apn="wap.digiceltt.com"
+      user="wap"
+      password="wap"
+      mmsproxy="172.20.6.12"
+      mmsport="8080"
+      mmsc="http://mmc.digiceltt.com/servlets/mms"
+      authtype="1"
       type="mms"
   />
 
@@ -4976,6 +5472,7 @@
       mmsc="http://mmsc"
       type="mms"
   />
+
 
   <apn carrier="Beeline Internet"
       mcc="401"
@@ -4998,16 +5495,8 @@
       type="mms"
   />
 
-  <apn carrier="Beeline WAP"
-      mcc="401"
-      mnc="01"
-      apn="wap.beeline.kz"
-      user="@wap.beeline"
-      password="beeline"
-      proxy="172.027.006.093"
-      port="8080"
-      type="default,supl"
-  />
+<!-- Samsung edit -->
+<!-- Remove apns named "Beeline WAP"  -->
 
   <apn carrier="Kcell Internet"
       mcc="401"
@@ -5026,23 +5515,21 @@
       type="mms"
   />
 
-  <apn carrier="Kcell WAP"
-      mcc="401"
-      mnc="02"
-      apn="wap"
-      proxy="195.47.255.7"
-      port="8080"
-      type="default,supl"
-  />
+<!-- Samsung edit -->
+<!-- Remove apns named "Kcell WAP"  -->
 
-  <apn carrier="NEO Internet"
+<!-- Samsung edit -->
+<!-- Change carrier name -->
+  <apn carrier="Tele2 Internet"
       mcc="401"
       mnc="77"
       apn="internet"
       type="default,supl"
   />
 
-  <apn carrier="NEO MMS"
+<!-- Samsung edit -->
+<!-- Change carrier name -->
+  <apn carrier="Tele2 MMS"
       mcc="401"
       mnc="77"
       apn="mms"
@@ -5052,14 +5539,8 @@
       type="mms"
   />
 
-  <apn carrier="NEO WAP"
-      mcc="401"
-      mnc="77"
-      apn="wap"
-      proxy="10.1.26.10"
-      port="8080"
-      type="default,supl"
-  />
+<!-- Samsung edit -->
+<!-- Remove apns named "NEO WAP"  -->
 
   <apn carrier="Vodafone MMS"
       mcc="404"
@@ -8598,7 +9079,7 @@
       apn="uninor"
       type="default,supl"
   />
-  
+
   <apn carrier="Uninor MMS"
       mcc="405"
       mnc="844"
@@ -8768,7 +9249,7 @@
       apn="uninor"
       type="default,supl"
   />
-  
+
   <apn carrier="Uninor MMS"
       mcc="405"
       mnc="875"
@@ -8785,7 +9266,7 @@
       apn="uninor"
       type="default,supl"
   />
-  
+
   <apn carrier="Uninor MMS"
       mcc="405"
       mnc="876"
@@ -8802,7 +9283,7 @@
       apn="uninor"
       type="default,supl"
   />
-  
+
   <apn carrier="Uninor MMS"
       mcc="405"
       mnc="877"
@@ -8819,7 +9300,7 @@
       apn="uninor"
       type="default,supl"
   />
-  
+
   <apn carrier="Uninor MMS"
       mcc="405"
       mnc="878"
@@ -8836,7 +9317,7 @@
       apn="uninor"
       type="default,supl"
   />
-  
+
   <apn carrier="Uninor MMS"
       mcc="405"
       mnc="879"
@@ -8853,7 +9334,7 @@
       apn="uninor"
       type="default,supl"
   />
-  
+
   <apn carrier="Uninor MMS"
       mcc="405"
       mnc="880"
@@ -8980,7 +9461,7 @@
       apn="uninor"
       type="default,supl"
   />
-  
+
   <apn carrier="Uninor MMS"
       mcc="405"
       mnc="925"
@@ -8997,7 +9478,7 @@
       apn="uninor"
       type="default,supl"
   />
-  
+
   <apn carrier="Uninor MMS"
       mcc="405"
       mnc="926"
@@ -9014,7 +9495,7 @@
       apn="uninor"
       type="default,supl"
   />
-  
+
   <apn carrier="Uninor MMS"
       mcc="405"
       mnc="927"
@@ -9031,7 +9512,7 @@
       apn="uninor"
       type="default,supl"
   />
-  
+
   <apn carrier="Uninor MMS"
       mcc="405"
       mnc="928"
@@ -9048,7 +9529,7 @@
       apn="uninor"
       type="default,supl"
   />
-  
+
   <apn carrier="Uninor MMS"
       mcc="405"
       mnc="929"
@@ -9281,6 +9762,7 @@
       type="default,supl"
   />
 
+
   <apn carrier="ZAIN MMS"
       mcc="419"
       mnc="02"
@@ -9293,6 +9775,7 @@
       type="mms"
   />
 
+
   <apn carrier="ZAIN MI"
       mcc="419"
       mnc="02"
@@ -9301,6 +9784,7 @@
       password="pps"
       type="default,supl"
   />
+
 
   <apn carrier="WATANIYA MMS"
       mcc="419"
@@ -9312,6 +9796,7 @@
       type="mms"
   />
 
+
   <apn carrier="INTERNET ACTION"
       mcc="419"
       mnc="03"
@@ -9319,7 +9804,10 @@
       type="default,supl"
   />
 
-  <apn carrier="VIVA  MMS"
+
+  <!-- Samsung edit -->
+  <!-- Delete garbage character -->
+  <apn carrier="VIVA MMS"
       mcc="419"
       mnc="04"
       apn="VIVA"
@@ -9329,12 +9817,14 @@
       type="mms"
   />
 
+
   <apn carrier="VIVA Internet"
       mcc="419"
       mnc="04"
       apn="VIVA"
       type="default,supl"
   />
+
 
   <apn carrier="JAWALNet"
       mcc="420"
@@ -9343,15 +9833,17 @@
       type="default,supl"
   />
 
+
   <apn carrier="ALJAWAL MMS"
       mcc="420"
       mnc="01"
       apn="mms.net.sa"
       mmsc="http://mms.net.sa:8002"
-      mmsproxy="010.001.001.001"
+      mmsproxy="10.1.1.1"
       mmsport="8080"
       type="mms"
   />
+
 
   <apn carrier="mobily Net Prepaid"
       mcc="420"
@@ -9360,15 +9852,17 @@
       type="default,supl"
   />
 
+
   <apn carrier="mobily MMS Prepaid"
       mcc="420"
       mnc="03"
       apn="mms2"
       mmsc="http://10.3.3.133:9090/was"
-      mmsproxy="010.003.002.133"
+      mmsproxy="10.3.2.133"
       mmsport="8080"
       type="mms"
   />
+
 
   <apn carrier="mobily Net Postpaid"
       mcc="420"
@@ -9377,15 +9871,17 @@
       type="default,supl"
   />
 
+
   <apn carrier="mobily MMS Postpaid"
       mcc="420"
       mnc="03"
       apn="mms1"
       mmsc="http://10.3.3.133:9090/was"
-      mmsproxy="010.003.002.133"
+      mmsproxy="10.3.2.133"
       mmsport="8080"
       type="mms"
   />
+
 
   <apn carrier="zain-gprs"
       mcc="420"
@@ -9394,15 +9890,17 @@
       type="default,supl"
   />
 
+
   <apn carrier="zain-mms"
       mcc="420"
       mnc="04"
       apn="zain"
       mmsc="http://10.122.200.12:8002/"
-      mmsproxy="10.122.200.010"
+      mmsproxy="10.122.200.10"
       mmsport="8080"
       type="mms"
   />
+
 
   <apn carrier="Oman Mobile MMS"
       mcc="422"
@@ -9416,6 +9914,7 @@
       type="mms"
   />
 
+
   <apn carrier="Oman Mobile Internet"
       mcc="422"
       mnc="02"
@@ -9424,6 +9923,7 @@
       password="taif"
       type="default,supl"
   />
+
 
   <apn carrier="Nawras MMS"
       mcc="422"
@@ -9436,6 +9936,7 @@
       mmsport="8080"
       type="mms"
   />
+
 
   <apn carrier="Nawras GPRS"
       mcc="422"
@@ -9462,7 +9963,9 @@
   />
 
 
-  <apn carrier="du WAP"
+  <!-- Samsung edit -->
+  <!-- Change APN name -->
+  <apn carrier="du"
       mcc="424"
       mnc="03"
       apn="du"
@@ -9479,27 +9982,34 @@
       type="mms"
   />
 
+  <!-- Samsung edit -->
+  <!-- Change value -->
   <apn carrier="3G Portal"
       mcc="425"
       mnc="01"
       apn="uwap.orange.co.il"
-      user="orange"
-      password="mobile54"
-      proxy="192.118.11.56"
       port="8080"
       type="default,supl"
   />
 
+  <!-- Samsung edit -->
+  <!-- Change value -->
   <apn carrier="MMS 3G"
       mcc="425"
       mnc="01"
       apn="uwap.orange.co.il"
-      user="orange"
-      password="mobile54"
       mmsc="http://192.168.220.15/servlets/mms"
-      mmsproxy="192.118.11.55"
       mmsport="8080"
       type="mms"
+  />
+
+  <!-- Samsung edit -->
+  <!-- Add new apn -->
+  <apn carrier="Internet 3G"
+      mcc="425"
+      mnc="01"
+      apn="modem.orange.net.il"
+      type="default,supl"
   />
 
   <apn carrier="Cellcom Internet"
@@ -9509,12 +10019,14 @@
       type="default,supl"
   />
 
+  <!-- Samsung edit -->
+  <!-- Change value -->
   <apn carrier="Cellcom MMS"
       mcc="425"
       mnc="02"
       apn="mms"
       mmsc="http://mms.cellcom.co.il"
-      mmsproxy="vwapm2.ain.co.il"
+      mmsproxy="172.31.29.38"
       mmsport="8080"
       type="mms"
   />
@@ -9531,7 +10043,9 @@
       type="mms"
   />
 
-  <apn carrier="Internet Pelephone"
+  <!-- Samsung edit -->
+  <!-- Change value -->
+  <apn carrier="Sphone Pelephone"
       mcc="425"
       mnc="03"
       apn="sphone.pelephone.net.il"
@@ -9547,6 +10061,7 @@
       type="default,supl"
   />
 
+
   <apn carrier="BAT MMS"
       mcc="426"
       mnc="01"
@@ -9556,6 +10071,7 @@
       mmsport="80"
       type="mms"
   />
+
 
   <apn carrier="Zain Internet"
       mcc="426"
@@ -9578,12 +10094,14 @@
       type="mms"
   />
 
+
   <apn carrier="VIVAGPRS"
       mcc="426"
       mnc="04"
       apn="viva.bh"
       type="default,supl"
   />
+
 
   <apn carrier="VIVAMMS"
       mcc="426"
@@ -9594,6 +10112,7 @@
       mmsport="8080"
       type="mms"
   />
+
 
   <apn carrier="Qtel MMS"
       mcc="427"
@@ -9607,6 +10126,7 @@
       type="mms"
   />
 
+
   <apn carrier="Qtel GPRS"
       mcc="427"
       mnc="01"
@@ -9618,6 +10138,7 @@
       type="default,supl"
   />
 
+
   <apn carrier="VFQ MMS"
       mcc="427"
       mnc="02"
@@ -9628,15 +10149,18 @@
       type="mms"
   />
 
+
+  <!-- Samsung edit -->
+  <!-- Delete Proxy and change access name -->
   <apn carrier="VFQ Mobile Internet"
       mcc="427"
       mnc="02"
-      apn="vodafone.com.qa"
-      proxy="10.101.97.102"
-      port="80"
+      apn="web.vodafone.com.qa"
       type="default,supl"
   />
 
+  <!-- Samsung edit -->
+  <!-- change value -->
   <apn carrier="spモード"
         mcc="440"
         mnc="10"
@@ -9645,21 +10169,56 @@
         auth="0"
     />
 
+  <!-- Samsung edit -->
+  <!-- Add new apn -->
   <apn carrier="mopera U(スマートフォン定額)"
         mcc="440"
         mnc="10"
         apn="mpr2.bizho.net"
         type="default,supl"
         auth="0"
-  />
-  
+    /> 
+
+  <!-- Samsung edit -->
+  <!-- Add new apn -->
   <apn carrier="mopera U設定"
         mcc="440"
         mnc="10"
-        apn="0120.mopera.ne.jp"
+        apn="0120.mopera.net"
         type="default,supl"
         auth="0"
-    />
+    /> 
+
+
+<apn carrier="SK Telecom"
+      mcc="450"
+      mnc="05"
+      apn="lte.sktelecom.com"
+      server="*"
+      mmsc="vmms.nate.com"
+      mmsport="8082"
+      type="*"
+      authtype="1"
+  />
+  
+  <apn carrier="LG U+"
+      mcc="450"
+      mnc="06"
+      apn="internet.lguplus.co.kr"
+      server="*"
+      mmsc="http://mmsc.ez-i.co.kr"        
+      mmsport="8084"
+      type="*"
+      authtype="1"
+  />
+
+  <apn carrier="KT"
+      mcc="450"
+      mnc="08"
+      apn="lte.ktfwing.com"
+      mmsc="http://mmsc.ktfwing.com:9082"
+      type="default,supl,mms"
+  />
 
   <apn carrier="VN MOBIFONE MMS"
       mcc="452"
@@ -9732,7 +10291,7 @@
       mnc="05"
       apn="mms"
       mmsc="http://10.10.128.58/servlets/mms"
-      mmsproxy="010.010.128.044"
+      mmsproxy="10.10.128.44"
       mmsport="8080"
       type="mms"
   />
@@ -9867,6 +10426,21 @@
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!--  Missed CSL Data of Hong Kong -->
+
+<apn carrier="CSL Data"
+      mcc="454"
+      mnc="18"
+      apn="hkcsl"
+      proxy="192.168.59.51"
+      port="8080"
+      mmsc="http://192.168.58.171:8002"
+      mmsproxy="192.168.59.51"
+      mmsport="8080"
+      type="default,supl,mms"
+  />
+  
   <apn carrier="PCCW 3G"
       mcc="454"
       mnc="19"
@@ -9877,7 +10451,9 @@
       type="default,supl,mms"
   />
 
-  <apn carrier="SmarTone Macau"
+<!-- Samsung edit -->
+<!--  carrier text modified from ""SmarTone Macau" -->
+  <apn carrier="SmarTone"
       mcc="455"
       mnc="00"
       apn="smartgprs"
@@ -9908,7 +10484,9 @@
       type="mms"
   />
 
-  <apn carrier="Hutchison Macau MMS"
+<!-- Samsung edit -->
+<!--  carrier text modified from ""Hutchison Macau MMS" -->
+  <apn carrier="3 Macau MMS"
       mcc="455"
       mnc="03"
       apn="mms.hutchisonmacau.com"
@@ -9918,7 +10496,11 @@
       type="mms"
   />
 
-  <apn carrier="Hutchison Macau"
+
+
+<!-- Samsung edit -->
+<!-- carrier text modified from ""Hutchison Macau" -->
+  <apn carrier="3 Macau"
       mcc="455"
       mnc="03"
       apn="web-g.three.com.hk"
@@ -9953,6 +10535,17 @@
       type="default,supl"
   />
 
+<!-- Samsung edit -->
+<!-- add new carrier -->
+  <apn carrier="中国移动 (China Mobile) WAP"
+      mcc="460"
+      mnc="00"
+      apn="cmwap"
+      proxy="10.0.0.172"
+      port="80"
+      type="default,supl"
+  />
+
   <apn carrier="中国移动彩信 (China Mobile)"
       mcc="460"
       mnc="00"
@@ -9965,17 +10558,53 @@
       type="mms"
   />
 
-  <apn carrier="中国联通 3g 网络 (China Unicom)"
+<!-- Samsung edit -->
+<!-- Change carrier name -->
+  <apn carrier="沃3G连接互联网 (China Unicom)"
       mcc="460"
       mnc="01"
       apn="3gnet"
       type="default,supl"
   />
 
-  <apn carrier="中国联通 3g 彩信 (China Unicom)"
+<!-- Samsung edit -->
+<!-- add new carrier -->
+  <apn carrier="沃3G手机上网 (China Unicom)"
       mcc="460"
       mnc="01"
       apn="3gwap"
+      proxy="10.0.0.172"
+      port="80"
+      type="default,supl"
+  />
+
+<!-- Samsung edit -->
+<!-- add new carrier -->
+  <apn carrier="联通2GNET上网 (China Unicom)"
+      mcc="460"
+      mnc="01"
+      apn="uninet"
+      type="default,supl"
+  />
+
+<!-- Samsung edit -->
+<!-- Change apn values -->
+  <apn carrier="联通彩信 (China Unicom)"
+      mcc="460"
+      mnc="01"
+      apn="3gwap"
+      mmsc="http://mmsc.myuni.com.cn"
+      mmsproxy="10.0.0.172"
+      mmsport="80"
+      type="mms"
+  />
+
+<!-- Samsung edit -->
+<!-- add new carrier -->
+  <apn carrier="联通2g彩信 (China Unicom)"
+      mcc="460"
+      mnc="01"
+      apn="uniwap"
       mmsc="http://mmsc.myuni.com.cn"
       mmsproxy="10.0.0.172"
       mmsport="80"
@@ -9989,6 +10618,17 @@
       type="default,supl"
   />
 
+<!-- Samsung edit -->
+<!-- add new carrier -->
+  <apn carrier="中国移动 (China Mobile) WAP"
+      mcc="460"
+      mnc="02"
+      apn="cmwap"
+      proxy="10.0.0.172"
+      port="80"
+      type="default,supl"
+  />
+  
   <apn carrier="中国移动彩信 (China Mobile)"
       mcc="460"
       mnc="02"
@@ -10005,6 +10645,17 @@
       mcc="460"
       mnc="07"
       apn="cmnet"
+      type="default,supl"
+  />
+
+<!-- Samsung edit -->
+<!-- add new carrier -->
+  <apn carrier="中国移动 (China Mobile) WAP"
+      mcc="460"
+      mnc="07"
+      apn="cmwap"
+      proxy="10.0.0.172"
+      port="80"
       type="default,supl"
   />
 
@@ -10267,20 +10918,24 @@
       type="mms"
   />
 
+  <!-- Samsung edit -->
+  <!-- Change telstra's apn name -->
   <apn carrier="Telstra MMS"
       mcc="505"
       mnc="01"
-      apn="Telstra.mms"
+      apn="telstra.mms"
       mmsc="http://mmsc.telstra.com:8002"
       mmsproxy="10.1.1.180"
       mmsport="80"
       type="mms"
   />
 
+  <!-- Samsung edit -->
+  <!-- Change telstra's apn name -->
   <apn carrier="Telstra Internet"
       mcc="505"
       mnc="01"
-      apn="Telstra.wap"
+      apn="telstra.iph"
       type="default,supl"
   />
 
@@ -10301,39 +10956,56 @@
       type="mms"
   />
 
-  <apn carrier="Optus Internet"
+  <!-- Samsung edit -->
+  <!-- delete dummy apn of Optus Internet-->
+  
+
+  <!-- Samsung edit -->
+  <!-- Change apn of Voda Austrailia (50503)-->
+  <apn carrier="Vodafone live!"  
       mcc="505"
-      mnc="02"
-      apn="yesinternet"
+      mnc="03"
+      apn="live.vodafone.com"
+      proxy="10.202.2.60"
+      port="8080"
       type="default,supl"
   />
 
-  <apn carrier="Vodafone AU"
+  <!-- Samsung edit -->
+  <!-- Change apn of Voda Austrailia (50503)-->
+  <apn carrier="Vodafone PXT"
       mcc="505"
       mnc="03"
       apn="live.vodafone.com"
       mmsc="http://pxt.vodafone.net.au/pxtsend"
       mmsproxy="10.202.2.60"
       mmsport="8080"
-      type="default,supl,mms"
+      type="mms"
   />
 
-  <apn carrier="3Internet"
+  <!-- Samsung edit -->
+  <!-- Change apn of Voda Austrailia (50506)-->
+  <apn carrier="Vodafone live!"  
       mcc="505"
       mnc="06"
-      apn="3netaccess"
+      apn="live.vodafone.com"
+      proxy="10.202.2.60"
+      port="8080"
       type="default,supl"
   />
 
-  <apn carrier="3"
+  <!-- Samsung edit -->
+  <!-- Change apn of Voda Austrailia (50503)-->
+  <apn carrier="Vodafone PXT"
       mcc="505"
       mnc="06"
-      apn="3services"
-      mmsc="http://mmsc.three.net.au:10021/mmsc"
-      mmsproxy="10.176.57.25"
-      mmsport="8799"
-      type="default,supl,mms"
+      apn="live.vodafone.com"
+      mmsc="http://pxt.vodafone.net.au/pxtsend"
+      mmsproxy="10.202.2.60"
+      mmsport="8080"
+      type="mms"
   />
+
 
   <apn carrier="VF AU PXT"
       mcc="505"
@@ -10842,20 +11514,24 @@
       type="default,supl"
   />
 
-  <apn carrier="Telecom Internet"
+  <!-- Samsung edit -->
+  <!-- Change apn of TNZ-->
+  <apn carrier="TelecomDefault"
       mcc="530"
       mnc="05"
-      apn="internet.telecom.co.nz"
+      apn="wap.telecom.co.nz"
       type="default,supl"
   />
 
+  <!-- Samsung edit -->
+  <!-- Change mmsport of TNZ-->
   <apn carrier="Telecom MMS"
       mcc="530"
       mnc="05"
       apn="wap.telecom.co.nz"
       mmsc="http://lsmmsc.xtra.co.nz"
       mmsproxy="210.55.11.73"
-      mmsport="80"
+      mmsport="8080"
       type="mms"
   />
 
@@ -10931,6 +11607,27 @@
       type="mms"
   />
 
+  <!-- Samsung edit -->
+  <!-- Add Tunisia Orange APN -->
+  <apn carrier="weborange"
+      mcc="605"
+      mnc="01"
+      apn="weborange"
+      type="default,supl"
+  />
+
+  <!-- Samsung edit -->
+  <!-- Add Tunisia Orange APN -->
+  <apn carrier="Orange MMS"
+      mcc="605"
+      mnc="01"
+      apn="mms.otun"
+      mmsc="http://mms.orange.tn"
+      mmsproxy="10.12.1.52"
+      mmsport="8080"
+      type="mms"
+  />
+
   <apn carrier="mobinet"
       mcc="605"
       mnc="02"
@@ -10989,7 +11686,7 @@
       user="mms"
       password="mms"
       mmsc="http://172.23.1.12/mms/wapenc"
-      mmsproxy="172.018.254.005"
+      mmsproxy="172.18.254.5"
       mmsport="8080"
       type="mms"
   />
@@ -11127,30 +11824,32 @@
       type="mms"
   />
 
-  <apn carrier="Orange World Réunion"
+<!-- Samsung edit -->
+<!-- The apns for Orange should be changed like below (Confirmed by operator) -->
+  <apn carrier="Orange World re"
       mcc="647"
       mnc="00"
       apn="orangerun"
       user="orange"
       password="orange"
-      proxy="192.168.10.100"
-      port="8080"
       type="default,supl"
   />
 
+<!-- Samsung edit -->
+<!-- The apns for Orange should be changed like below (Confirmed by operator) -->
   <apn carrier="Orange MMS Réunion"
       mcc="647"
       mnc="00"
-      apn="orangerun"
+      apn="orangerun.acte"
       user="orange"
       password="orange"
-      mmsc="http://mms.orange.re/"
+      mmsc="http://mms.orange.re"
       mmsproxy="192.168.10.200"
       mmsport="8080"
       type="mms"
   />
 
-  <apn carrier="SRR MMS"
+  <apn carrier="MMS"
       mcc="647"
       mnc="10"
       apn="mmssfr"
@@ -11162,10 +11861,14 @@
       type="mms"
   />
 
-  <apn carrier="SRR Full Internet"
+  <apn carrier="GPRS SRR"
       mcc="647"
       mnc="10"
-      apn="sl2sfr"
+      apn="wapsfr"
+      user="wap"
+      password="wap"
+      proxy="10.0.224.161"
+      port="8080"
       type="default,supl"
   />
 
@@ -11180,10 +11883,10 @@
       mcc="651"
       mnc="01"
       apn="mms"
-      proxy="10.113.063.011"
+      proxy="10.113.63.11"
       port="8080"
       mmsc="http://mmsc.vodacom4me.co.ls"
-      mmsproxy="10.113.063.011"
+      mmsproxy="10.113.63.11"
       mmsport="8080"
       type="mms"
   />
@@ -11192,7 +11895,7 @@
       mcc="655"
       mnc="01"
       apn="internet"
-      proxy="196.006.128.012"
+      proxy="196.6.128.12"
       port="8080"
       type="default,supl"
   />
@@ -11201,10 +11904,10 @@
       mcc="655"
       mnc="01"
       apn="mms.vodacom.net"
-      proxy="196.006.128.013"
+      proxy="196.6.128.13"
       port="8080"
       mmsc="http://mmsc.vodacom4me.co.za/"
-      mmsproxy="196.006.128.013"
+      mmsproxy="196.6.128.13"
       mmsport="8080"
       type="mms"
   />
@@ -11253,7 +11956,7 @@
       mcc="655"
       mnc="07"
       apn="vdata"
-      proxy="196.031.116.241"
+      proxy="196.31.116.241"
       port="8080"
       type="default,supl"
   />
@@ -11262,10 +11965,10 @@
       mcc="655"
       mnc="07"
       apn="vmms"
-      proxy="196.031.116.242"
+      proxy="196.31.116.242"
       port="8080"
       mmsc="http://mms.virginmobile.co.za"
-      mmsproxy="196.031.116.242"
+      mmsproxy="196.31.116.242"
       mmsport="8080"
       type="mms"
   />
@@ -11294,15 +11997,20 @@
       type="default,supl"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="INTERNET CLARO"
       mcc="704"
       mnc="01"
       apn="internet.ideasclaro"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS CLARO"
       mcc="704"
       mnc="01"
@@ -11312,18 +12020,24 @@
       mmsproxy="216.230.133.66"
       mmsport="8080"
       mmsc="http://mms.ideasclaro.com:8002"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="BROADBAND TIGO"
       mcc="704"
       mnc="02"
       apn="broadband.tigo.gt"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS TIGO"
       mcc="704"
       mnc="02"
@@ -11333,18 +12047,24 @@
       mmsproxy="10.16.17.12"
       mmsport="8888"
       mmsc="http://mms"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Internet GT"
       mcc="704"
       mnc="03"
       apn="internet.movistar.gt"
       user="movistargt"
       password="movistargt"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS2 GPRS"
       mcc="704"
       mnc="03"
@@ -11354,18 +12074,24 @@
       mmsproxy="10.12.22.1"
       mmsport="80"
       mmsc="http://mms.movistar.gt"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Internet GT"
       mcc="704"
       mnc="030"
       apn="internet.movistar.gt"
       user="movistargt"
       password="movistargt"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS2 GPRS"
       mcc="704"
       mnc="030"
@@ -11375,18 +12101,24 @@
       mmsproxy="10.12.22.1"
       mmsport="80"
       mmsc="http://mms.movistar.gt"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="INTERNET CLARO"
       mcc="706"
       mnc="01"
       apn="internet.ideasclaro"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS CLARO"
       mcc="706"
       mnc="01"
@@ -11396,18 +12128,51 @@
       mmsproxy="216.230.133.66"
       mmsport="8080"
       mmsc="http://mms.ideasclaro.com:8002"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!--  Apply new carrier -->
+<apn carrier="El Salvaldor Digicel"
+      mcc="706"
+      mnc="02"
+      apn="web.digicelsv.com"
+      user=""
+      password=""
+      authtype="1"
+      type="default,supl,dun"
+  />
+
+<!-- Samsung edit -->
+<!--  Apply new carrier -->
+  <apn carrier="MMS El Salvador"
+      mcc="706"
+      mnc="02"
+      apn="wap.digicelsv.com"
+      user=""
+      password=""
+      mmsproxy="172.26.5.12"
+      mmsport="8080"
+      mmsc="http://172.26.5.132/servlets/mms"
+      authtype="1"
+      type="mms"
+  />
+
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="BROADBAND TIGO"
       mcc="706"
       mnc="03"
       apn="broadband.tigo.sv"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS TIGO"
       mcc="706"
       mnc="03"
@@ -11417,18 +12182,24 @@
       mmsproxy="10.16.17.12"
       mmsport="8888"
       mmsc="http://mms"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Internet SV"
       mcc="706"
       mnc="04"
       apn="internet.movistar.sv"
       user="movistarsv"
       password="movistarsv"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS2 GPRS"
       mcc="706"
       mnc="04"
@@ -11438,18 +12209,24 @@
       mmsproxy="10.12.20.1"
       mmsport="80"
       mmsc="http://mms.movistar.sv"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Internet SV"
       mcc="706"
       mnc="040"
       apn="internet.movistar.sv"
       user="movistarsv"
       password="movistarsv"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS2 GPRS"
       mcc="706"
       mnc="040"
@@ -11459,18 +12236,24 @@
       mmsproxy="10.12.20.1"
       mmsport="80"
       mmsc="http://mms.movistar.sv"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Internet Claro"
       mcc="708"
       mnc="001"
       apn="web.megatel.hn"
       user="webmegatel"
       password="webmegatel"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS Claro"
       mcc="708"
       mnc="001"
@@ -11480,18 +12263,24 @@
       mmsproxy="10.6.32.2"
       mmsport="8080"
       mmsc="http://10.6.32.27/servlets/mms"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="INTERNET TIGO"
       mcc="708"
       mnc="02"
       apn="internet.tigo.hn"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS TIGO"
       mcc="708"
       mnc="02"
@@ -11501,18 +12290,24 @@
       mmsproxy="10.16.17.12"
       mmsport="8888"
       mmsc="http://mms"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="INTERNET TIGO"
       mcc="708"
       mnc="020"
       apn="internet.tigo.hn"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS TIGO"
       mcc="708"
       mnc="020"
@@ -11522,18 +12317,24 @@
       mmsproxy="10.16.17.12"
       mmsport="8888"
       mmsc="http://mms"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="INTERNET"
       mcc="710"
       mnc="21"
       apn="web.emovil"
       user="webemovil"
       password="webemovil"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS"
       mcc="710"
       mnc="21"
@@ -11543,18 +12344,24 @@
       mmsproxy="10.6.32.2"
       mmsport="8080"
       mmsc="http://10.6.32.27/servlets/mms"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Internet GPRS"
       mcc="710"
       mnc="300"
       apn="internet.movistar.ni"
       user="movistarni"
       password="movistarni"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="movistar MMS"
       mcc="710"
       mnc="300"
@@ -11564,19 +12371,24 @@
       mmsproxy="10.12.23.1"
       mmsport="80"
       mmsc="http://mms.movistar.ni"
+      authtype="1"
       type="mms"
   />
 
-
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="INTERNET"
       mcc="710"
       mnc="730"
       apn="web.emovil"
       user="webemovil"
       password="webemovil"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS"
       mcc="710"
       mnc="730"
@@ -11586,18 +12398,24 @@
       mmsproxy="10.6.32.2"
       mmsport="8080"
       mmsc="http://10.6.32.27/servlets/mms"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Kolbi"
       mcc="712"
       mnc="01"
       apn="kolbi3g"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Multimedia"
       mcc="712"
       mnc="01"
@@ -11607,18 +12425,24 @@
       mmsproxy="10.184.202.24"
       mmsport="8080"
       mmsc="http://mmsice"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Kolbi"
       mcc="712"
       mnc="02"
       apn="kolbi3g"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Multimedia"
       mcc="712"
       mnc="02"
@@ -11628,9 +12452,66 @@
       mmsproxy="10.184.202.24"
       mmsport="8080"
       mmsc="http://mmsice"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Added Claro, Movistar carrier -->
+ <apn carrier="INTERNET CLARO"
+      mcc="712"
+      mnc="03"
+      apn="internet.ideasclaro"
+      user=""
+      password=""
+      authtype="1"
+      type="default,supl,dun"
+  />
+
+<!-- Samsung edit -->
+<!-- Added Claro, Movistar carrier -->
+  <apn carrier="MMS CLARO"
+      mcc="712"
+      mnc="03"
+      apn="mms.ideasclaro"
+      user=""
+      password=""
+      mmsproxy="216.230.133.66"
+      mmsport="8080"
+      mmsc="http://mms.ideasclaro.com:8002"
+      authtype="1"
+      type="mms"
+  />
+  
+<!-- Samsung edit -->
+<!-- Added Claro, Movistar carrier -->
+  <apn carrier="movistar INTERNET"
+      mcc="712"
+      mnc="04"
+      apn="internet.movistar.cr"
+      user="movistarcr"
+      password="movistarcr"
+      authtype="1"
+      type="default,supl,dun"
+  />
+
+<!-- Samsung edit -->
+<!-- Added Claro, Movistar carrier -->
+  <apn carrier="movistar MMS"
+      mcc="712"
+      mnc="04"
+      apn="mms.movistar.cr"
+      user="movistarcr"
+      password="movistarcr"
+      mmsproxy="10.221.79.83"
+      mmsport="80"
+      mmsc="http://mms.movistar.cr"
+      authtype="1"
+      type="mms"
+  />
+
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Wap"
       mcc="714"
       mnc="01"
@@ -11639,9 +12520,12 @@
       port="8080"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Mms"
       mcc="714"
       mnc="01"
@@ -11651,18 +12535,24 @@
       mmsproxy="172.25.3.5"
       mmsport="8080"
       mmsc="http://mms.zonamovil.com.pa"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="movistar INTERNET"
       mcc="714"
       mnc="020"
       apn="internet.movistar.pa"
       user="movistarpa"
       password="movistarpa"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="movistar MMS"
       mcc="714"
       mnc="020"
@@ -11672,18 +12562,24 @@
       mmsproxy="10.12.21.1"
       mmsport="80"
       mmsc="http://mms.movistar.pa"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="WEB Claro"
       mcc="714"
       mnc="03"
       apn="web.claro.com.pa"
       user="CLAROWEB"
       password="CLAROWEB"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS Claro"
       mcc="714"
       mnc="03"
@@ -11693,18 +12589,51 @@
       mmsproxy="10.240.3.129"
       mmsport="8799"
       mmsc="http://www.claro.com.pa/mms/"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Apply new carrier -->
+  <apn carrier="INTERNET Panama"
+      mcc="714"
+      mnc="04"
+      apn="web.digicelpanama.com"
+      user=""
+      password=""
+      authtype="1"
+      type="default,supl,dun"
+  />
+
+<!-- Samsung edit -->
+<!-- Apply new carrier -->
+  <apn carrier="MMS Panama"
+      mcc="714"
+      mnc="04"
+      apn="wap.digicelpanama.com"
+      user=""
+      password=""
+      mmsproxy="172.27.99.99"
+      mmsport="8080"
+      mmsc="http://mmc.digicelpanama.com/servlets/mms"
+      authtype="1"
+      type="mms"
+  />
+
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="movistar Internet"
       mcc="716"
       mnc="06"
       apn="movistar.pe"
       user="movistar@datos"
       password="movistar"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="movistar MMS"
       mcc="716"
       mnc="06"
@@ -11714,18 +12643,24 @@
       mmsproxy="200.4.196.118"
       mmsport="8080"
       mmsc="http://mmsc.telefonicamovistar.com.pe:8088/mms/"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="CLARO DATOS"
       mcc="716"
       mnc="10"
       apn="claro.pe"
       user="claro"
       password="claro"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="CLARO MMS"
       mcc="716"
       mnc="10"
@@ -11735,20 +12670,26 @@
       mmsproxy="192.168.231.30"
       mmsport="80"
       mmsc="http://claro/servlets/mms"
+      authtype="1"
       type="mms"
   />
 
-  <apn carrier="Movistar Emoción"
+<!-- Samsung edit -->
+<!--  Modify Proxy -->  
+ <apn carrier="Movistar Emoción"
       mcc="722"
       mnc="07"
       apn="wap.gprs.unifon.com.ar"
       user="wap"
       password="wap"
-      proxy="213.249.019.049"
+      proxy="200.5.68.10"
       port="8080"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Movistar MMS"
       mcc="722"
       mnc="07"
@@ -11758,60 +12699,79 @@
       mmsproxy="200.68.32.239"
       mmsport="8080"
       mmsc="http://mms.movistar.com.ar"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Claro AR"
       mcc="722"
       mnc="31"
       apn="igprs.claro.com.ar"
       user="ctigprs"
       password="ctigprs999"
+      authtype="1"
       type="default,supl,dun"
   />
 
-  <apn carrier="Claro MMS AR"
+<!-- Samsung edit -->
+<!--  Modify Profile Name -->
+  <apn carrier="MMS GPRS AR"
       mcc="722"
       mnc="31"
       apn="mms.ctimovil.com.ar"
       user="ctimms"
       password="ctimms999"
       mmsproxy="170.51.255.240"
-      mmsport="8080" mmsc="http://mms.ctimovil.com.ar"
+      mmsport="8080"
+      mmsc="http://mms.ctimovil.com.ar"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Claro AR"
       mcc="722"
       mnc="310"
       apn="igprs.claro.com.ar"
       user="ctigprs"
       password="ctigprs999"
+      authtype="1"
       type="default,supl,dun"
   />
 
-
-  <apn carrier="Claro MMS AR"
+<!-- Samsung edit -->
+<!-- change values -->
+  <apn carrier="MMS GPRS AR"
       mcc="722"
       mnc="310"
       apn="mms.ctimovil.com.ar"
       user="ctimms"
       password="ctimms999"
       mmsproxy="170.51.255.240"
-      mmsport="8080" mmsc="http://mms.ctimovil.com.ar"
+      mmsport="8080"
+      mmsc="http://mms.ctimovil.com.ar"
+      authtype="1"
       type="mms"
   />
 
-  <apn carrier="Personal Datos AR"
+<!-- Samsung edit -->
+<!-- change values -->
+  <apn carrier="Personal Datos"
       mcc="722"
       mnc="34"
-      apn="gprs.personal.com"
+      apn="datos.personal.com"
       user="gprs"
       password="adgj"
+      authtype="1"
       type="default,supl,dun"
   />
 
-  <apn carrier="Personal MMS AR"
+<!-- Samsung edit -->
+<!-- change values -->
+  <apn carrier="Personal MMS"
       mcc="722"
       mnc="34"
       apn="mms"
@@ -11820,19 +12780,25 @@
       mmsproxy="172.25.7.31"
       mmsport="8080"
       mmsc="http://mms.personal.com"
+      authtype="1"
       type="mms"
   />
 
-  <apn carrier="Personal Datos AR"
+<!-- Samsung edit -->
+<!-- change values -->
+  <apn carrier="Personal Datos"
       mcc="722"
       mnc="341"
-      apn="gprs.personal.com"
+      apn="datos.personal.com"
       user="gprs"
       password="adgj"
+      authtype="1"
       type="default,supl,dun"
   />
 
-  <apn carrier="Personal MMS AR"
+<!-- Samsung edit -->
+<!-- change values -->
+  <apn carrier="Personal MMS"
       mcc="722"
       mnc="341"
       apn="mms"
@@ -11841,9 +12807,12 @@
       mmsproxy="172.25.7.31"
       mmsport="8080"
       mmsc="http://mms.personal.com"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="TIM Connect"
       mcc="724"
       mnc="02"
@@ -11853,9 +12822,12 @@
       mmsc="http://mms.tim.br"
       mmsproxy="200.179.66.242"
       mmsport="8080"
+      authtype="1"
       type="default,supl,mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="TIM Connect"
       mcc="724"
       mnc="03"
@@ -11865,9 +12837,12 @@
       mmsc="http://mms.tim.br"
       mmsproxy="200.179.66.242"
       mmsport="8080"
+      authtype="1"
       type="default,supl,mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="TIM Connect"
       mcc="724"
       mnc="04"
@@ -11877,18 +12852,24 @@
       mmsc="http://mms.tim.br"
       mmsproxy="200.179.66.242"
       mmsport="8080"
+      authtype="1"
       type="default,supl,mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Java Session"
       mcc="724"
       mnc="05"
       apn="java.claro.com.br"
       user="claro"
       password="claro"
+      authtype="1"
       type="default,supl"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Claro Foto"
       mcc="724"
       mnc="05"
@@ -11898,9 +12879,12 @@
       mmsc="http://mms.claro.com.br"
       mmsproxy="200.169.126.10"
       mmsport="8799"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Vivo MMS"
       mcc="724"
       mnc="06"
@@ -11910,15 +12894,19 @@
       mmsc="http://termnat.vivomms.com.br:8088/mms"
       mmsproxy="200.142.130.104"
       mmsport="80"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Vivo Internet"
       mcc="724"
       mnc="06"
       apn="zap.vivo.com.br"
       user="vivo"
       password="vivo"
+      authtype="1"
       type="default,supl"
   />
 
@@ -11962,9 +12950,12 @@
       mmsc="http://termnat.vivomms.com.br:8088/mms"
       mmsproxy="200.142.130.104"
       mmsport="80"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Vivo MMS"
       mcc="724"
       mnc="11"
@@ -11974,28 +12965,36 @@
       mmsc="http://termnat.vivomms.com.br:8088/mms"
       mmsproxy="200.142.130.104"
       mmsport="80"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Vivo Internet"
       mcc="724"
       mnc="11"
       apn="zap.vivo.com.br"
       user="vivo"
       password="vivo"
+      authtype="1"
       type="default,supl"
   />
 
-
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="BrT Modem"
       mcc="724"
       mnc="16"
       apn="brt.br"
       user="brt"
       password="brt"
+      authtype="1"
       type="default,supl"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="BrT MMS"
       mcc="724"
       mnc="16"
@@ -12005,6 +13004,7 @@
       mmsc="http://mms.brasiltelecom.com.br/"
       mmsproxy="200.96.8.29"
       mmsport="8080"
+      authtype="1"
       type="mms"
   />
 
@@ -12029,16 +13029,20 @@
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Vivo Internet"
       mcc="724"
       mnc="23"
       apn="zap.vivo.com.br"
       user="vivo"
       password="vivo"
+      authtype="1"
       type="default,supl"
   />
 
-
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Vivo MMS"
       mcc="724"
       mnc="23"
@@ -12048,17 +13052,24 @@
       mmsc="http://termnat.vivomms.com.br:8088/mms"
       mmsproxy="200.142.130.104"
       mmsport="80"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="AmazôniaC GPRS"
       mcc="724"
       mnc="24"
       apn="gprs.amazoniacelular.com.br"
-      user="celular" password="celular"
+      user="celular"
+      password="celular"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="AmazôniaC MMS"
       mcc="724"
       mnc="24"
@@ -12068,16 +13079,22 @@
       mmsc="http://mms.amazoniacelular.com.br"
       mmsproxy="200.192.230.142"
       mmsport="8080"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="OI GPRS"
       mcc="724"
       mnc="31"
       apn="gprs.oi.com.br"
+      authtype="1"
       type="default,supl"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="OI MMS"
       mcc="724"
       mnc="31"
@@ -12087,19 +13104,25 @@
       mmsc="http://200.222.42.201:8002"
       mmsproxy="192.168.10.50"
       mmsport="3128"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Internet Movil"
       mcc="730"
       mnc="01"
       apn="bam.entelpcs.cl"
       user="entelpcs"
       password="entelpcs"
+      authtype="1"
       type="default,supl,dun"
   />
 
-  <apn carrier="MMS Entel PCS"
+<!-- Samsung edit -->
+<!-- Modify Profile Name and Auth Type -->
+  <apn carrier="MMS Entel"
       mcc="730"
       mnc="01"
       apn="mms.entelpcs.cl"
@@ -12108,30 +13131,39 @@
       mmsproxy="10.99.0.10"
       mmsport="8080"
       mmsc="http://mmsc.entelpcs.cl"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Internet Movil"
       mcc="730"
-      mnc="010"
+      mnc="10"
       apn="bam.entelpcs.cl"
       user="entelpcs"
       password="entelpcs"
+      authtype="1"
       type="default,supl,dun"
   />
 
-  <apn carrier="MMS Entel PCS"
+<!-- Samsung edit -->
+<!-- Modify Profile Name and Auth Type -->
+  <apn carrier="MMS Entel"
       mcc="730"
-      mnc="010"
+      mnc="10"
       apn="mms.entelpcs.cl"
       user="entelpcs"
       password="entelpcs"
       mmsproxy="10.99.0.10"
       mmsport="8080"
       mmsc="http://mmsc.entelpcs.cl"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="NEM"
       mcc="730"
       mnc="02"
@@ -12140,9 +13172,12 @@
       port="8080"
       user="wap"
       password="wap"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS"
       mcc="730"
       mnc="02"
@@ -12152,18 +13187,24 @@
       mmsproxy="172.17.8.10"
       mmsport="8080"
       mmsc="http://mms.movistar.cl"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="BAM Claro"
       mcc="730"
       mnc="03"
       apn="bam.clarochile.cl"
       user="clarochile"
       password="clarochile"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS Claro"
       mcc="730"
       mnc="03"
@@ -12173,39 +13214,92 @@
       mmsproxy="172.23.200.200"
       mmsport="8080"
       mmsc="http://mms.clarochile.cl"
+      authtype="1"
       type="mms"
   />
-  
+
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="web"
       mcc="730"
       mnc="07"
       apn="web.gtdmovil.cl"
       user="webgtd"
       password="webgtd"
+      authtype="1"
       type="default,supl,dun"
   />
 
-  <apn carrier="mms"
+<!-- Samsung edit -->
+<!-- Remove apn "mms" -->
+
+<!-- Samsung edit -->
+<!-- add new carrier -->
+  <apn carrier="Internet"
       mcc="730"
-      mnc="07"
-      apn="mms.gtdmovil.cl"
-      user="mmsgtd"
-      password="mmsgtd"
-      mmsproxy="172.17.8.20"
-      mmsport="8080"
-      mmsc="http://mmsc.gtdmovil.cl"
+      mnc="08"
+      apn="movil.vtr.com"
+      user="vtrmovil"
+      password="vtrmovil"
+      authtype="2"
+      type="default,supl,dun"
+  />
+
+<!-- Samsung edit -->
+<!-- add new carrier -->
+  <apn carrier="Wap"
+      mcc="730"
+      mnc="08"
+      apn="wap.vtr.com"
+      proxy="192.168.94.210"
+      port="9028"
+      user=""
+      password=""
+      authtype="0"
+      type="default,supl,dun"
+  />
+
+<!-- Samsung edit -->
+<!-- add new carrier -->
+  <apn carrier="Bam"
+      mcc="730"
+      mnc="08"
+      apn="bam.vtr.com"
+      user="vtr"
+      password="vtr"
+      authtype="2"
+      type="default,supl,dun"
+  />
+
+<!-- Samsung edit -->
+<!-- add new carrier -->
+  <apn carrier="MMS"
+      mcc="730"
+      mnc="08"
+      apn="mms.vtr.com"
+      user="mms"
+      password=""
+      mmsc="http://192.168.94.162:19090/was"
+      mmsproxy="192.168.94.210"
+      mmsport="9028"
+      authtype="0"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Internet Movil"
       mcc="730"
       mnc="10"
       apn="bam.entelpcs.cl"
       user="entelpcs"
       password="entelpcs"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS Entel PCS"
       mcc="730"
       mnc="10"
@@ -12215,18 +13309,24 @@
       mmsc="http://mmsc.entelpcs.cl"
       mmsproxy="10.99.0.10"
       mmsport="8080"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="WEB Comcel 3GSM"
       mcc="732"
       mnc="101"
       apn="internet.comcel.com.co"
       user="COMCELWEB"
       password="COMCELWEB"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS Comcel 3GSM"
       mcc="732"
       mnc="101"
@@ -12236,18 +13336,24 @@
       mmsproxy="198.228.90.225"
       mmsport="8799"
       mmsc="http://www.comcel.com.co/mms/"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="TIGO WEB"
       mcc="732"
       mnc="103"
       apn="web.colombiamovil.com.co"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="TIGO Multimedia"
       mcc="732"
       mnc="103"
@@ -12257,18 +13363,24 @@
       mmsproxy="190.102.206.48"
       mmsport="8080"
       mmsc="http://mms.ola.com.co"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="TIGO WEB"
       mcc="732"
       mnc="111"
       apn="web.colombiamovil.com.co"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="TIGO Multimedia"
       mcc="732"
       mnc="111"
@@ -12278,18 +13390,24 @@
       mmsproxy="190.102.206.48"
       mmsport="8080"
       mmsc="http://mms.ola.com.co"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="movistar INTERNET"
       mcc="732"
       mnc="123"
       apn="internet.movistar.com.co"
       user="movistar"
       password="movistar"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="movistar MMS"
       mcc="732"
       mnc="123"
@@ -12299,16 +13417,22 @@
       mmsproxy="192.168.222.7"
       mmsport="9001"
       mmsc="http://mms.movistar.com.co"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Digitel GSM"
       mcc="734"
       mnc="01"
       apn="gprsweb.digitel.ve"
       type="default,supl,dun"
+      authtype="1"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS"
       mcc="734"
       mnc="01"
@@ -12316,16 +13440,22 @@
       mmsproxy="10.99.0.10"
       mmsport="8080"
       mmsc="http://mms.412.com.ve/servlets/mms"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Digitel GSM"
       mcc="734"
       mnc="02"
       apn="gprsweb.digitel.ve"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS"
       mcc="734"
       mnc="02"
@@ -12333,16 +13463,22 @@
       mmsproxy="10.99.0.10"
       mmsport="8080"
       mmsc="http://mms.412.com.ve/servlets/mms"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Digitel GSM"
       mcc="734"
       mnc="03"
       apn="gprsweb.digitel.ve"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS"
       mcc="734"
       mnc="03"
@@ -12350,16 +13486,22 @@
       mmsproxy="10.99.0.10"
       mmsport="8080"
       mmsc="http://mms.412.com.ve/servlets/mms"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="movistar INTERNET"
       mcc="734"
       mnc="04"
       apn="internet.movistar.ve"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- add new carrier -->
   <apn carrier="movistar MMS"
       mcc="734"
       mnc="04"
@@ -12367,16 +13509,34 @@
       mmsproxy="200.35.64.73"
       mmsport="9001"
       mmsc="http://mms.movistar.com.ve:8088/mms"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
+  <apn carrier="movistar WAP"
+      mcc="734"
+      mnc="04"
+      apn="wap.movistar.ve"
+      mmsproxy="200.35.64.73"
+      mmsport="9001"
+      authtype="1"
+      type="default,supl,dun"
+  />
+
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MODEM"
       mcc="734"
       mnc="06"
       apn="int.movilnet.com.ve"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS"
       mcc="734"
       mnc="06"
@@ -12384,18 +13544,111 @@
       mmsproxy="192.168.16.12"
       mmsport="8080"
       mmsc="http://mms2.movilnet.com.ve/servlets/mms"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- add new carrier -->
+  <apn carrier="VIVA3G"
+      mcc="736"
+      mnc="01"
+      apn="internet.nuevatel.com"
+      user=""
+      password=""
+      proxy="192.168.101.004"
+      port="3128"
+      authtype="1"
+      type="default,supl,dun"
+  />
+
+<!-- Samsung edit -->
+<!-- add new carrier -->
+  <apn carrier="VIVAMMS"
+      mcc="736"
+      mnc="01"
+      apn="mms.nuevatel.com"
+      user=""
+      password=""
+      mmsproxy="192.168.101.004"
+      mmsport="3128"
+      mmsc="http://mmsgw.nuevatel.com:1981"
+      authtype="1"
+      type="mms"
+  />
+
+<!-- Samsung edit -->
+<!-- add new carrier -->
+  <apn carrier="ENTEL WAP GPRS"
+      mcc="736"
+      mnc="02"
+      apn="wap.movil.com.bo"
+      user=""
+      password=""
+      proxy="172.27.7.10"
+      port="8080"
+      authtype="1"
+      type="default,supl,dun"
+  />
+
+<!-- Samsung edit -->
+<!-- add new carrier -->
+  <apn carrier="ENTEL MMS GPRS"
+      mcc="736"
+      mnc="02"
+      apn="mms.movil.com.bo"
+      user=""
+      password=""
+      mmsproxy="172.27.7.10"
+      mmsport="8080"
+      mmsc="http://mms.movil.com.bo/servlets/mms"
+      authtype="1"
+      type="mms"
+  />
+
+<!-- Samsung edit -->
+<!-- add new carrier -->  
+   <apn carrier="WAPTIGO"
+      mcc="736"
+      mnc="03"
+      apn="wap.tigo.bo"
+      user=""
+      password=""
+      proxy="172.25.100.8"
+      port="8080"
+      authtype="1"
+      type="default,supl,dun"
+  />
+
+<!-- Samsung edit -->
+<!-- add new carrier -->
+  <apn carrier="MMSTIGO"
+      mcc="736"
+      mnc="03"
+      apn="mms.tigo.bo"
+      user=""
+      password=""
+      mmsproxy="172.25.100.8"
+      mmsport="8080"
+      mmsc="http://mms"
+      authtype="1"
+      type="mms"
+  />
+
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="movistar INTERNET"
       mcc="740"
       mnc="00"
       apn="internet.movistar.com.ec"
       user="movistar"
       password="movistar"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="movistar MMS"
       mcc="740"
       mnc="00"
@@ -12405,19 +13658,25 @@
       mmsproxy="10.3.5.50"
       mmsport="9001"
       mmsc="http://mms.movistar.com.ec:8088/mms/"
+      authtype="1"
       type="mms"
   />
 
-  <apn carrier="PORTA INTERNET"
+<!-- Samsung edit -->
+<!-- change value -->
+  <apn carrier="Claro Internet"
       mcc="740"
       mnc="01"
       apn="internet.porta.com.ec"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
-  <apn carrier="MMS PORTA"
+<!-- Samsung edit -->
+<!-- change value -->
+  <apn carrier="MMS Claro"
       mcc="740"
       mnc="01"
       apn="mms.porta.com.ec"
@@ -12426,19 +13685,25 @@
       mmsproxy="216.250.208.94"
       mmsport="8799"
       mmsc="http://iesmms.porta.com.ec"
+      authtype="1"
       type="mms"
   />
 
-  <apn carrier="PORTA INTERNET"
+<!-- Samsung edit -->
+<!-- change value -->
+  <apn carrier="Claro Internet"
       mcc="740"
       mnc="010"
       apn="internet.porta.com.ec"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
-  <apn carrier="MMS PORTA"
+<!-- Samsung edit -->
+<!-- change value -->
+  <apn carrier="MMS Claro"
       mcc="740"
       mnc="010"
       apn="mms.porta.com.ec"
@@ -12447,18 +13712,24 @@
       mmsproxy="216.250.208.94"
       mmsport="8799"
       mmsc="http://iesmms.porta.com.ec"
+      authtype="1"
       type="mms"
   />
 
-  <apn carrier="Internet Alegro"
+<!-- Samsung edit -->
+<!-- change value -->
+  <apn carrier="ALEGRO 3G"
       mcc="740"
       mnc="02"
-      apn="internet.alegro.net.ec"
+      apn="internet3gsp.alegro.net.ec"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS Alegro"
       mcc="740"
       mnc="02"
@@ -12468,16 +13739,22 @@
       mmsproxy="10.4.85.3"
       mmsport="8080"
       mmsc="http://mms.alegro.net.ec/mms/"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="VOX INTERNET"
       mcc="744"
       mnc="01"
       apn="vox.internet"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="VOX MMS"
       mcc="744"
       mnc="01"
@@ -12487,18 +13764,24 @@
       mmsproxy="172.24.97.29"
       mmsport="8080"
       mmsc="http://mms.vox.com.py/mmsc"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Claro PY"
       mcc="744"
       mnc="02"
       apn="igprs.claro.com.py"
       user="ctigprs"
       password="ctigprs999"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS GPRS PY"
       mcc="744"
       mnc="02"
@@ -12508,16 +13791,22 @@
       mmsproxy="170.51.255.240"
       mmsport="8080"
       mmsc="http://mms.ctimovil.com.py"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="TIGO PY"
       mcc="744"
       mnc="04"
       apn="internet.tigo.py"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS Tigo"
       mcc="744"
       mnc="04"
@@ -12527,18 +13816,24 @@
       mmsproxy="10.16.17.12"
       mmsport="8888"
       mmsc="http://mms"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Personal Datos Py"
       mcc="744"
       mnc="05"
       apn="internet"
       user="personal"
       password="personal"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Personal MMS Py"
       mcc="744"
       mnc="05"
@@ -12548,9 +13843,12 @@
       mmsproxy="172.16.192.7"
       mmsport="8080"
       mmsc="http://mms"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="wapANCEL"
       mcc="748"
       mnc="01"
@@ -12559,9 +13857,12 @@
       port="3128"
       user=""
       password=""
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="mmsANCEL"
       mcc="748"
       mnc="01"
@@ -12571,18 +13872,34 @@
       mmsproxy="200.40.246.2"
       mmsport="3128"
       mmsc="http://mmsc.mms.ancelutil.com.uy"
+      authtype="1"
       type="mms"
   />
 
-  <apn carrier="Movistar Internet"
+<!-- Samsung edit -->
+<!-- add apn value -->
+  <apn carrier="gprsANCEL"
+      mcc="748"
+      mnc="01"
+      apn="gprs.ancel"
+      authtype="1"
+      type="default,supl,dun"
+  />
+
+<!-- Samsung edit -->
+<!-- change value -->
+  <apn carrier="Movistar Emoción"
       mcc="748"
       mnc="07"
       apn="webapn.movistar.com.uy"
       user="movistar"
       password="movistar"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="FOTOS MMS"
       mcc="748"
       mnc="07"
@@ -12592,18 +13909,24 @@
       mmsproxy="10.0.2.29"
       mmsport="8080"
       mmsc="http://mmsc.movistar.com.uy"
+      authtype="1"
       type="mms"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="Claro UY"
       mcc="748"
       mnc="10"
       apn="igprs.claro.com.uy"
       user="ctigprs"
       password="ctigprs999"
+      authtype="1"
       type="default,supl,dun"
   />
 
+<!-- Samsung edit -->
+<!-- Add the PAP auth type  -->
   <apn carrier="MMS GPRS UY"
       mcc="748"
       mnc="10"
@@ -12613,20 +13936,8 @@
       mmsproxy="170.51.255.240"
       mmsport="8080"
       mmsc="http://mms.ctimovil.com.uy"
+      authtype="1"
       type="mms"
   />
 
-   <apn carrier="Sprint"
-        mcc="310"
-        mnc="120"
-        apn="Sprint"
-        user="Sprint"
-        server="*"
-        password="*"
-        mmsc="http://mms.sprintpcs.com"
-        mmsproxy = "68.28.31.7"
-        mmsport = "80"
-        authtype="3"
-        type="*"
-   /> 	
 </apns>
