@@ -83,7 +83,7 @@ BOARD_HAVE_NFC := true
 BOARD_KEEP_PARCEL_GB_COMPATIBLE := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := SGH-I727
+TARGET_OTA_ASSERT_DEVICE := hercules
 
 # LibRIL
 TARGET_PROVIDES_LIBRIL := vendor/samsung/skyrocket/proprietary/libril.so
