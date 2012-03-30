@@ -16,7 +16,6 @@
 
 # Prebuilt libraries that are needed to build open-source libraries
 #PRODUCT_COPY_FILES += \
-    #vendor/samsung/skyrocket/proprietary/lib/libaudioalsa.so:obj/lib/libaudioalsa.so \
 
 # All the blobs necessary for skyrocket
 PRODUCT_COPY_FILES += \
@@ -37,16 +36,6 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/etc/init.qcom.modem_links.sh:/system/etc/init.qcom.modem_links.sh \
     vendor/samsung/skyrocket/proprietary/etc/gps.conf:/system/etc/gps.conf \
     vendor/samsung/skyrocket/proprietary/etc/audio_effects.conf:/system/etc/audio_effects.conf \
-    vendor/samsung/skyrocket/proprietary/etc/audio/LVVEFS_Rx_Configuration.txt:/system/etc/audio/LVVEFS_Rx_Configuration.txt \
-    vendor/samsung/skyrocket/proprietary/etc/audio/LVVEFS_Tx_Configuration.txt:/system/etc/audio/LVVEFS_Tx_Configuration.txt \
-    vendor/samsung/skyrocket/proprietary/etc/audio/Rx_ControlParams_EARPIECE_WIDEBAND.txt:/system/etc/audio/Rx_ControlParams_EARPIECE_WIDEBAND.txt \
-    vendor/samsung/skyrocket/proprietary/etc/audio/Rx_ControlParams_SPEAKER_WIDEBAND.txt:/system/etc/audio/Rx_ControlParams_SPEAKER_WIDEBAND.txt \
-    vendor/samsung/skyrocket/proprietary/etc/audio/Rx_ControlParams_WIRED_HEADPHONE_WIDEBAND.txt:/system/etc/audio/Rx_ControlParams_WIRED_HEADPHONE_WIDEBAND.txt \
-    vendor/samsung/skyrocket/proprietary/etc/audio/Rx_ControlParams_WIRED_HEADSET_WIDEBAND.txt:/system/etc/audio/Rx_ControlParams_WIRED_HEADSET_WIDEBAND.txt \
-    vendor/samsung/skyrocket/proprietary/etc/audio/Tx_ControlParams_EARPIECE_WIDEBAND.txt:/system/etc/audio/Tx_ControlParams_EARPIECE_WIDEBAND.txt \
-    vendor/samsung/skyrocket/proprietary/etc/audio/Tx_ControlParams_SPEAKER_WIDEBAND.txt:/system/etc/audio/Tx_ControlParams_SPEAKER_WIDEBAND.txt \
-    vendor/samsung/skyrocket/proprietary/etc/audio/Tx_ControlParams_WIRED_HEADPHONE_WIDEBAND.txt:/system/etc/audio/Tx_ControlParams_WIRED_HEADPHONE_WIDEBAND.txt \
-    vendor/samsung/skyrocket/proprietary/etc/audio/Tx_ControlParams_WIRED_HEADSET_WIDEBAND.txt:/system/etc/audio/Tx_ControlParams_WIRED_HEADSET_WIDEBAND.txt \
     vendor/samsung/skyrocket/proprietary/etc/wifi/bcm4330_aps.bin:/system/etc/wifi/bcm4330_aps.bin \
     vendor/samsung/skyrocket/proprietary/etc/wifi/bcm4330_mfg.bin:/system/etc/wifi/bcm4330_mfg.bin \
     vendor/samsung/skyrocket/proprietary/etc/wifi/bcm4330_sta.bin:/system/etc/wifi/bcm4330_sta.bin \
@@ -97,6 +86,22 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/lib/libC2D2.so:/system/lib/libC2D2.so \
     vendor/samsung/skyrocket/proprietary/lib/libOpenVG.so:/system/lib/libOpenVG.so \
     vendor/samsung/skyrocket/proprietary/lib/libsc-a2xx.so:/system/lib/libsc-a2xx.so \
+
+# Audio
+PRODUCT_COPY_FILES += \
+    vendor/samsung/skyrocket/proprietary/lib/libaudioalsa.so:/system/lib/libaudioalsa.so \
+    vendor/samsung/skyrocket/proprietary/lib/libaudioparsers.so:/system/lib/libaudioparsers.so \
+    vendor/samsung/skyrocket/proprietary/lib/libacdbloader.so:/system/lib/libacdbloader.so \
+    vendor/samsung/skyrocket/proprietary/lib/libacdbmapper.so:/system/lib/libacdbmapper.so \
+    vendor/samsung/skyrocket/proprietary/lib/libaudcal.so:/system/lib/libaudcal.so \
+    vendor/samsung/skyrocket/proprietary/lib/libsamsungSoundboosterLPA.so:/system/lib/libsamsungSoundboosterLPA.so \
+    vendor/samsung/skyrocket/proprietary/lib/lib_Samsung_SB_AM_Handset_LPA.so:/system/lib/lib_Samsung_SB_AM_Handset_LPA.so \
+    vendor/samsung/skyrocket/proprietary/lib/libmvsechocanceler.so:/system/lib/libmvsechocanceler.so \
+    vendor/samsung/skyrocket/proprietary/lib/lib_Samsung_Resampler.so:/system/lib/lib_Samsung_Resampler.so \
+
+# Media
+PRODUCT_COPY_FILES += \
+    vendor/samsung/skyrocket/proprietary/etc/media_profiles.xml:/system/etc/media_profiles.xml \
 
 # Firmware
 PRODUCT_COPY_FILES += \
