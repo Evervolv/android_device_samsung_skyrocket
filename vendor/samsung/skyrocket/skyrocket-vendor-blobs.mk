@@ -32,6 +32,7 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/bin/qmuxd:/system/bin/qmuxd \
     vendor/samsung/skyrocket/proprietary/bin/rmt_storage:/system/bin/rmt_storage \
     vendor/samsung/skyrocket/proprietary/bin/sdcard:/system/bin/sdcard \
+    vendor/samsung/skyrocket/proprietary/bin/playsound:/system/bin/playsound \
     vendor/samsung/skyrocket/proprietary/bin/thermald:/system/bin/thermald \
     vendor/samsung/skyrocket/proprietary/etc/init.qcom.modem_links.sh:/system/etc/init.qcom.modem_links.sh \
     vendor/samsung/skyrocket/proprietary/etc/gps.conf:/system/etc/gps.conf \
