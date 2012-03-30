@@ -85,6 +85,9 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/lib/hw/gralloc.msm8660.so:/system/lib/hw/gralloc.msm8660.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/hwcomposer.msm8660.so:/system/lib/hw/hwcomposer.msm8660.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/nfc.qcom.so:/system/lib/hw/nfc.qcom.so \
+
+# Graphics
+PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/lib/egl/eglsubAndroid.so:/system/lib/egl/eglsubAndroid.so \
     vendor/samsung/skyrocket/proprietary/lib/egl/libEGL_adreno200.so:/system/lib/egl/libEGL_adreno200.so \
     vendor/samsung/skyrocket/proprietary/lib/egl/libGLES_android.so:/system/lib/egl/libGLES_android.so \
@@ -93,6 +96,9 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/lib/egl/libGLESv2_adreno200.so:/system/lib/egl/libGLESv2_adreno200.so \
     vendor/samsung/skyrocket/proprietary/lib/egl/libGLESv2S3D_adreno200.so:/system/lib/egl/libGLESv2S3D_adreno200.so \
     vendor/samsung/skyrocket/proprietary/lib/egl/libq3dtools_adreno200.so:/system/lib/egl/libq3dtools_adreno200.so \
+    vendor/samsung/skyrocket/proprietary/lib/libC2D2.so:/system/lib/libC2D2.so \
+    vendor/samsung/skyrocket/proprietary/lib/libOpenVG.so:/system/lib/libOpenVG.so \
+    vendor/samsung/skyrocket/proprietary/lib/libsc-a2xx.so:/system/lib/libsc-a2xx.so \
 
 # Vold
 PRODUCT_COPY_FILES += \
