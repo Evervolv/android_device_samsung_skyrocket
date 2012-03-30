@@ -7,6 +7,7 @@
 /dev/urandom              0666   root       root
 /dev/ashmem               0666   root       root
 /dev/binder               0666   root       root
+/dev/rtc0                 0600   system     system
 
 # logger should be world writable (for logging) but not readable
 /dev/log/*                0662   root       log
@@ -16,6 +17,9 @@
 
 # the DIAG device node is world writable/readable.
 /dev/diag                 0666   root       root
+
+# the genlock client device node is world writable/readable.
+/dev/genlock              0666   root      root
 
 # gpu driver for adreno200 is globally accessible
 /dev/kgsl                 0666   root       root
@@ -29,11 +33,12 @@
 /dev/android_adb_enable   0660   adb        adb
 /dev/ttyMSM0              0600   bluetooth  bluetooth
 /dev/ttyHS0               0600   bluetooth  bluetooth
+/dev/ttyGS0               0660   system     system
 /dev/uinput               0660   system     bluetooth
 /dev/alarm                0664   system     radio
 /dev/tty0                 0660   root       system
 /dev/sdio_tty_ciq_00      0660   system     system
-/dev/graphics/*           0660   root       graphics
+/dev/graphics/*           0660   system     graphics
 /dev/msm_hw3dm            0660   system     graphics
 /dev/msm_rotator          0660   system     graphics
 /dev/input/*              0660   root       input
@@ -44,11 +49,11 @@
 /dev/pmem_adsp*           0660   system     audio
 /dev/pmem_smipool*        0660   system     camera
 /dev/pmem_camera*         0660   system     camera
-/dev/oncrpc/*             0660   root       system 
+/dev/oncrpc/*             0660   root       system
 /dev/adsp/*               0660   system     audio
 /dev/snd/*                0660   system     audio
 /dev/mt9t013              0660   system     system
-/dev/msm_camera/*         0660   system     system
+/dev/msm_camera/*         0660   system     camera
 /dev/akm8976_daemon       0640   compass    system
 /dev/akm8976_aot          0640   compass    system
 /dev/akm8973_daemon       0640   compass    system
@@ -58,10 +63,13 @@
 /dev/akm8976_pffd         0640   compass    system
 /dev/lightsensor          0640   system     system
 /dev/radio0               0644   fm_radio   fm_radio
+/dev/i2c-0                0664   root       system
+/dev/i2c-1                0664   root       system
 /dev/i2c-2                0664   root       system
 /dev/i2c-4                0664   root       system
 /dev/msm_pcm_out*         0660   system     audio
 /dev/msm_pcm_in*          0660   system     audio
+/dev/msm_mvs              0660   system     audio
 /dev/msm_voicememo        0660   system     audio
 /dev/msm_pcm_ctl*         0660   system     audio
 /dev/msm_snd*             0660   system     audio
@@ -79,6 +87,9 @@
 /dev/snd/dsp1             0660   system     audio
 /dev/snd/mixer            0660   system     audio
 /dev/msm_pcm_lp_dec       0660   system     audio
+/dev/smd4                 0660   system     system
+/dev/smd3                 0660   bluetooth      bluetooth
+/dev/smd2                 0660   bluetooth      bluetooth
 /dev/smd0                 0640   radio      radio
 /dev/smd7                 0640   radio      radio
 /dev/smdcntl0             0640   radio      radio
@@ -99,14 +110,19 @@
 /dev/sdioctl6             0640   radio      radio
 /dev/sdioctl7             0640   radio      radio
 /dev/sdioctl8             0640   radio      radio
-/dev/rmnet_ctrl           0640   radio      radio
+/dev/rmnet_mux_ctrl       0640   radio      radio
+/dev/hsicctl0             0640   radio      radio
+/dev/hsicctl1             0640   radio      radio
+/dev/hsicctl2             0640   radio      radio
+/dev/hsicctl3             0640   radio      radio
 /dev/qemu_trace           0666   system     system
 /dev/qmi                  0640   radio      radio
 /dev/qmi0                 0640   radio      radio
 /dev/qmi1                 0640   radio      radio
 /dev/qmi2                 0640   radio      radio
 /dev/bus/usb/*            0660   root       usb
-/dev/gemini0              0660   system     system
+/dev/mtp_usb              0660   root       mtp
+/dev/gemini0              0660   system     camera
 /dev/mdm                  0660   system     system
 /dev/ttyHSL1              0660   system     system
 /dev/tty_sdio_00          0660   system     system
@@ -115,13 +131,15 @@
 /dev/block/mmcblk0p19     0660   system     system
 /dev/block/mmcblk0p20     0660   system     system
 /dev/usb_accessory        0660   root       usb
-/dev/tspdrv		  0660	 system    system
-/dev/lcdtest		  0660	 system     graphics
+/dev/tspdrv		  0660	 shell	    shell
+/dev/video*	          0660   system     camera 
+/dev/tun                  0660   system     vpn
+#regular apps need to be able to open ion
+/dev/ion                  0664   system     system
 
 # CDMA radio interface MUX
 /dev/ts0710mux*           0640   radio      radio
 /dev/ppp                  0660   radio      vpn
-/dev/tun                  0660   vpn        vpn
 
 # sysfs properties
 /sys/devices/virtual/input/input*   enable      0660  root   input
@@ -129,11 +147,13 @@
 #permissions for video
 /dev/msm_vidc_reg         0660  system       audio
 /dev/msm_vidc_dec         0660  system       audio
+/dev/msm_vidc_dec_sec     0660  system       audio
 /dev/msm_vidc_enc         0660  system       audio
 #permissions for audio
 /dev/msm_amrnb            0660  system       audio
 /dev/msm_amrwb            0660  system       audio
 /dev/msm_aac              0660  system       audio
+/dev/msm_multi_aac        0660  system       audio
 /dev/msm_aac_in           0660  system       audio
 /dev/msm_qcelp            0660  system       audio
 /dev/msm_evrc             0660  system       audio
@@ -147,5 +167,10 @@
 /dev/msm_preproc_ctl      0660  system       audio
 /dev/msm_a2dp_in          0640  system       audio
 /dev/msm_amrnb_in         0640  system       audio
-/dev/msm_mvs              0660  system       audio
 /sys/devices/virtual/usb_composite/*   enable      0664  root   system
+/sys/devices/virtual/smdpkt/smdcntl*       open_timeout   0664 radio radio
+#permissions for sensors
+/dev/msm_dsps             0660  system       system
+# for usb printer
+/dev/bus/usb/*         0660        system        usb
+/dev/usb/lp*           0660        system        usb
