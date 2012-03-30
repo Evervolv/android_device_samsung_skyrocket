@@ -29,7 +29,6 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/bin/rmt_storage:/system/bin/rmt_storage \
     vendor/samsung/skyrocket/proprietary/bin/sdcard:/system/bin/sdcard \
     vendor/samsung/skyrocket/proprietary/bin/sec-ril:/system/bin/sec-ril \
-    vendor/samsung/skyrocket/proprietary/bin/vold:/system/bin/vold \
     vendor/samsung/skyrocket/proprietary/etc/init.qcom.modem_links.sh:/system/etc/init.qcom.modem_links.sh \
     vendor/samsung/skyrocket/proprietary/etc/audio_effects.conf:/system/etc/audio_effects.conf \
     vendor/samsung/skyrocket/proprietary/etc/audio/LVVEFS_Rx_Configuration.txt:/system/etc/audio/LVVEFS_Rx_Configuration.txt \
@@ -94,6 +93,24 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/lib/egl/libGLESv2_adreno200.so:/system/lib/egl/libGLESv2_adreno200.so \
     vendor/samsung/skyrocket/proprietary/lib/egl/libGLESv2S3D_adreno200.so:/system/lib/egl/libGLESv2S3D_adreno200.so \
     vendor/samsung/skyrocket/proprietary/lib/egl/libq3dtools_adreno200.so:/system/lib/egl/libq3dtools_adreno200.so \
+
+# Vold
+PRODUCT_COPY_FILES += \
+    vendor/samsung/skyrocket/proprietary/bin/vold:/system/bin/vold \
+    vendor/samsung/skyrocket/proprietary/lib/libsec_devenc.so:/system/lib/libsec_devenc.so \
+    vendor/samsung/skyrocket/proprietary/lib/libsec_km.so:/system/lib/libsec_km.so \
+    vendor/samsung/skyrocket/proprietary/lib/libsecfips.so:/system/lib/libsecfips.so \
+    vendor/samsung/skyrocket/proprietary/lib/libdirencryption.so:/system/lib/libdirencryption.so \
+    vendor/samsung/skyrocket/proprietary/lib/libsec_ecryptfs.so:/system/lib/libsec_ecryptfs.so \
+    vendor/samsung/skyrocket/proprietary/lib/libkeyutils.so:/system/lib/libkeyutils.so \
+
+# CND - Related to radio
+PRODUCT_COPY_FILES += \
+    vendor/samsung/skyrocket/proprietary/bin/cnd:/system/bin/cnd \
+    vendor/samsung/skyrocket/proprietary/lib/libcneutils.so:/system/lib/libcneutils.so \
+    vendor/samsung/skyrocket/proprietary/lib/libcneqmiutils.so:/system/lib/libcneqmiutils.so \
+    vendor/samsung/skyrocket/proprietary/lib/libxml.so:/system/lib/libxml.so \
+    vendor/samsung/skyrocket/proprietary/lib/libnetutils.so:/system/lib/libnetutils.so \
 
 # Camera
 PRODUCT_COPY_FILES += \
