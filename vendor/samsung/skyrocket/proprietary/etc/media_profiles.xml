@@ -183,6 +183,7 @@
              channels="2" />
     </EncoderProfile>
 
+  <!-- Back Camera
     <EncoderProfile quality="wvga" fileFormat="3gp" duration="30">
       <Video codec="h264"
              bitRate="2000000"
@@ -221,7 +222,7 @@
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
-
+ -->
     <EncoderProfile quality="timelapselow" fileFormat="3gp" duration="30">
       <Video codec="h264"
              bitRate="192000"
@@ -414,6 +415,7 @@
              channels="2" />
     </EncoderProfile>
 
+  <!-- Back Camera
     <EncoderProfile quality="wvga" fileFormat="3gp" duration="30">
       <Video codec="h264"
              bitRate="2000000"
@@ -452,7 +454,7 @@
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
-
+ -->
     <EncoderProfile quality="timelapselow" fileFormat="3gp" duration="30">
       <Video codec="h264"
              bitRate="192000"
