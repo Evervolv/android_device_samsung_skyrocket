@@ -20,8 +20,15 @@
 
 # All the blobs necessary for skyrocket
 PRODUCT_COPY_FILES += \
+    vendor/samsung/skyrocket/proprietary/bin/ATFWD-daemon:/system/bin/ATFWD-daemon \
     vendor/samsung/skyrocket/proprietary/bin/ks:/system/bin/ks \
+    vendor/samsung/skyrocket/proprietary/bin/drexe:/system/bin/drexe \
+    vendor/samsung/skyrocket/proprietary/bin/ds_fmc_appd:/system/bin/ds_fmc_appd \
     vendor/samsung/skyrocket/proprietary/bin/netmgrd:/system/bin/netmgrd \
+    vendor/samsung/skyrocket/proprietary/bin/immvibed:/system/bin/immvibed \
+    vendor/samsung/skyrocket/proprietary/bin/bridgemgrd:/system/bin/bridgemgrd \
+    vendor/samsung/skyrocket/proprietary/bin/mpdecision:/system/bin/mpdecision \
+    vendor/samsung/skyrocket/proprietary/bin/npsmobex:/system/bin/npsmobex \
     vendor/samsung/skyrocket/proprietary/bin/qcks:/system/bin/qcks \
     vendor/samsung/skyrocket/proprietary/bin/qmiproxy:/system/bin/qmiproxy \
     vendor/samsung/skyrocket/proprietary/bin/rild:/system/bin/rild \
@@ -29,6 +36,7 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/bin/rmt_storage:/system/bin/rmt_storage \
     vendor/samsung/skyrocket/proprietary/bin/sdcard:/system/bin/sdcard \
     vendor/samsung/skyrocket/proprietary/bin/sec-ril:/system/bin/sec-ril \
+    vendor/samsung/skyrocket/proprietary/bin/thermald:/system/bin/thermald \
     vendor/samsung/skyrocket/proprietary/etc/init.qcom.modem_links.sh:/system/etc/init.qcom.modem_links.sh \
     vendor/samsung/skyrocket/proprietary/etc/audio_effects.conf:/system/etc/audio_effects.conf \
     vendor/samsung/skyrocket/proprietary/etc/audio/LVVEFS_Rx_Configuration.txt:/system/etc/audio/LVVEFS_Rx_Configuration.txt \
