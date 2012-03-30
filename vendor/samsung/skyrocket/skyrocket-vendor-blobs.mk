@@ -16,7 +16,6 @@
 
 # Prebuilt libraries that are needed to build open-source libraries
 #PRODUCT_COPY_FILES += \
-    #vendor/samsung/skyrocket/proprietary/lib/libcamera.so:obj/lib/libcamera.so \
     #vendor/samsung/skyrocket/proprietary/lib/libaudioalsa.so:obj/lib/libaudioalsa.so \
 
 # All the blobs necessary for skyrocket
@@ -82,7 +81,6 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/lib/hw/audio.a2dp.default.so:/system/lib/hw/audio.a2dp.default.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/audio.primary.default.so:/system/lib/hw/audio.primary.default.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/audio_policy.default.so:/system/lib/hw/audio_policy.default.so \
-    vendor/samsung/skyrocket/proprietary/lib/hw/camera.msm8660.so:/system/lib/hw/camera.msm8660.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/copybit.msm8660.so:/system/lib/hw/copybit.msm8660.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/gralloc.default.so:/system/lib/hw/gralloc.default.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/gralloc.msm8660.so:/system/lib/hw/gralloc.msm8660.so \
@@ -96,6 +94,13 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/lib/egl/libGLESv2_adreno200.so:/system/lib/egl/libGLESv2_adreno200.so \
     vendor/samsung/skyrocket/proprietary/lib/egl/libGLESv2S3D_adreno200.so:/system/lib/egl/libGLESv2S3D_adreno200.so \
     vendor/samsung/skyrocket/proprietary/lib/egl/libq3dtools_adreno200.so:/system/lib/egl/libq3dtools_adreno200.so \
+
+# Camera
+PRODUCT_COPY_FILES += \
+    vendor/samsung/skyrocket/proprietary/lib/hw/camera.msm8660.so:/system/lib/hw/camera.msm8660.so \
+    vendor/samsung/skyrocket/proprietary/lib/libmmjpeg.so:/system/lib/libmmjpeg.so \
+    vendor/samsung/skyrocket/proprietary/lib/libgemini.so:/system/lib/libgemini.so \
+    vendor/samsung/skyrocket/proprietary/lib/libs3cjpeg.so:/system/lib/libs3cjpeg.so \
 
 
 # Not sure if I need these
