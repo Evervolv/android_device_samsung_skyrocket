@@ -21,7 +21,6 @@
 # All the blobs necessary for skyrocket
 PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/bin/ATFWD-daemon:/system/bin/ATFWD-daemon \
-    vendor/samsung/skyrocket/proprietary/bin/ks:/system/bin/ks \
     vendor/samsung/skyrocket/proprietary/bin/drexe:/system/bin/drexe \
     vendor/samsung/skyrocket/proprietary/bin/ds_fmc_appd:/system/bin/ds_fmc_appd \
     vendor/samsung/skyrocket/proprietary/bin/netmgrd:/system/bin/netmgrd \
@@ -107,6 +106,24 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/lib/libC2D2.so:/system/lib/libC2D2.so \
     vendor/samsung/skyrocket/proprietary/lib/libOpenVG.so:/system/lib/libOpenVG.so \
     vendor/samsung/skyrocket/proprietary/lib/libsc-a2xx.so:/system/lib/libsc-a2xx.so \
+
+# Firmware
+PRODUCT_COPY_FILES += \
+    vendor/samsung/skyrocket/proprietary/bin/ks:/system/bin/ks \
+    vendor/samsung/skyrocket/proprietary/etc/firmware/bcm4330B1.hcd:/system/etc/firmware/bcm4330B1.hcd \
+    vendor/samsung/skyrocket/proprietary/etc/firmware/cyttsp_8660_ffa.hex:/system/etc/firmware/cyttsp_8660_ffa.hex \
+    vendor/samsung/skyrocket/proprietary/etc/firmware/cyttsp_8660_fluid_p2.hex:/system/etc/firmware/cyttsp_8660_fluid_p2.hex \
+    vendor/samsung/skyrocket/proprietary/etc/firmware/cyttsp_8660_fluid_p3.hex:/system/etc/firmware/cyttsp_8660_fluid_p3.hex \
+    vendor/samsung/skyrocket/proprietary/etc/firmware/dsps_fluid.b00:/system/etc/firmware/dsps_fluid.b00 \
+    vendor/samsung/skyrocket/proprietary/etc/firmware/dsps_fluid.b01:/system/etc/firmware/dsps_fluid.b01 \
+    vendor/samsung/skyrocket/proprietary/etc/firmware/dsps_fluid.b02:/system/etc/firmware/dsps_fluid.b02 \
+    vendor/samsung/skyrocket/proprietary/etc/firmware/dsps_fluid.b03:/system/etc/firmware/dsps_fluid.b03 \
+    vendor/samsung/skyrocket/proprietary/etc/firmware/dsps_fluid.mdt:/system/etc/firmware/dsps_fluid.mdt \
+    vendor/samsung/skyrocket/proprietary/etc/firmware/leia_pfp_470.fw:/system/etc/firmware/leia_pfp_470.fw \
+    vendor/samsung/skyrocket/proprietary/etc/firmware/leia_pm4_470.fw:/system/etc/firmware/leia_pm4_470.fw \
+    vendor/samsung/skyrocket/proprietary/etc/firmware/vidc_1080p.fw:/system/etc/firmware/vidc_1080p.fw \
+    vendor/samsung/skyrocket/proprietary/etc/firmware/yamato_pfp.fw:/system/etc/firmware/yamato_pfp.fw \
+    vendor/samsung/skyrocket/proprietary/etc/firmware/yamato_pm4.fw:/system/etc/firmware/yamato_pm4.fw \
 
 # Vold
 PRODUCT_COPY_FILES += \
