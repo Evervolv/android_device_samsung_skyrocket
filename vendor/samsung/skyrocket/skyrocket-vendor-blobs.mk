@@ -37,6 +37,7 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/bin/sec-ril:/system/bin/sec-ril \
     vendor/samsung/skyrocket/proprietary/bin/thermald:/system/bin/thermald \
     vendor/samsung/skyrocket/proprietary/etc/init.qcom.modem_links.sh:/system/etc/init.qcom.modem_links.sh \
+    vendor/samsung/skyrocket/proprietary/etc/gps.conf:/system/etc/gps.conf \
     vendor/samsung/skyrocket/proprietary/etc/audio_effects.conf:/system/etc/audio_effects.conf \
     vendor/samsung/skyrocket/proprietary/etc/audio/LVVEFS_Rx_Configuration.txt:/system/etc/audio/LVVEFS_Rx_Configuration.txt \
     vendor/samsung/skyrocket/proprietary/etc/audio/LVVEFS_Tx_Configuration.txt:/system/etc/audio/LVVEFS_Tx_Configuration.txt \
