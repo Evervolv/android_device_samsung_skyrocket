@@ -66,7 +66,6 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/lib/hw/gps.default.so:/system/lib/hw/gps.default.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/lights.msm8660.so:/system/lib/hw/lights.msm8660.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/sensors.default.so:/system/lib/hw/sensors.default.so \
-    vendor/samsung/skyrocket/proprietary/lib/hw/audio.a2dp.default.so:/system/lib/hw/audio.a2dp.default.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/audio.primary.default.so:/system/lib/hw/audio.primary.default.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/audio_policy.default.so:/system/lib/hw/audio_policy.default.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/copybit.msm8660.so:/system/lib/hw/copybit.msm8660.so \
@@ -169,4 +168,7 @@ PRODUCT_COPY_FILES += \
 # Not sure if I need these
 #vendor/samsung/skyrocket/proprietary/bin/dhcpcd:/system/bin/dhcpcd \
 #vendor/samsung/skyrocket/proprietary/bin/sh0:/system/bin/sh0 \
+
+# Causes crash in /system/bin/mediaserver:libaudioflinger:onFirstRef()
+    #vendor/samsung/skyrocket/proprietary/lib/hw/audio.a2dp.default.so:/system/lib/hw/audio.a2dp.default.so \
 
