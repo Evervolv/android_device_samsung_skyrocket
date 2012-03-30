@@ -44,8 +44,7 @@ BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 
 # Set this up here so that BoardVendorConfig.mk can override it
 BOARD_USES_GENERIC_AUDIO := false
-BOARD_PREBUILT_LIBAUDIO := true
-BOARD_USE_YAMAHAPLAYER := true
+#BOARD_PREBUILT_LIBAUDIO := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
