@@ -26,17 +26,19 @@ TARGET_SPECIFIC_HEADER_PATH := device/samsung/skyrocket/include
 
 # Connectivity - Wi-Fi
 WPA_SUPPLICANT_VERSION := VER_0_8_X
-BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wext
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_bcmdhd
 
-# SGH-I727 uses bcm4330
-BOARD_WLAN_DEVICE := bcm4330
+# SGH-I727 uses bcm4330 (bcmhd device)
+BOARD_WLAN_DEVICE := bcmdhd
 WIFI_DRIVER_MODULE_PATH     := "/lib/modules/dhd.ko"
 WIFI_DRIVER_FW_STA_PATH     := "/system/etc/wifi/bcm4330_sta.bin"
-WIFI_DRIVER_FW_AP_PATH      := "/system/etc/wifi/bcm4330_aps.bin"
+WIFI_DRIVER_FW_AP_PATH      := "/system/etc/wifi/bcm4330_apsta.bin"
 WIFI_DRIVER_FW_P2P_PATH     := "/system/etc/wifi/bcm4330_p2p.bin"
-WIFI_DRIVER_MODULE_NAME     :=  "dhd"
-WIFI_DRIVER_MODULE_ARG      :=  "firmware_path=/system/etc/wifi/bcm4330_sta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
+WIFI_DRIVER_MODULE_NAME     := "dhd"
+WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/wifi/bcm4330_sta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
 
 # Vold
 BOARD_VOLD_MAX_PARTITIONS := 12
