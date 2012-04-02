@@ -73,9 +73,6 @@ COMMON_GLOBAL_CFLAGS += \
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QCOM_LIBS := true
 
-# Legacy touchscreen support
-BOARD_USE_LEGACY_TOUCHSCREEN := true
-
 # Enable NFC
 BOARD_HAVE_NFC := true
 
