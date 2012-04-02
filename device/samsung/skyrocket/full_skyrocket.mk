@@ -27,7 +27,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase=android-samsung \
     ro.com.google.locationfeatures=1 \
     ro.com.google.networklocation=1 \
-    ro.com.google.gmsversion=2.3_r5 \
+    ro.com.google.gmsversion=4.0.3_r0 \
     ro.setupwizard.enable_bypass=1 \
     dalvik.vm.lockprof.threshold=500 \
     dalvik.vm.dexopt-flags=m=y
@@ -67,19 +67,14 @@ PRODUCT_COPY_FILES += \
 ADDITIONAL_DEFAULT_PROPERTIES += \
     persist.service.adb.enable=1
 
-#Using prebuilt audio libs right now
-PRODUCT_COPY_FILES += \
-    device/samsung/skyrocket/prebuilt/system/lib/hw/audio.primary.default.so:system/lib/hw/audio.primary.default.so \
-    device/samsung/skyrocket/prebuilt/system/lib/hw/audio_policy.default.so:system/lib/hw/audio_policy.default.so \
-    device/samsung/skyrocket/prebuilt/system/lib/hw/audio.a2dp.default.so:system/lib/hw/audio.a2dp.default.so
-
 #Using prebuilt libril.so right now
 #PRODUCT_COPY_FILES += \
     #device/samsung/skyrocket/prebuilt/system/lib/libril.so:system/lib/libril.so
 
 #Add touchscreen config file
 PRODUCT_COPY_FILES += \
-    device/samsung/skyrocket/prebuilt/system/usr/idc/sec_touchscreen.idc:system/usr/idc/sec_touchscreen.idc
+    device/samsung/skyrocket/prebuilt/system/usr/idc/qwerty.idc:system/usr/idc/qwerty.idc
+    device/samsung/skyrocket/prebuilt/system/usr/idc/qwerty2.idc:system/usr/idc/qwerty2.idc
 
 ## (2) Also get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/samsung/skyrocket/skyrocket-vendor.mk)
@@ -109,7 +104,7 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-	frameworks/base/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
+    frameworks/base/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
@@ -196,9 +191,6 @@ endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
-
-# media profiles and capabilities spec
-$(call inherit-product, device/samsung/skyrocket/media_a1026.mk)
 
 $(call inherit-product, build/target/product/full_base_telephony.mk)
 

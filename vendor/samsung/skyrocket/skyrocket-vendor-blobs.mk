@@ -60,6 +60,9 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/lib/libidl.so:/system/lib/libidl.so \
     vendor/samsung/skyrocket/proprietary/lib/libnetmgr.so:/system/lib/libnetmgr.so \
     vendor/samsung/skyrocket/proprietary/lib/libqdp.so:/system/lib/libqdp.so \
+
+# HW Directory
+PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/lib/hw/audio_policy.msm8660.so:/system/lib/hw/audio_policy.msm8660.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/audio.primary.msm8660.so:/system/lib/hw/audio.primary.msm8660.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/gps.default.so:/system/lib/hw/gps.default.so \
