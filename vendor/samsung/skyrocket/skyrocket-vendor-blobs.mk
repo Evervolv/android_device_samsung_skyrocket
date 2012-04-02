@@ -109,7 +109,6 @@ PRODUCT_COPY_FILES += \
 # Firmware
 PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/bin/ks:/system/bin/ks \
-    vendor/samsung/skyrocket/proprietary/etc/firmware/bcm4330B1.hcd:/system/etc/firmware/bcm4330B1.hcd \
     vendor/samsung/skyrocket/proprietary/etc/firmware/cyttsp_8660_ffa.hex:/system/etc/firmware/cyttsp_8660_ffa.hex \
     vendor/samsung/skyrocket/proprietary/etc/firmware/cyttsp_8660_fluid_p2.hex:/system/etc/firmware/cyttsp_8660_fluid_p2.hex \
     vendor/samsung/skyrocket/proprietary/etc/firmware/cyttsp_8660_fluid_p3.hex:/system/etc/firmware/cyttsp_8660_fluid_p3.hex \
@@ -170,6 +169,11 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/lib/libgps.utils.so:/system/lib/libgps.utils.so \
     vendor/samsung/skyrocket/proprietary/lib/libloc_api-rpc-qc.so:/system/lib/libloc_api-rpc-qc.so \
     vendor/samsung/skyrocket/proprietary/lib/libcommondefs.so:/system/lib/libcommondefs.so \
+
+# Bluetooh
+PRODUCT_COPY_FILES += \
+    vendor/samsung/skyrocket/proprietary/etc/firmware/bcm4330B1.hcd:/system/etc/firmware/bcm4330B1.hcd \
+    vendor/samsung/skyrocket/proprietary/bin/brcm_patchram_plus:/system/bin/brcm_patchram_plus \
 
 # Misc
 PRODUCT_COPY_FILES += \
