@@ -36,7 +36,6 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/bin/playsound:/system/bin/playsound \
     vendor/samsung/skyrocket/proprietary/bin/thermald:/system/bin/thermald \
     vendor/samsung/skyrocket/proprietary/etc/init.qcom.modem_links.sh:/system/etc/init.qcom.modem_links.sh \
-    vendor/samsung/skyrocket/proprietary/etc/gps.conf:/system/etc/gps.conf \
     vendor/samsung/skyrocket/proprietary/etc/audio_effects.conf:/system/etc/audio_effects.conf \
     vendor/samsung/skyrocket/proprietary/etc/wifi/bcm4330_aps.bin:/system/etc/wifi/bcm4330_aps.bin \
     vendor/samsung/skyrocket/proprietary/etc/wifi/bcm4330_mfg.bin:/system/etc/wifi/bcm4330_mfg.bin \
@@ -160,6 +159,14 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/lib/libmmjpeg.so:/system/lib/libmmjpeg.so \
     vendor/samsung/skyrocket/proprietary/lib/libgemini.so:/system/lib/libgemini.so \
     vendor/samsung/skyrocket/proprietary/lib/libs3cjpeg.so:/system/lib/libs3cjpeg.so \
+
+# GPS - direct dependents of camera.msm8660.so
+PRODUCT_COPY_FILES += \
+    vendor/samsung/skyrocket/proprietary/lib/libloc_eng.so:/system/lib/libloc_eng.so \
+    vendor/samsung/skyrocket/proprietary/lib/libloc_adapter.so:/system/lib/libloc_adapter.so \
+    vendor/samsung/skyrocket/proprietary/lib/libgps.utils.so:/system/lib/libgps.utils.so \
+    vendor/samsung/skyrocket/proprietary/lib/libloc_api-rpc-qc.so:/system/lib/libloc_api-rpc-qc.so \
+    vendor/samsung/skyrocket/proprietary/lib/libcommondefs.so:/system/lib/libcommondefs.so \
 
 # Misc
 PRODUCT_COPY_FILES += \
