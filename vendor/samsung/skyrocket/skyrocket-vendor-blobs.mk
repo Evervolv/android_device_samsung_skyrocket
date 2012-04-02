@@ -37,6 +37,19 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/bin/thermald:/system/bin/thermald \
     vendor/samsung/skyrocket/proprietary/etc/init.qcom.modem_links.sh:/system/etc/init.qcom.modem_links.sh \
     vendor/samsung/skyrocket/proprietary/etc/audio_effects.conf:/system/etc/audio_effects.conf \
+    vendor/samsung/skyrocket/proprietary/etc/apns-conf.xml:/system/etc/apns-conf.xml \
+    vendor/samsung/skyrocket/proprietary/etc/init.qcom.post_boot.sh:/system/etc/init.qcom.post_boot.sh \
+    vendor/samsung/skyrocket/proprietary/lib/libgsl.so:/system/lib/libgsl.so \
+    vendor/samsung/skyrocket/proprietary/lib/libakm.so:/system/lib/libakm.so \
+    vendor/samsung/skyrocket/proprietary/lib/libdiag.so:/system/lib/libdiag.so \
+    vendor/samsung/skyrocket/proprietary/lib/libdsutils.so:/system/lib/libdsutils.so \
+    vendor/samsung/skyrocket/proprietary/lib/libdsi_netctrl.so:/system/lib/libdsi_netctrl.so \
+    vendor/samsung/skyrocket/proprietary/lib/libidl.so:/system/lib/libidl.so \
+    vendor/samsung/skyrocket/proprietary/lib/libnetmgr.so:/system/lib/libnetmgr.so \
+    vendor/samsung/skyrocket/proprietary/lib/libqdp.so:/system/lib/libqdp.so \
+
+# Wifi
+PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/etc/wifi/bcm4330_aps.bin:/system/etc/wifi/bcm4330_aps.bin \
     vendor/samsung/skyrocket/proprietary/etc/wifi/bcm4330_mfg.bin:/system/etc/wifi/bcm4330_mfg.bin \
     vendor/samsung/skyrocket/proprietary/etc/wifi/bcm4330_sta.bin:/system/etc/wifi/bcm4330_sta.bin \
@@ -50,22 +63,11 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/etc/wifi/bcm4330_apsta.bin:/system/etc/wifi/bcm4330_apsta.bin \
     vendor/samsung/skyrocket/proprietary/etc/wifi/bcm4330_p2p.bin:/system/etc/wifi/bcm4330_p2p.bin \
     vendor/samsung/skyrocket/proprietary/etc/wifi/default_ap.conf:/system/etc/wifi/default_ap.conf \
-    vendor/samsung/skyrocket/proprietary/etc/init.qcom.post_boot.sh:/system/etc/init.qcom.post_boot.sh \
-    vendor/samsung/skyrocket/proprietary/etc/apns-conf.xml:/system/etc/apns-conf.xml \
-    vendor/samsung/skyrocket/proprietary/lib/libgsl.so:/system/lib/libgsl.so \
-    vendor/samsung/skyrocket/proprietary/lib/libakm.so:/system/lib/libakm.so \
-    vendor/samsung/skyrocket/proprietary/lib/libdiag.so:/system/lib/libdiag.so \
-    vendor/samsung/skyrocket/proprietary/lib/libdsutils.so:/system/lib/libdsutils.so \
-    vendor/samsung/skyrocket/proprietary/lib/libdsi_netctrl.so:/system/lib/libdsi_netctrl.so \
-    vendor/samsung/skyrocket/proprietary/lib/libidl.so:/system/lib/libidl.so \
-    vendor/samsung/skyrocket/proprietary/lib/libnetmgr.so:/system/lib/libnetmgr.so \
-    vendor/samsung/skyrocket/proprietary/lib/libqdp.so:/system/lib/libqdp.so \
 
 # HW Directory
 PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/lib/hw/audio_policy.msm8660.so:/system/lib/hw/audio_policy.msm8660.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/audio.primary.msm8660.so:/system/lib/hw/audio.primary.msm8660.so \
-    vendor/samsung/skyrocket/proprietary/lib/hw/gps.default.so:/system/lib/hw/gps.default.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/lights.msm8660.so:/system/lib/hw/lights.msm8660.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/sensors.default.so:/system/lib/hw/sensors.default.so \
     vendor/samsung/skyrocket/proprietary/lib/hw/audio.primary.default.so:/system/lib/hw/audio.primary.default.so \
@@ -162,8 +164,9 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/lib/libgemini.so:/system/lib/libgemini.so \
     vendor/samsung/skyrocket/proprietary/lib/libs3cjpeg.so:/system/lib/libs3cjpeg.so \
 
-# GPS - direct dependents of camera.msm8660.so
+# GPS
 PRODUCT_COPY_FILES += \
+    vendor/samsung/skyrocket/proprietary/lib/hw/gps.default.so:/system/lib/hw/gps.default.so \
     vendor/samsung/skyrocket/proprietary/lib/libloc_eng.so:/system/lib/libloc_eng.so \
     vendor/samsung/skyrocket/proprietary/lib/libloc_adapter.so:/system/lib/libloc_adapter.so \
     vendor/samsung/skyrocket/proprietary/lib/libgps.utils.so:/system/lib/libgps.utils.so \
