@@ -44,7 +44,7 @@ PRODUCT_COPY_FILES += \
     device/samsung/skyrocket/prebuilt/root/ueventd.goldfish.rc:root/ueventd.goldfish.rc \
     device/samsung/skyrocket/prebuilt/root/ueventd.rc:root/ueventd.rc \
     device/samsung/skyrocket/prebuilt/system/lib/modules/ansi_cprng.ko:root/lib/modules/ansi_cprng.ko \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/bthid.ko:root/lib/modules/bthid.ko \
+    device/samsung/skyrocket/prebuilt/system/lib/modules/cls_flow.ko:root/lib/modules/cls_flow.ko \
     device/samsung/skyrocket/prebuilt/system/lib/modules/dal_remotetest.ko:root/lib/modules/dal_remotetest.ko \
     device/samsung/skyrocket/prebuilt/system/lib/modules/dhd.ko:root/lib/modules/dhd.ko \
     device/samsung/skyrocket/prebuilt/system/lib/modules/dma_test.ko:root/lib/modules/dma_test.ko \
@@ -52,16 +52,16 @@ PRODUCT_COPY_FILES += \
     device/samsung/skyrocket/prebuilt/system/lib/modules/gspca_main.ko:root/lib/modules/gspca_main.ko \
     device/samsung/skyrocket/prebuilt/system/lib/modules/ksapi.ko:root/lib/modules/ksapi.ko \
     device/samsung/skyrocket/prebuilt/system/lib/modules/lcd.ko:root/lib/modules/lcd.ko \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/librasdioif.ko:root/lib/modules/librasdioif.ko \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/msm_tsif.ko:root/lib/modules/msm_tsif.ko\
-    device/samsung/skyrocket/prebuilt/system/lib/modules/oprofile.ko:root/lib/modules/oprofile.ko \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/qce.ko:root/lib/modules/qce.ko \
+    device/samsung/skyrocket/prebuilt/system/lib/modules/msm-buspm-dev.ko:root/lib/modules/msm-buspm-dev.ko \
+    device/samsung/skyrocket/prebuilt/system/lib/modules/msm_tsif.ko:root/lib/modules/msm_tsif.ko \
     device/samsung/skyrocket/prebuilt/system/lib/modules/qcedev.ko:root/lib/modules/qcedev.ko \
+    device/samsung/skyrocket/prebuilt/system/lib/modules/qce.ko:root/lib/modules/qce.ko \
     device/samsung/skyrocket/prebuilt/system/lib/modules/qcrypto.ko:root/lib/modules/qcrypto.ko \
+    device/samsung/skyrocket/prebuilt/system/lib/modules/sch_dsmark.ko:root/lib/modules/sch_dsmark.ko \
     device/samsung/skyrocket/prebuilt/system/lib/modules/scsi_wait_scan.ko:root/lib/modules/scsi_wait_scan.ko \
     device/samsung/skyrocket/prebuilt/system/lib/modules/spidev.ko:root/lib/modules/spidev.ko \
     device/samsung/skyrocket/prebuilt/system/lib/modules/tsif_chrdev.ko:root/lib/modules/tsif_chrdev.ko \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/vibrator.ko:root/lib/modules/vibrator.ko
+    device/samsung/skyrocket/prebuilt/system/lib/modules/vibrator.ko:root/lib/modules/vibrator.ko \
 
 # Temporary hack
 ADDITIONAL_DEFAULT_PROPERTIES += \
@@ -147,45 +147,6 @@ PRODUCT_COPY_FILES += \
     device/samsung/skyrocket/prebuilt/system/usr/keylayout/sec_power_key.kl:system/usr/keylayout/sec_power_key.kl \
     device/samsung/skyrocket/prebuilt/system/usr/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl \
     device/samsung/skyrocket/prebuilt/system/usr/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl
-
-# Firmware
-PRODUCT_COPY_FILES += \
-    device/samsung/skyrocket/prebuilt/system/etc/firmware/dsps_fluid.b00:system/etc/firmware/dsps_fluid.b00 \
-    device/samsung/skyrocket/prebuilt/system/etc/firmware/dsps_fluid.b01:system/etc/firmware/dsps_fluid.b01 \
-    device/samsung/skyrocket/prebuilt/system/etc/firmware/dsps_fluid.b02:system/etc/firmware/dsps_fluid.b02 \
-    device/samsung/skyrocket/prebuilt/system/etc/firmware/dsps_fluid.b03:system/etc/firmware/dsps_fluid.b03 \
-    device/samsung/skyrocket/prebuilt/system/etc/firmware/dsps_fluid.mdt:system/etc/firmware/dsps_fluid.mdt \
-    device/samsung/skyrocket/prebuilt/system/etc/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470.fw \
-    device/samsung/skyrocket/prebuilt/system/etc/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw \
-    device/samsung/skyrocket/prebuilt/system/etc/firmware/osbl.mbn:system/etc/firmware/osbl.mbn \
-    device/samsung/skyrocket/prebuilt/system/etc/firmware/RS_M5LS_O.bin:system/etc/firmware/RS_M5LS_O.bin \
-    device/samsung/skyrocket/prebuilt/system/etc/firmware/RS_M5LS_S.bin:system/etc/firmware/RS_M5LS_S.bin \
-    device/samsung/skyrocket/prebuilt/system/etc/firmware/RS_M5LS_S_TMO.bin:system/etc/firmware/RS_M5LS_S_TMO.bin \
-    device/samsung/skyrocket/prebuilt/system/etc/firmware/vidc_1080p.fw:system/etc/firmware/vidc_1080p.fw \
-    device/samsung/skyrocket/prebuilt/system/etc/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
-    device/samsung/skyrocket/prebuilt/system/etc/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw
-
-# Wifi Module
-PRODUCT_COPY_FILES += \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/ansi_cprng.ko:system/lib/modules/ansi_cprng.ko \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/bthid.ko:system/lib/modules/bthid.ko \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/dal_remotetest.ko:system/lib/modules/dal_remotetest.ko \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/dhd.ko:system/lib/modules/dhd.ko \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/dma_test.ko:system/lib/modules/dma_test.ko \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/evbug.ko:system/lib/modules/evbug.ko \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/gspca_main.ko:system/lib/modules/gspca_main.ko \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/ksapi.ko:system/lib/modules/ksapi.ko \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/lcd.ko:system/lib/modules/lcd.ko \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/librasdioif.ko:system/lib/modules/librasdioif.ko \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/msm_tsif.ko:system/lib/modules/msm_tsif.ko\
-    device/samsung/skyrocket/prebuilt/system/lib/modules/oprofile.ko:system/lib/modules/oprofile.ko \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/qce.ko:system/lib/modules/qce.ko \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/qcedev.ko:system/lib/modules/qcedev.ko \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/qcrypto.ko:system/lib/modules/qcrypto.ko \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/spidev.ko:system/lib/modules/spidev.ko \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/tsif_chrdev.ko:system/lib/modules/tsif_chrdev.ko \
-    device/samsung/skyrocket/prebuilt/system/lib/modules/vibrator.ko:system/lib/modules/vibrator.ko
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
