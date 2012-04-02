@@ -20,7 +20,6 @@ PRODUCT_COPY_FILES += \
 
 # All the blobs necessary for skyrocket
 PRODUCT_COPY_FILES += \
-    vendor/samsung/skyrocket/proprietary/bin/ATFWD-daemon:/system/bin/ATFWD-daemon \
     vendor/samsung/skyrocket/proprietary/bin/drexe:/system/bin/drexe \
     vendor/samsung/skyrocket/proprietary/bin/ds_fmc_appd:/system/bin/ds_fmc_appd \
     vendor/samsung/skyrocket/proprietary/bin/netmgrd:/system/bin/netmgrd \
@@ -28,25 +27,16 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/bin/bridgemgrd:/system/bin/bridgemgrd \
     vendor/samsung/skyrocket/proprietary/bin/mpdecision:/system/bin/mpdecision \
     vendor/samsung/skyrocket/proprietary/bin/npsmobex:/system/bin/npsmobex \
-    vendor/samsung/skyrocket/proprietary/bin/qcks:/system/bin/qcks \
-    vendor/samsung/skyrocket/proprietary/bin/qmiproxy:/system/bin/qmiproxy \
-    vendor/samsung/skyrocket/proprietary/bin/qmuxd:/system/bin/qmuxd \
-    vendor/samsung/skyrocket/proprietary/bin/rmt_storage:/system/bin/rmt_storage \
     vendor/samsung/skyrocket/proprietary/bin/sdcard:/system/bin/sdcard \
     vendor/samsung/skyrocket/proprietary/bin/playsound:/system/bin/playsound \
     vendor/samsung/skyrocket/proprietary/bin/thermald:/system/bin/thermald \
     vendor/samsung/skyrocket/proprietary/etc/init.qcom.modem_links.sh:/system/etc/init.qcom.modem_links.sh \
+    vendor/samsung/skyrocket/proprietary/etc/init.qcom.post_boot.sh:/system/etc/init.qcom.post_boot.sh \
     vendor/samsung/skyrocket/proprietary/etc/audio_effects.conf:/system/etc/audio_effects.conf \
     vendor/samsung/skyrocket/proprietary/etc/apns-conf.xml:/system/etc/apns-conf.xml \
-    vendor/samsung/skyrocket/proprietary/etc/init.qcom.post_boot.sh:/system/etc/init.qcom.post_boot.sh \
     vendor/samsung/skyrocket/proprietary/lib/libgsl.so:/system/lib/libgsl.so \
     vendor/samsung/skyrocket/proprietary/lib/libakm.so:/system/lib/libakm.so \
     vendor/samsung/skyrocket/proprietary/lib/libdiag.so:/system/lib/libdiag.so \
-    vendor/samsung/skyrocket/proprietary/lib/libdsutils.so:/system/lib/libdsutils.so \
-    vendor/samsung/skyrocket/proprietary/lib/libdsi_netctrl.so:/system/lib/libdsi_netctrl.so \
-    vendor/samsung/skyrocket/proprietary/lib/libidl.so:/system/lib/libidl.so \
-    vendor/samsung/skyrocket/proprietary/lib/libnetmgr.so:/system/lib/libnetmgr.so \
-    vendor/samsung/skyrocket/proprietary/lib/libqdp.so:/system/lib/libqdp.so \
 
 # Wifi
 PRODUCT_COPY_FILES += \
@@ -134,7 +124,12 @@ PRODUCT_COPY_FILES += \
 # Radio
 PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/bin/rild:/system/bin/rild \
+    vendor/samsung/skyrocket/proprietary/bin/ATFWD-daemon:/system/bin/ATFWD-daemon \
+    vendor/samsung/skyrocket/proprietary/bin/qcks:/system/bin/qcks \
     vendor/samsung/skyrocket/proprietary/bin/sec-ril:/system/bin/sec-ril \
+    vendor/samsung/skyrocket/proprietary/bin/qmiproxy:/system/bin/qmiproxy \
+    vendor/samsung/skyrocket/proprietary/bin/qmuxd:/system/bin/qmuxd \
+    vendor/samsung/skyrocket/proprietary/bin/rmt_storage:/system/bin/rmt_storage \
     vendor/samsung/skyrocket/proprietary/lib/libsecril-client.so:/system/lib/libsecril-client.so\
     vendor/samsung/skyrocket/proprietary/lib/libqmi.so:/system/lib/libqmi.so \
     vendor/samsung/skyrocket/proprietary/lib/libril.so:/system/lib/libril.so \
@@ -144,6 +139,11 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/lib/libreference-ril.so:/system/lib/libreference-ril.so \
     vendor/samsung/skyrocket/proprietary/lib/libril-qc-qmi-1.so:/system/lib/libril-qc-qmi-1.so \
     vendor/samsung/skyrocket/proprietary/lib/libril-qcril-hook-oem.so:/system/lib/libril-qcril-hook-oem.so \
+    vendor/samsung/skyrocket/proprietary/lib/libdsutils.so:/system/lib/libdsutils.so \
+    vendor/samsung/skyrocket/proprietary/lib/libdsi_netctrl.so:/system/lib/libdsi_netctrl.so \
+    vendor/samsung/skyrocket/proprietary/lib/libidl.so:/system/lib/libidl.so \
+    vendor/samsung/skyrocket/proprietary/lib/libnetmgr.so:/system/lib/libnetmgr.so \
+    vendor/samsung/skyrocket/proprietary/lib/libqdp.so:/system/lib/libqdp.so \
 
 # CND - Related to radio
 PRODUCT_COPY_FILES += \
