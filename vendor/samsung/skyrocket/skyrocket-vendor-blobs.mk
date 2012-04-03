@@ -93,6 +93,9 @@ PRODUCT_COPY_FILES += \
 # Media
 PRODUCT_COPY_FILES += \
     vendor/samsung/skyrocket/proprietary/etc/media_profiles.xml:/system/etc/media_profiles.xml \
+    vendor/samsung/skyrocket/proprietary/lib/libmmparser.so:/system/etc/libmmparser.so \
+    vendor/samsung/skyrocket/proprietary/lib/libmmosal.so:/system/etc/libmmosal.so \
+    vendor/samsung/skyrocket/proprietary/lib/libmmparser_divxdrmlib.so:/system/etc/libmmparser_divxdrmlib.so \
 
 # Firmware
 PRODUCT_COPY_FILES += \
