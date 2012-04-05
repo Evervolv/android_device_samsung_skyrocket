@@ -128,10 +128,6 @@ PRODUCT_PACKAGES += \
 #    libOmxCore \
 #    libaudio \
 
-##Disable HWAccel for now
-ADDITIONAL_BUILD_PROPERTIES += \
-    ro.config.disable_hw_accel=true
-
 # Keylayouts
 PRODUCT_COPY_FILES += \
     device/samsung/skyrocket/prebuilt/system/usr/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
