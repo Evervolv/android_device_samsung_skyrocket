@@ -120,6 +120,8 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libOmxVdec \
     gralloc.msm8660 \
+    gralloc.default \
+    hwcomposer.msm8660 \
     com.android.future.usb.accessory
 #    overlay.default \
 #    gps.SGH-I727 \
