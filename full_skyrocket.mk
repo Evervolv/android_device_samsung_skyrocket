@@ -65,8 +65,9 @@ PRODUCT_COPY_FILES += \
     device/samsung/skyrocket/prebuilt/system/lib/modules/tsif_chrdev.ko:root/lib/modules/tsif_chrdev.ko \
     device/samsung/skyrocket/prebuilt/system/lib/modules/vibrator.ko:root/lib/modules/vibrator.ko \
 
-# Temporary hack
+# USB
 ADDITIONAL_DEFAULT_PROPERTIES += \
+    persist.sys.usb.config=mass_storage \
     persist.service.adb.enable=1
 
 #Using prebuilt libril.so right now
