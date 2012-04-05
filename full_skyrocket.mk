@@ -116,19 +116,25 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
 PRODUCT_PACKAGES += \
-    librs_jni \
+    audio.a2dp.default \
+    gralloc.msm8660 \
+    hwcomposer.msm8660 \
+    libOmxCore \
     libOmxVenc \
     libOmxVdec \
-    gralloc.msm8660 \
-    gralloc.default \
-    hwcomposer.msm8660 \
+    libstagefrighthw \
     com.android.future.usb.accessory
-#    overlay.default \
-#    gps.SGH-I727 \
-#    copybit.msm8x60 \
-#    overlay.default \
-#    libOmxCore \
-#    libaudio \
+
+# This does need to be part of PRODUCT_PACKAGES but currently results in no video \
+    copybit.msm8660 \
+
+# These PRODUCT_PACKAGES are enabled by default and do not need to be listed \
+    librs_jni \
+    libgenlock \
+    libmemalloc \
+    liboverlay \
+    libQcomUI \
+    libdivxdrmdecrypt \
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
