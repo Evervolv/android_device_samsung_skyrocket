@@ -91,13 +91,13 @@ TARGET_OTA_ASSERT_DEVICE := hercules
 # LibRIL
 TARGET_PROVIDES_LIBRIL := vendor/samsung/skyrocket/proprietary/libril.so
 
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom usb_id_pin_rework=true
-BOARD_KERNEL_BASE := 0x4040000
-BOARD_PAGE_SIZE := 2048
-
-# Define Prebuilt kernel locations
-TARGET_PREBUILT_KERNEL := device/samsung/skyrocket/prebuilt/root/kernel
-#TARGET_PROVIDES_INIT_RC := true
+# Kernel
+TARGET_PROVIDES_INIT_RC     := true
+TARGET_PREBUILT_KERNEL      := device/samsung/skyrocket/prebuilt/root/kernel
+BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom usb_id_pin_rework=true
+BOARD_KERNEL_BASE           := 0x40400000
+BOARD_KERNEL_PAGESIZE       := 2048
+BOARD_FORCE_RAMDISK_ADDRESS := 0x41800000
 
 # For recovery-chargemode
 TARGET_RECOVERY_INITRC := device/samsung/skyrocket/prebuilt/recovery/root/init.rc

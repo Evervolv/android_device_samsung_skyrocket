@@ -35,14 +35,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Kernel 
 PRODUCT_COPY_FILES += \
     device/samsung/skyrocket/prebuilt/root/init:root/init \
-    device/samsung/skyrocket/prebuilt/root/init.rc:root/init.rc \
     device/samsung/skyrocket/prebuilt/root/init.goldfish.rc:root/init.goldfish.rc \
-    device/samsung/skyrocket/prebuilt/root/init.qcom.sh:root/init.qcom.sh \
-    device/samsung/skyrocket/prebuilt/root/init.qcom.rc:root/init.qcom.rc \
-    device/samsung/skyrocket/prebuilt/recovery/root/lpm.rc:root/lpm.rc \
     device/samsung/skyrocket/prebuilt/root/init.qcom.lpm_boot.sh:root/init.qcom.lpm_boot.sh \
-    device/samsung/skyrocket/prebuilt/root/init.skyrocket.usb.rc:root/init.skyrocket.usb.rc \
+    device/samsung/skyrocket/prebuilt/root/init.qcom.rc:root/init.qcom.rc \
+    device/samsung/skyrocket/prebuilt/root/init.qcom.sh:root/init.qcom.sh \
+    device/samsung/skyrocket/prebuilt/root/init.qcom.usb.rc:root/init.qcom.usb.rc \
+    device/samsung/skyrocket/prebuilt/root/init.qcom.usb.sh:root/init.qcom.usb.sh \
+    device/samsung/skyrocket/prebuilt/root/init.rc:root/init.rc \
     device/samsung/skyrocket/prebuilt/root/init.target.rc:root/init.target.rc \
+    device/samsung/skyrocket/prebuilt/root/initlogo.rle:root/initlogo.rle \
+    device/samsung/skyrocket/prebuilt/root/lpm.rc:root/lpm.rc \
     device/samsung/skyrocket/prebuilt/root/ueventd.goldfish.rc:root/ueventd.goldfish.rc \
     device/samsung/skyrocket/prebuilt/root/ueventd.rc:root/ueventd.rc \
     device/samsung/skyrocket/prebuilt/system/lib/modules/ansi_cprng.ko:root/lib/modules/ansi_cprng.ko \
