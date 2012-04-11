@@ -69,7 +69,6 @@ PRODUCT_COPY_FILES += \
 
 # USB
 ADDITIONAL_DEFAULT_PROPERTIES += \
-    persist.sys.usb.config=mass_storage \
     persist.service.adb.enable=1
 
 #Using prebuilt libril.so right now
