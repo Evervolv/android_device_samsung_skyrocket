@@ -84,7 +84,8 @@ BOARD_HAVE_NFC := true
 TARGET_OTA_ASSERT_DEVICE := hercules
 
 # LibRIL
-TARGET_PROVIDES_LIBRIL := vendor/samsung/skyrocket/proprietary/libril.so
+#BOARD_USE_NEW_LIBRIL_HTC    := true
+BOARD_PROVIDES_LIBRIL := true
 
 # Kernel
 TARGET_PROVIDES_INIT_RC     := true
