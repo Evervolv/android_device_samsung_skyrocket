@@ -1,16 +1,9 @@
 # Bins
-bin/ATFWD-daemon
-bin/cnd
 bin/drexe
 bin/immvibed
-bin/netmgrd
 bin/npsmobex
-bin/qcks
-bin/qmiproxy
-bin/qmuxd
-bin/rmt_storage
-bin/sec-ril
 bin/thermald
+bin/ks
 
 # Audio
 lib/libacdbloader.so
@@ -33,3 +26,41 @@ lib/libsc-a2xx.so
 
 # Misc
 lib/libdiag.so
+
+# Vold
+bin/vold
+lib/libsec_devenc.so
+lib/libsec_km.so
+lib/libsecfips.so
+lib/libdirencryption.so
+lib/libsec_ecryptfs.so
+lib/libkeyutils.so
+
+# Radio
+bin/netmgrd
+bin/ATFWD-daemon
+bin/qcks
+bin/sec-ril
+bin/qmiproxy
+bin/qmuxd
+bin/rmt_storage
+lib/libsecril-client.so
+lib/libqmi.so
+lib/libqdi.so
+lib/libqmiservices.so
+lib/libqueue.so
+lib/libril-qc-qmi-1.so
+lib/libril-qcril-hook-oem.so
+lib/libdsutils.so
+lib/libdsi_netctrl.so
+lib/libidl.so
+lib/libnetmgr.so
+lib/libqdp.so
+
+# CND - Related to radio
+bin/cnd
+lib/libcneutils.so
+lib/libcneqmiutils.so
+lib/libxml.so
+lib/libnetutils.so
+
