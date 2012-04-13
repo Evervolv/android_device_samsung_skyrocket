@@ -3,7 +3,22 @@ bin/drexe
 bin/immvibed
 bin/npsmobex
 bin/thermald
-bin/ks
+bin/bridgemgrd
+bin/ds_fmc_appd
+bin/playsound
+bin/amploader
+bin/btnvtool
+bin/hci_qcomm_init
+bin/hdmid
+bin/lpmkey
+bin/mpdecision
+bin/playlpm
+bin/port-bridge
+bin/profiler_daemon
+bin/samsungani
+bin/sdcard
+bin/usbhub
+bin/usbhub_init
 
 # Audio
 lib/libacdbloader.so
@@ -24,21 +39,10 @@ lib/libC2D2.so
 lib/libOpenVG.so
 lib/libsc-a2xx.so
 
-# Misc
-lib/libdiag.so
-
-# Vold
-bin/vold
-lib/libsec_devenc.so
-lib/libsec_km.so
-lib/libsecfips.so
-lib/libdirencryption.so
-lib/libsec_ecryptfs.so
-lib/libkeyutils.so
-
 # Radio
 bin/netmgrd
 bin/ATFWD-daemon
+bin/ks
 bin/qcks
 bin/sec-ril
 bin/qmiproxy
@@ -63,4 +67,38 @@ lib/libcneutils.so
 lib/libcneqmiutils.so
 lib/libxml.so
 lib/libnetutils.so
+
+# Vold
+bin/vold
+lib/libsec_devenc.so
+lib/libsec_km.so
+lib/libdirencryption.so
+lib/libsec_ecryptfs.so
+lib/libsecfips.so
+lib/libkeyutils.so
+
+# GPS
+bin/gpsone_daemon
+lib/liboncrpc.so
+lib/libgpsone_bit_api.so
+
+# Misc libs (will sort out later)
+lib/libdiag.so
+lib/libakm.so
+lib/libcommondefs.so
+lib/libgemini.so
+lib/libgps.utils.so
+lib/libloc_adapter.so
+lib/libloc_api-rpc-qc.so
+lib/libloc_eng.so
+lib/libmmjpeg.so
+lib/libmmosal.so
+lib/libmmparser_divxdrmlib.so
+lib/libmmparser.so
+lib/libmvsechocanceler.so
+lib/lib_Samsung_Resampler.so
+lib/lib_Samsung_SB_AM_Handset_LPA.so
+lib/libsamsungSoundboosterLPA.so
+lib/libQmageDecoder.so
+lib/libprofiler_msmadc.so
 
