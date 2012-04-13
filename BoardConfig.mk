@@ -33,6 +33,9 @@ USE_CAMERA_STUB := true
 
 TARGET_BOOTLOADER_BOARD_NAME := skyrocket
 
+# Assert
+TARGET_OTA_ASSERT_DEVICE := hercules
+
 # Kernel
 TARGET_PREBUILT_KERNEL      := device/samsung/skyrocket/prebuilt/kernel
 BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom usb_id_pin_rework=true
