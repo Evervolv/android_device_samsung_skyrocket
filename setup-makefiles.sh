@@ -1,5 +1,5 @@
 VENDOR=samsung
-DEVICE=hercules
+DEVICE=skyrocket
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 

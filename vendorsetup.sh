@@ -20,5 +20,5 @@
 # In particular, you can add lunch options with the add_lunch_combo
 # function: add_lunch_combo generic-eng
 
-add_lunch_combo samsung_hercules-userdebug
-add_lunch_combo samsung_hercules-eng
+add_lunch_combo samsung_skyrocket-userdebug
+add_lunch_combo samsung_skyrocket-eng

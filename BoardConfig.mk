@@ -29,22 +29,22 @@ USE_CAMERA_STUB := true
 -include device/samsung/msm8660-common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
--include vendor/samsung/hercules/BoardConfigVendor.mk
+-include vendor/samsung/skyrocket/BoardConfigVendor.mk
 
-TARGET_BOOTLOADER_BOARD_NAME := hercules
+TARGET_BOOTLOADER_BOARD_NAME := skyrocket
 
 # Kernel
-TARGET_PREBUILT_KERNEL      := device/samsung/hercules/prebuilt/kernel
+TARGET_PREBUILT_KERNEL      := device/samsung/skyrocket/prebuilt/kernel
 BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom usb_id_pin_rework=true
 BOARD_KERNEL_BASE           := 0x40400000
 BOARD_KERNEL_PAGESIZE       := 2048
 BOARD_FORCE_RAMDISK_ADDRESS := 0x41800000
 
 # Recovery
-TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/hercules/recovery/recoverykernel
-TARGET_RECOVERY_INITRC := device/samsung/hercules/recovery/init.rc
+TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/skyrocket/recovery/recoverykernel
+TARGET_RECOVERY_INITRC := device/samsung/skyrocket/recovery/init.rc
 
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := hercules
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := skyrocket
 
 COMMON_GLOBAL_CFLAGS += -DQCOM_ROTATOR_KERNEL_FORMATS
 TARGET_USES_OVERLAY := false

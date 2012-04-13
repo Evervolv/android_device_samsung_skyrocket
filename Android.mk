@@ -1,3 +1,3 @@
-ifneq ($(filter hercules,$(TARGET_DEVICE)),)
+ifneq ($(filter skyrocket,$(TARGET_DEVICE)),)
     include $(all-subdir-makefiles)
 endif
