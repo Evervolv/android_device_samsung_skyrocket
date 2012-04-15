@@ -31,29 +31,7 @@ PRODUCT_COPY_FILES += \
     device/samsung/skyrocket/ramdisk/init.target.rc:root/init.target.rc \
     device/samsung/skyrocket/ramdisk/initlogo.rle:root/initlogo.rle \
     device/samsung/skyrocket/ramdisk/lpm.rc:root/lpm.rc \
-    device/samsung/skyrocket/ramdisk/ueventd.rc:root/ueventd.rc
-
-## kernel modules
-PRODUCT_COPY_FILES += \
-    device/samsung/skyrocket/modules/ansi_cprng.ko:system/lib/modules/ansi_cprng.ko \
-    device/samsung/skyrocket/modules/cls_flow.ko:system/lib/modules/cls_flow.ko \
-    device/samsung/skyrocket/modules/dal_remotetest.ko:system/lib/modules/dal_remotetest.ko \
-    device/samsung/skyrocket/modules/dhd.ko:system/lib/modules/dhd.ko \
-    device/samsung/skyrocket/modules/dma_test.ko:system/lib/modules/dma_test.ko \
-    device/samsung/skyrocket/modules/evbug.ko:system/lib/modules/evbug.ko \
-    device/samsung/skyrocket/modules/gspca_main.ko:system/lib/modules/gspca_main.ko \
-    device/samsung/skyrocket/modules/ksapi.ko:system/lib/modules/ksapi.ko \
-    device/samsung/skyrocket/modules/lcd.ko:system/lib/modules/lcd.ko \
-    device/samsung/skyrocket/modules/msm-buspm-dev.ko:system/lib/modules/msm-buspm-dev.ko \
-    device/samsung/skyrocket/modules/msm_tsif.ko:system/lib/modules/msm_tsif.ko \
-    device/samsung/skyrocket/modules/qce.ko:system/lib/modules/qce.ko \
-    device/samsung/skyrocket/modules/qcedev.ko:system/lib/modules/qcedev.ko \
-    device/samsung/skyrocket/modules/qcrypto.ko:system/lib/modules/qcrypto.ko \
-    device/samsung/skyrocket/modules/sch_dsmark.ko:system/lib/modules/sch_dsmark.ko \
-    device/samsung/skyrocket/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko \
-    device/samsung/skyrocket/modules/spidev.ko:system/lib/modules/spidev.ko \
-    device/samsung/skyrocket/modules/tsif_chrdev.ko:system/lib/modules/tsif_chrdev.ko \
-    device/samsung/skyrocket/modules/vibrator.ko:system/lib/modules/vibrator.ko
+    device/samsung/skyrocket/ramdisk/ueventd.qcom.rc:root/ueventd.qcom.rc
 
 # BCM4330 BT Firmware
 PRODUCT_COPY_FILES += \
@@ -125,7 +103,25 @@ endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \
-    device/samsung/skyrocket/prebuilt/bcmdhd.ko:system/lib/modules/bcmdhd.ko
+    device/samsung/skyrocket/modules/ansi_cprng.ko:system/lib/modules/ansi_cprng.ko \
+    device/samsung/skyrocket/modules/cls_flow.ko:system/lib/modules/cls_flow.ko \
+    device/samsung/skyrocket/modules/dal_remotetest.ko:system/lib/modules/dal_remotetest.ko \
+    device/samsung/skyrocket/modules/dhd.ko:system/lib/modules/dhd.ko \
+    device/samsung/skyrocket/modules/dma_test.ko:system/lib/modules/dma_test.ko \
+    device/samsung/skyrocket/modules/evbug.ko:system/lib/modules/evbug.ko \
+    device/samsung/skyrocket/modules/gspca_main.ko:system/lib/modules/gspca_main.ko \
+    device/samsung/skyrocket/modules/ksapi.ko:system/lib/modules/ksapi.ko \
+    device/samsung/skyrocket/modules/lcd.ko:system/lib/modules/lcd.ko \
+    device/samsung/skyrocket/modules/msm-buspm-dev.ko:system/lib/modules/msm-buspm-dev.ko \
+    device/samsung/skyrocket/modules/msm_tsif.ko:system/lib/modules/msm_tsif.ko \
+    device/samsung/skyrocket/modules/qce.ko:system/lib/modules/qce.ko \
+    device/samsung/skyrocket/modules/qcedev.ko:system/lib/modules/qcedev.ko \
+    device/samsung/skyrocket/modules/qcrypto.ko:system/lib/modules/qcrypto.ko \
+    device/samsung/skyrocket/modules/sch_dsmark.ko:system/lib/modules/sch_dsmark.ko \
+    device/samsung/skyrocket/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko \
+    device/samsung/skyrocket/modules/spidev.ko:system/lib/modules/spidev.ko \
+    device/samsung/skyrocket/modules/tsif_chrdev.ko:system/lib/modules/tsif_chrdev.ko \
+    device/samsung/skyrocket/modules/vibrator.ko:system/lib/modules/vibrator.ko
 
 # common msm8660 configs
 $(call inherit-product, device/samsung/msm8660-common/msm8660.mk)
