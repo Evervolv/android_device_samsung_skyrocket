@@ -34,7 +34,7 @@ USE_CAMERA_STUB := true
 TARGET_BOOTLOADER_BOARD_NAME := skyrocket
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := hercules
+TARGET_OTA_ASSERT_DEVICE := SGHI727
 
 # Kernel
 TARGET_PREBUILT_KERNEL      := device/samsung/skyrocket/prebuilt/kernel
