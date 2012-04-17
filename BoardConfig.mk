@@ -38,7 +38,6 @@ TARGET_OTA_ASSERT_DEVICE := SGHI727
 
 # Kernel
 TARGET_PREBUILT_KERNEL      := device/samsung/skyrocket/prebuilt/kernel
-TARGET_PROVIDES_INIT_RC     := true
 BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom usb_id_pin_rework=true
 BOARD_KERNEL_BASE           := 0x40400000
 BOARD_KERNEL_PAGESIZE       := 2048
