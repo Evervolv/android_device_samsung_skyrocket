@@ -19,23 +19,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 ## The gps config appropriate for this device
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_US_SUPL:system/etc/gps.conf
 
-## ramdisk stuffs
+## ramdisk init
 PRODUCT_COPY_FILES += \
     device/samsung/skyrocket/prebuilt/init:root/init \
-    device/samsung/skyrocket/ramdisk/init.rc:root/init.rc \
-    device/samsung/skyrocket/ramdisk/init.qcom.lpm_boot.sh:root/init.qcom.lpm_boot.sh \
-    device/samsung/skyrocket/ramdisk/init.qcom.rc:root/init.qcom.rc \
-    device/samsung/skyrocket/ramdisk/init.qcom.sh:root/init.qcom.sh \
-    device/samsung/skyrocket/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
-    device/samsung/skyrocket/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
-    device/samsung/skyrocket/ramdisk/init.target.rc:root/init.target.rc \
-    device/samsung/skyrocket/ramdisk/initlogo.rle:root/initlogo.rle \
-    device/samsung/skyrocket/ramdisk/lpm.rc:root/lpm.rc \
-    device/samsung/skyrocket/ramdisk/ueventd.qcom.rc:root/ueventd.qcom.rc
-
-# BCM4330 BT Firmware
-PRODUCT_COPY_FILES += \
-    device/samsung/msm8660-common/firmware/bcm4330B1.hcd:system/vendor/firmware/bcm4330B1.hcd
 
 ## (2) Also get non-open-source specific aspects if available
 $(call inherit-product-if-exists, vendor/samsung/skyrocket/skyrocket-vendor.mk)
@@ -58,37 +44,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     gps.skyrocket \
     lights.skyrocket
-
-# keylayouts
-PRODUCT_COPY_FILES += \
-    device/samsung/skyrocket/keylayout/8660_handset.kl:system/usr/keylayout/8660_handset.kl\
-    device/samsung/skyrocket/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
-    device/samsung/skyrocket/keylayout/ffa-keypad.kl:system/usr/keylayout/ffa-keypad.kl \
-    device/samsung/skyrocket/keylayout/fluid-keypad.kl:system/usr/keylayout/fluid-keypad.kl \
-    device/samsung/skyrocket/keylayout/Generic.kl:system/usr/keylayout/Generic.kl \
-    device/samsung/skyrocket/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl\
-    device/samsung/skyrocket/keylayout/sii9234_rcp.kl:system/usr/keylayout/sii9234_rcp.kl \
-    device/samsung/skyrocket/keylayout/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_028e.kl \
-    device/samsung/skyrocket/keylayout/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_028e.kl \
-    device/samsung/skyrocket/keylayout/Vendor_046d_Product_c216.kl:system/usr/keylayout/Vendor_046d_Product_c216.kl \
-    device/samsung/skyrocket/keylayout/Vendor_046d_Product_c294.kl:system/usr/keylayout/Vendor_046d_Product_c294.kl \
-    device/samsung/skyrocket/keylayout/Vendor_046d_Product_c299.kl:system/usr/keylayout/Vendor_046d_Product_c299.kl \
-    device/samsung/skyrocket/keylayout/Vendor_046d_Product_c532.kl:system/usr/keylayout/Vendor_046d_Product_c532.kl \
-    device/samsung/skyrocket/keylayout/Vendor_054c_Product_0268.kl:system/usr/keylayout/Vendor_054c_Product_0268.kl \
-    device/samsung/skyrocket/keylayout/Vendor_05ac_Product_0239.kl:system/usr/keylayout/Vendor_05ac_Product_0239.kl \
-    device/samsung/skyrocket/keylayout/Vendor_22b8_Product_093d.kl:system/usr/keylayout/Vendor_22b8_Product_093d.kl
-
-# Keychars
-PRODUCT_COPY_FILES += \
-    device/samsung/skyrocket/keychars/Generic.kcm:system/usr/keychars/Generic.kcm \
-    device/samsung/skyrocket/keychars/qwerty.kcm:system/usr/keychars/qwerty.kcm \
-    device/samsung/skyrocket/keychars/qwerty2.kcm:system/usr/keychars/qwerty2.kcm \
-    device/samsung/skyrocket/keychars/Virtual.kcm:system/usr/keychars/Virtual.kcm
-
-# IDC
-PRODUCT_COPY_FILES += \
-    device/samsung/skyrocket/idc/qwerty.idc:system/usr/idc/qwerty.idc \
-    device/samsung/skyrocket/idc/qwerty2.idc:system/usr/idc/qwerty2.idc
 
 # Kernel and modules
 ifeq ($(TARGET_PREBUILT_KERNEL),)
@@ -119,7 +74,7 @@ PRODUCT_COPY_FILES += \
     device/samsung/skyrocket/modules/tsif_chrdev.ko:system/lib/modules/tsif_chrdev.ko \
     device/samsung/skyrocket/modules/vibrator.ko:system/lib/modules/vibrator.ko
 
-# common msm8660 configs
+# common msm8660
 $(call inherit-product, device/samsung/msm8660-common/msm8660.mk)
 
 $(call inherit-product, frameworks/base/build/phone-xhdpi-1024-dalvik-heap.mk)
