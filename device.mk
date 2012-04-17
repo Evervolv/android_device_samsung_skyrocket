@@ -90,10 +90,6 @@ PRODUCT_COPY_FILES += \
     device/samsung/skyrocket/idc/qwerty.idc:system/usr/idc/qwerty.idc \
     device/samsung/skyrocket/idc/qwerty2.idc:system/usr/idc/qwerty2.idc
 
-# misc
-PRODUCT_COPY_FILES += \
-    device/samsung/skyrocket/vold.fstab:system/etc/vold.fstab
-
 # Kernel and modules
 ifeq ($(TARGET_PREBUILT_KERNEL),)
     LOCAL_KERNEL := device/samsung/skyrocket/prebuilt/kernel
