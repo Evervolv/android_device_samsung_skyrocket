@@ -40,10 +40,9 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/skyrocket/overlay
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
-# GPS and Light
+# GPS
 PRODUCT_PACKAGES += \
-    gps.skyrocket \
-    lights.skyrocket
+    gps.skyrocket
 
 # Kernel and modules
 ifeq ($(TARGET_PREBUILT_KERNEL),)
