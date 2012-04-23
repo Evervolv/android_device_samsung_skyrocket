@@ -1,4 +1,3 @@
-#
 # system.prop for SGH-T727
 #
 
@@ -108,7 +107,8 @@ ro.telephony.call_ring.multiple=0
 # for 480x800 panel
 ro.sf.lcd_density=240
 
-# Still debugging RIL, but these currently should not be set
+# Fields for custom RIL
+# MAX PROP NAME is 31 chars --|
 ro.telephony.ril_class=HercSkyQualcommRIL
 
 # System property for SIM
