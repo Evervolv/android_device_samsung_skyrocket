@@ -44,6 +44,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     gps.skyrocket
 
+# Lights
+PRODUCT_PACKAGES += \
+    lights.skyrocket
+
 # Kernel and modules
 ifeq ($(TARGET_PREBUILT_KERNEL),)
     LOCAL_KERNEL := device/samsung/skyrocket/prebuilt/kernel
