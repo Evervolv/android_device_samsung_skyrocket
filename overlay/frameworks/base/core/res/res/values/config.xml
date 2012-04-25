@@ -22,6 +22,10 @@
 <resources>
     <string name="config_datause_iface">rmnet_sdio0</string>
 
+    <!-- Flag indicating whether we should enable automatic brightness for
+         the button and keyboard backlights. -->
+    <bool name="config_autoBrightnessButtonKeyboard">false</bool>
+
     <!-- Default color for notification LED is green. -->
     <color name="config_defaultNotificationColor">#ff00ff00</color>
 
