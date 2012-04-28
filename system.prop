@@ -16,9 +16,10 @@ ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
 debug.sf.hw=1
 debug.composition.type=c2d
-debug.overlayui.enable=1
-dalvik.vm.heapsize=64m
+debug.overlayui.enable=0
 dev.pm.dyn_samplingrate=1
+
+dalvik.vm.heapsize=64m
 
 #
 # system props for the cne module
