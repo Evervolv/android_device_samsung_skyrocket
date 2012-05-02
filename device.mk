@@ -77,6 +77,19 @@ PRODUCT_COPY_FILES += \
     device/samsung/skyrocket/modules/tsif_chrdev.ko:system/lib/modules/tsif_chrdev.ko \
     device/samsung/skyrocket/modules/vibrator.ko:system/lib/modules/vibrator.ko
 
+# Ramdisk
+PRODUCT_COPY_FILES += \
+    device/samsung/skyrocket/ramdisk/init.rc:root/init.rc \
+    device/samsung/skyrocket/ramdisk/init.qcom.lpm_boot.sh:root/init.qcom.lpm_boot.sh \
+    device/samsung/skyrocket/ramdisk/init.qcom.rc:root/init.qcom.rc \
+    device/samsung/skyrocket/ramdisk/init.qcom.sh:root/init.qcom.sh \
+    device/samsung/skyrocket/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
+    device/samsung/skyrocket/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
+    device/samsung/skyrocket/ramdisk/init.target.rc:root/init.target.rc \
+    device/samsung/skyrocket/ramdisk/initlogo.rle:root/initlogo.rle \
+    device/samsung/skyrocket/ramdisk/lpm.rc:root/lpm.rc \
+    device/samsung/skyrocket/ramdisk/ueventd.qcom.rc:root/ueventd.qcom.rc
+
 # common msm8660
 $(call inherit-product, device/samsung/msm8660-common/msm8660.mk)
 
