@@ -62,6 +62,9 @@ persist.data_netmgrd_nint=16
 #
 ro.emmc.sdcard.partition=17
 
+ro.additionalmounts=/mnt/emmc
+ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
+
 #system props for time-services
 persist.timed.enable=true
 
