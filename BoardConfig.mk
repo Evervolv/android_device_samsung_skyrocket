@@ -47,8 +47,6 @@ BOARD_FORCE_RAMDISK_ADDRESS := 0x41800000
 TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/skyrocket/recovery/recoverykernel
 TARGET_RECOVERY_INITRC := device/samsung/skyrocket/recovery/init.rc
 
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := skyrocket
-
 # Only needed if TARGET_USES_OVERLAY is true and if using CM's
 # hardware/qcom/display (CAF's latest no longer has this #ifdef)
 #COMMON_GLOBAL_CFLAGS += -DQCOM_ROTATOR_KERNEL_FORMATS

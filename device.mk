@@ -36,14 +36,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ## overlays
 DEVICE_PACKAGE_OVERLAYS += device/samsung/skyrocket/overlay
 
-# Permissions
-PRODUCT_COPY_FILES += \
-    frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
-
-# GPS
-PRODUCT_PACKAGES += \
-    gps.skyrocket
-
 # Kernel and modules
 ifeq ($(TARGET_PREBUILT_KERNEL),)
     LOCAL_KERNEL := device/samsung/skyrocket/prebuilt/kernel
