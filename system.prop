@@ -48,7 +48,6 @@ media.stagefright.enable-qcp=true
 
 ro.vendor.extension_library=/system/lib/libqc-opt.so
 
-
 #
 # system props for the data modules
 #
@@ -59,9 +58,6 @@ persist.data_netmgrd_nint=16
 # system props for SD card emulation of emmc partition
 #
 ro.emmc.sdcard.partition=17
-
-ro.additionalmounts=/mnt/emmc
-ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
 
 #system props for time-services
 persist.timed.enable=true
@@ -108,7 +104,6 @@ ro.ril.transmitpower=true
 #
 ro.telephony.call_ring.multiple=0
 
-# for 480x800 panel
 ro.sf.lcd_density=240
 
 # Fields for custom RIL
@@ -127,4 +122,12 @@ persist.radio.adb_log_on=1
 
 # System proverty for sys info indication
 persist.radio.add_power_save=1
+
+# notify vold we have internal and external sd
+ro.additionalmounts=/mnt/emmc
+ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
+
+# qcom display options
+debug.enabletr=true
+com.qc.hardware=true
 
