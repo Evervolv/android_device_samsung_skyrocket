@@ -48,6 +48,7 @@ media.stagefright.enable-qcp=true
 
 ro.vendor.extension_library=/system/lib/libqc-opt.so
 
+
 #
 # system props for the data modules
 #
@@ -104,6 +105,7 @@ ro.ril.transmitpower=true
 #
 ro.telephony.call_ring.multiple=0
 
+# for 480x800 panel
 ro.sf.lcd_density=240
 
 # Fields for custom RIL
@@ -130,4 +132,3 @@ ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
 # qcom display options
 debug.enabletr=true
 com.qc.hardware=true
-
