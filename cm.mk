@@ -1,7 +1,5 @@
 $(call inherit-product, device/samsung/skyrocket/full_skyrocket.mk)
 
-PRODUCT_RELEASE_NAME := SamsungSGH-I727
-
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
