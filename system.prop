@@ -81,6 +81,12 @@ ro.qualcomm.cabl=1
 #
 ro.ril.transmitpower=true
 
+# system prop for adb_notification
+persist.adb.notify=0
+
+# system prop for usb_notification
+persist.usb_mass_storage.notify=0
+
 #
 # Needed to match behavior of stock rom
 #      D/PHONE: mDoesRilSendMultipleCallRing=false
@@ -114,3 +120,8 @@ ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
 # qcom display options
 debug.enabletr=true
 com.qc.hardware=true
+
+# tweaks
+persist.sys.ui.hw=1
+dalvik.vm.verify_bytecode=false
+
