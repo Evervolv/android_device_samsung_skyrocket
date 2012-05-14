@@ -76,6 +76,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/samsung/skyrocket/firmware/bcm4330B1.hcd:system/etc/firmware/bcm4330B1.hcd
 
+# BT firmware
+PRODUCT_COPY_FILES += \
+    device/samsung/skyrocket/vold.fstab:system/etc/vold.fstab
+
 # common msm8660
 $(call inherit-product, device/samsung/msm8660-common/msm8660.mk)
 
