@@ -47,6 +47,7 @@ PRODUCT_COPY_FILES += \
     device/samsung/skyrocket/modules/gspca_main.ko:system/lib/modules/gspca_main.ko \
     device/samsung/skyrocket/modules/ksapi.ko:system/lib/modules/ksapi.ko \
     device/samsung/skyrocket/modules/lcd.ko:system/lib/modules/lcd.ko \
+    device/samsung/skyrocket/modules/mmc_test.ko:system/lib/modules/mmc_test.ko \
     device/samsung/skyrocket/modules/msm-buspm-dev.ko:system/lib/modules/msm-buspm-dev.ko \
     device/samsung/skyrocket/modules/msm_tsif.ko:system/lib/modules/msm_tsif.ko \
     device/samsung/skyrocket/modules/qce.ko:system/lib/modules/qce.ko \
