@@ -29,6 +29,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES := \
     Torch
 
+# Lights
+PRODUCT_PACKAGES := \
+    lights.skyrocket 
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from skyrocket device
