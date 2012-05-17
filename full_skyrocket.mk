@@ -30,7 +30,7 @@ PRODUCT_PACKAGES := \
     Torch
 
 # Lights
-PRODUCT_PACKAGES := \
+PRODUCT_PACKAGES += \
     lights.skyrocket 
 
 # Inherit from those products. Most specific first.
