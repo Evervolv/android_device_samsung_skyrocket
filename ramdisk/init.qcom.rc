@@ -56,6 +56,10 @@ on boot
     setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
     chown bluetooth bluetooth ro.bt.bdaddr_path
 
+    #Create QMUX deamon socket area
+    mkdir /dev/socket/qmux_radio 0770 radio radio
+    chmod 2770 /dev/socket/qmux_radio
+
     setprop wifi.interface wlan0
 
     # Enable Bluetooth 802.11 PAL when Bluetooth is turned on
