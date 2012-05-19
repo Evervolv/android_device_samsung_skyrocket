@@ -105,6 +105,8 @@ ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
 debug.enabletr=true
 com.qc.hardware=true
 
+com.qc.hdmi_out=true
+
 # tweaks
 persist.sys.ui.hw=1
 dalvik.vm.verify_bytecode=false
