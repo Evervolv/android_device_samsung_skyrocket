@@ -19,8 +19,8 @@ debug.composition.type=dyn
 dev.pm.dyn_samplingrate=1
 
 ro.hdmi.enable=true
-lpa.decode=true
-lpa.use-stagefright=true
+#lpa.decode=true
+#lpa.use-stagefright=true
 
 #system props for the MM modules
 
