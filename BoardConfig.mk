@@ -69,3 +69,7 @@ BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 
 # FIXME: Overlay has an issue on Quincy when playing video in landscape mode
 COMMON_GLOBAL_CFLAGS += -DQCOM_ROTATOR_KERNEL_FORMATS
+
+# MTP
+BOARD_MTP_DEVICE := "/dev/mtp_usb"
+
