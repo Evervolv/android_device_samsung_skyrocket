@@ -19,10 +19,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 ## The gps config appropriate for this device
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_US_SUPL:system/etc/gps.conf
 
-## ramdisk init
-PRODUCT_COPY_FILES += \
-    device/samsung/skyrocket/prebuilt/init:root/init \
-
 ## (2) Also get non-open-source specific aspects if available
 $(call inherit-product-if-exists, vendor/samsung/skyrocket/skyrocket-vendor.mk)
 
@@ -61,7 +57,6 @@ PRODUCT_COPY_FILES += \
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    device/samsung/skyrocket/ramdisk/init.rc:root/init.rc \
     device/samsung/skyrocket/ramdisk/init.qcom.lpm_boot.sh:root/init.qcom.lpm_boot.sh \
     device/samsung/skyrocket/ramdisk/init.qcom.rc:root/init.qcom.rc \
     device/samsung/skyrocket/ramdisk/init.qcom.sh:root/init.qcom.sh \
@@ -70,13 +65,14 @@ PRODUCT_COPY_FILES += \
     device/samsung/skyrocket/ramdisk/init.target.rc:root/init.target.rc \
     device/samsung/skyrocket/ramdisk/initlogo.rle:root/initlogo.rle \
     device/samsung/skyrocket/ramdisk/lpm.rc:root/lpm.rc \
-    device/samsung/skyrocket/ramdisk/ueventd.qcom.rc:root/ueventd.qcom.rc
+    device/samsung/skyrocket/ramdisk/ueventd.rc:root/ueventd.rc \
+    device/samsung/skyrocket/ramdisk/init.emmc.rc:root/init.emmc.rc
 
 # BT firmware
 PRODUCT_COPY_FILES += \
     device/samsung/skyrocket/firmware/bcm4330B1.hcd:system/etc/firmware/bcm4330B1.hcd
 
-# BT firmware
+# Vold
 PRODUCT_COPY_FILES += \
     device/samsung/skyrocket/vold.fstab:system/etc/vold.fstab
 
