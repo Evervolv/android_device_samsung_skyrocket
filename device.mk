@@ -25,6 +25,10 @@ $(call inherit-product-if-exists, vendor/samsung/skyrocket/skyrocket-vendor.mk)
 ## overlays
 DEVICE_PACKAGE_OVERLAYS += device/samsung/skyrocket/overlay
 
+# Device uses high-density artwork where available
+PRODUCT_AAPT_CONFIG := normal hdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
+
 # Kernel and modules
 ifeq ($(TARGET_PREBUILT_KERNEL),)
     LOCAL_KERNEL := device/samsung/skyrocket/prebuilt/kernel
