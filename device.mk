@@ -67,7 +67,6 @@ PRODUCT_COPY_FILES += \
     device/samsung/skyrocket/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
     device/samsung/skyrocket/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
     device/samsung/skyrocket/ramdisk/init.target.rc:root/init.target.rc \
-    device/samsung/skyrocket/ramdisk/initlogo.rle:root/initlogo.rle \
     device/samsung/skyrocket/ramdisk/lpm.rc:root/lpm.rc \
     device/samsung/skyrocket/ramdisk/ueventd.rc:root/ueventd.rc \
     device/samsung/skyrocket/ramdisk/init.emmc.rc:root/init.emmc.rc
