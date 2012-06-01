@@ -64,7 +64,6 @@ BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p2
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
-
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 
 # FIXME: Overlay has an issue on Quincy when playing video in landscape mode
@@ -79,9 +78,6 @@ BOARD_MTP_DEVICE := "/dev/mtp_usb"
 # Audio
 TARGET_USES_QCOM_LPA := true
 COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
-
-# Disable MVS audio, it causes robot voice in GTalk
-COMMON_GLOBAL_CFLAGS += -DNO_QCOM_MVS
 
 # Disable initlogo, Samsungs framebuffer is weird
 TARGET_NO_INITLOGO := true
