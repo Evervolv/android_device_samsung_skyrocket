@@ -29,15 +29,7 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/skyrocket/overlay
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
-# Kernel and modules
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-    LOCAL_KERNEL := device/samsung/skyrocket/prebuilt/kernel
-else
-    LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
 PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel \
     device/samsung/skyrocket/modules/ansi_cprng.ko:system/lib/modules/ansi_cprng.ko \
     device/samsung/skyrocket/modules/cls_flow.ko:system/lib/modules/cls_flow.ko \
     device/samsung/skyrocket/modules/dal_remotetest.ko:system/lib/modules/dal_remotetest.ko \

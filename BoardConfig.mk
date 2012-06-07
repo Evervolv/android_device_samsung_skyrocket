@@ -37,11 +37,13 @@ TARGET_BOOTLOADER_BOARD_NAME := skyrocket
 TARGET_OTA_ASSERT_DEVICE := SGHI727,hercules
 
 # Kernel
-TARGET_PREBUILT_KERNEL      := device/samsung/skyrocket/prebuilt/kernel
-BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom usb_id_pin_rework=true
-BOARD_KERNEL_BASE           := 0x40400000
-BOARD_KERNEL_PAGESIZE       := 2048
-BOARD_FORCE_RAMDISK_ADDRESS := 0x41800000
+#   - Needs GB kernel for recovery since ICS kernels cause eMMC corruption
+TARGET_PREBUILT_KERNEL          := device/samsung/skyrocket/prebuilt/kernel
+TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/skyrocket/prebuilt/recovery_kernel
+BOARD_KERNEL_CMDLINE            := androidboot.hardware=qcom usb_id_pin_rework=true
+BOARD_KERNEL_BASE               := 0x40400000
+BOARD_KERNEL_PAGESIZE           := 2048
+BOARD_FORCE_RAMDISK_ADDRESS     := 0x41800000
 
 # cat /proc/emmc
 #dev:        size     erasesize name
@@ -64,7 +66,9 @@ BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p2
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
+
+# Suppress the WIPE command since it can brick our EMMC
+BOARD_SUPPRESS_EMMC_WIPE := true
 
 # FIXME: Overlay has an issue on Quincy when playing video in landscape mode
 COMMON_GLOBAL_CFLAGS += -DQCOM_ROTATOR_KERNEL_FORMATS
