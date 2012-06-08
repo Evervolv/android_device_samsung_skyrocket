@@ -161,9 +161,6 @@ on post-fs-data
     mkdir /data/wpstiles/ 0755 shell
     mkdir /data/wiper 0755 location qcom_oncrpc
 
-    #Create directories for gpsone_daemon services
-    mkdir /data/misc/gpsone_d 0770 system system
-
     #Create directories for QuIPS
     mkdir /data/misc/quipc 0770 gps system
 
@@ -397,12 +394,6 @@ service wiperiface /system/bin/wiperiface
     user location
     group qcom_oncrpc
     oneshot
-
-service gpsone_daemon /system/bin/gpsone_daemon
-    class late_start
-    user system
-    group system qcom_oncrpc inet
-    disabled
 
 service quipc_igsn /system/bin/quipc_igsn
     class late_start

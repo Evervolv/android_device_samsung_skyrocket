@@ -129,15 +129,6 @@ done
 # Start gpsone_daemon for SVLTE Type I & II devices
 #
 case "$target" in
-        "msm7630_fusion")
-        start gpsone_daemon
-esac
-case "$baseband" in
-        "svlte2a")
-        start gpsone_daemon
-        start bridgemgrd
-esac
-case "$target" in
         "msm7630_surf" | "msm8660" | "msm8960")
         start quipc_igsn
 esac
