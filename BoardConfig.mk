@@ -37,13 +37,12 @@ TARGET_BOOTLOADER_BOARD_NAME := skyrocket
 TARGET_OTA_ASSERT_DEVICE := SGHI727,hercules,skyrocket
 
 # Kernel
-#   - Needs GB kernel for recovery since ICS kernels cause eMMC corruption
-TARGET_PREBUILT_KERNEL          := device/samsung/skyrocket/prebuilt/kernel
-TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/skyrocket/prebuilt/recovery_kernel
-BOARD_KERNEL_CMDLINE            := androidboot.hardware=qcom usb_id_pin_rework=true
-BOARD_KERNEL_BASE               := 0x40400000
-BOARD_KERNEL_PAGESIZE           := 2048
-BOARD_FORCE_RAMDISK_ADDRESS     := 0x41800000
+TARGET_KERNEL_CONFIG        := cyanogenmod_skyrocket_defconfig
+TARGET_KERNEL_SOURCE        := kernel/samsung/msm8660-common
+BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom usb_id_pin_rework=true
+BOARD_KERNEL_BASE           := 0x40400000
+BOARD_KERNEL_PAGESIZE       := 2048
+BOARD_FORCE_RAMDISK_ADDRESS := 0x41800000
 
 # cat /proc/emmc
 #dev:        size     erasesize name
