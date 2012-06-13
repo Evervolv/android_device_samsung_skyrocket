@@ -25,8 +25,8 @@ media.stagefright.enable-qcp=true
 
 ro.vendor.extension_library=/system/lib/libqc-opt.so
 
-#lpa.decode=true
-#lpa.use-stagefright=true
+lpa.decode=true
+lpa.use-stagefright=true
 
 #
 # system props for the data modules
