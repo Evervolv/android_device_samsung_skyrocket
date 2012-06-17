@@ -34,7 +34,7 @@ USE_CAMERA_STUB := true
 TARGET_BOOTLOADER_BOARD_NAME := skyrocket
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := SGHI727,hercules,skyrocket
+TARGET_OTA_ASSERT_DEVICE := SGHI727,SGH-I727,hercules,skyrocket
 
 # Kernel
 TARGET_KERNEL_CONFIG        := cyanogenmod_skyrocket_defconfig
