@@ -50,7 +50,7 @@ PRODUCT_COPY_FILES += \
 # common msm8660
 $(call inherit-product, device/samsung/msm8660-common/msm8660.mk)
 
-$(call inherit-product, frameworks/base/build/phone-xhdpi-1024-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, vendor/samsung/skyrocket/skyrocket-vendor.mk)
 
