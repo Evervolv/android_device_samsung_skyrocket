@@ -59,18 +59,10 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 838860800
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 20044333056
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-# TODO (orphaned) BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p1
-# TODO (orphaned) BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk0p28
-# TODO (orphaned) BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p2
-# TODO (orphaned) BOARD_USES_MMCUTILS := true
-# TODO (orphaned) BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 # Suppress the WIPE command since it can brick our EMMC
 BOARD_SUPPRESS_EMMC_WIPE := true
-
-# FIXME: Overlay has an issue on Quincy when playing video in landscape mode
-COMMON_GLOBAL_CFLAGS += -DQCOM_ROTATOR_KERNEL_FORMATS
 
 # Workaround for glitches while cropping bypass layers
 # TODO (orphaned) TARGET_NO_BYPASS_CROPPING := true
