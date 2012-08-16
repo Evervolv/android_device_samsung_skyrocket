@@ -38,7 +38,7 @@ PRODUCT_COPY_FILES += \
     device/samsung/skyrocket/ramdisk/init.target.rc:root/init.target.rc \
     device/samsung/skyrocket/ramdisk/ueventd.rc:root/ueventd.rc \
     device/samsung/skyrocket/ramdisk/init.emmc.rc:root/init.emmc.rc \
-    device/samsung/skyrocket/fstab.skyrocket:root/fstab.skyrocket
+    device/samsung/skyrocket/fstab.qcom:root/fstab.qcom
 
 # BT firmware
 PRODUCT_COPY_FILES += \
