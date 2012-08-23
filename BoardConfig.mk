@@ -39,7 +39,7 @@ TARGET_OTA_ASSERT_DEVICE := SGH-I727,skyrocket
 # Kernel
 TARGET_KERNEL_CONFIG        := cyanogenmod_skyrocket_defconfig
 TARGET_KERNEL_SOURCE        := kernel/samsung/msm8660-common
-BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom usb_id_pin_rework=true
+BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom usb_id_pin_rework=true no_console_suspend=true
 BOARD_KERNEL_BASE           := 0x40400000
 BOARD_KERNEL_PAGESIZE       := 2048
 BOARD_FORCE_RAMDISK_ADDRESS := 0x41800000
@@ -69,11 +69,6 @@ BOARD_SUPPRESS_EMMC_WIPE := true
 
 # MTP
 # TODO (orphaned) BOARD_MTP_DEVICE := "/dev/mtp_usb"
-
-# Audio
-# TODO (orphaned) TARGET_USES_QCOM_LPA := true
-COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
-# TODO (orphaned) BOARD_HAS_SAMSUNG_VOLUME_BUG := true
 
 # Disable initlogo, Samsungs framebuffer is weird
 TARGET_NO_INITLOGO := true
