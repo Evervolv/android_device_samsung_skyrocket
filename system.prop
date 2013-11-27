@@ -14,33 +14,13 @@ persist.rild.nitz_short_ons_1=
 persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 ril.subscription.types=NV,RUIM
-DEVICE_PROVISIONED=1
-debug.sf.hw=1
-debug.composition.type=c2d
-debug.overlayui.enable=1
-dalvik.vm.heapsize=64m
+
 dev.pm.dyn_samplingrate=1
 
-#
-# system props for the cne module
-#
-persist.cne.UseCne=false
-persist.cne.bat.range.low.med=30
-persist.cne.bat.range.med.high=60
-persist.cne.loc.policy.op=/system/etc/OperatorPolicy.xml
-persist.cne.loc.policy.user=/system/etc/UserPolicy.xml
-persist.cne.bwbased.rat.sel=false
-persist.cne.snsr.based.rat.mgt=false
-persist.cne.bat.based.rat.mgt=false
-persist.cne.rat.acq.time.out=30000
-persist.cne.rat.acq.retry.tout=0
-
-ro.hdmi.enable=true
-lpa.decode=true
-lpa.use-stagefright=true
+# Disable GC freed lines
+dalvik.vm.debug.alloc=0
 
 #system props for the MM modules
-
 media.stagefright.enable-player=true
 media.stagefright.enable-http=true
 media.stagefright.enable-fma2dp=false
@@ -72,25 +52,31 @@ persist.audio.vr.enable=false
 ro.opengles.version=131072
 
 #
-# system prop for Bluetooth Auto connect for remote initated connections
+# System prop for sending transmit power request to RIL during WiFi hotspot on/off
 #
-ro.bluetooth.remote.autoconnect=true
+ro.ril.transmitpower=true
 
 #
-# system prop for Bluetooth FTP profile
+# Needed to match behavior of stock rom
+#      D/PHONE: mDoesRilSendMultipleCallRing=false
 #
-ro.qualcomm.bluetooth.ftp=true
-#
-# system prop for requesting Master role in incoming Bluetooth connection.
-#
-ro.bluetooth.request.master=true
-# system property for Bluetooth discoverability time out in seconds
-# 0: Always discoverable
-# Disalbe because of discoverable timeout concept
-#debug.bt.discoverable_time=0
+ro.telephony.call_ring.multiple=0
 
-# System property for cabl
-ro.qualcomm.cabl=1
+# for 480x800 panel
 ro.sf.lcd_density=240
 
-ro.telephony.ril.v3=signalstrength
+# Fields for custom RIL
+telephony.lteOnGsmDevice=1
+
+# System property for SIM
+persist.radio.apm_sim_not_pwdn=1
+
+# System prop for qmi adb log
+persist.radio.adb_log_on=1
+
+# System proverty for sys info indication
+persist.radio.add_power_save=1
+
+# System proverty snapshot disable
+persist.radio.snapshot_disabled=1
+
