@@ -36,6 +36,9 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8660_SURF
 # Assert
 TARGET_OTA_ASSERT_DEVICE := SGH-I727,skyrocket
 
+# NFC
+BOARD_HAVE_NFC := true
+
 # Kernel
 TARGET_KERNEL_CONFIG        := evervolv_skyrocket_defconfig
 TARGET_KERNEL_SOURCE        := kernel/samsung/msm8660

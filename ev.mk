@@ -1,7 +1,8 @@
 # Inherit AOSP device configuration for surf.
-$(call inherit-product, device/samsung/skyrocket/full_skyrocket.mk)
+$(call inherit-product, device/samsung/skyrocket/device.mk)
 
 # Inherit some common evervolv stuff.
+$(call inherit-product, vendor/ev/config/gsm.mk)
 $(call inherit-product, vendor/ev/config/common_full_phone.mk)
 
 #
