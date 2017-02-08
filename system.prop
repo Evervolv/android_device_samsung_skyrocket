@@ -20,6 +20,7 @@ debug.composition.type=c2d
 debug.overlayui.enable=1
 dalvik.vm.heapsize=64m
 dev.pm.dyn_samplingrate=1
+windowsmgr.max_events_per_sec=240
 
 #
 # system props for the cne module
@@ -94,3 +95,6 @@ ro.qualcomm.cabl=1
 ro.sf.lcd_density=240
 
 ro.telephony.ril.v3=signalstrength
+
+
+
